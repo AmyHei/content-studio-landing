@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "博客 - Content Studio",
+  title: "博客 - AutoContent",
   description:
     "关于 AI 内容创作、公众号自动化、自媒体运营的实用文章和教程。",
 };

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Content Studio - AI 内容自动化工具",
+  title: "AutoContent - AI 内容自动化工具",
   description:
     "让 AI 帮你从选题到发布，一键搞定公众号内容。监控热点、AI 写稿、自动配图、一键发布微信公众号。",
   keywords: [
@@ -22,16 +22,17 @@ export const metadata: Metadata = {
     "公众号自动化",
     "内容创作",
     "自媒体工具",
-    "Content Studio",
+    "AutoContent",
     "AI 内容生成",
     "微信公众号",
   ],
   openGraph: {
-    title: "Content Studio - AI 内容自动化工具",
+    title: "AutoContent - AI 内容自动化工具",
     description:
       "让 AI 帮你从选题到发布，一键搞定公众号内容。监控热点、AI 写稿、自动配图、一键发布微信公众号。",
     locale: "zh_CN",
     type: "website",
+    url: "https://autocontent.net",
   },
 };
 

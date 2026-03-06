@@ -136,7 +136,7 @@ export default function Home() {
             准备好让 AI 帮你创作了吗？
           </h2>
           <p className="text-blue-100 text-lg mb-10">
-            加入等候名单，第一时间体验 Content Studio
+            加入等候名单，第一时间体验 AutoContent
           </p>
           <WaitlistForm variant="dark" />
         </div>
@@ -144,7 +144,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 px-6 text-center text-gray-500 dark:text-gray-500 text-sm">
-        &copy; 2026 Content Studio. All rights reserved.
+        &copy; 2026 AutoContent. All rights reserved.
       </footer>
     </div>
   );

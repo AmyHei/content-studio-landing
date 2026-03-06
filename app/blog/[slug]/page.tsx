@@ -19,7 +19,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return { title: "文章未找到" };
   return {
-    title: `${post.title} - Content Studio`,
+    title: `${post.title} - AutoContent`,
     description: post.excerpt,
   };
 }
@@ -76,7 +76,7 @@ export default async function BlogPostPage({
             想让 AI 帮你自动化内容创作？
           </p>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            加入 Content Studio 等候名单，第一时间体验
+            加入 AutoContent 等候名单，第一时间体验
           </p>
           <WaitlistForm />
         </div>

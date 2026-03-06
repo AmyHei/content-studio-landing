@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://bustree.cn",
+  siteUrl: "https://autocontent.net",
   generateRobotsTxt: true,
   outDir: "./out",
 };

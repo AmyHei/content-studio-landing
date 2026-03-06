@@ -5,7 +5,7 @@ export function Nav() {
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <Link href="/" className="font-bold text-lg text-gray-900 dark:text-white">
-          Content Studio
+          AutoContent
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm">
