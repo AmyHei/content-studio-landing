@@ -70,13 +70,43 @@ export default async function BlogPostPage({
           </div>
         </article>
 
+        {/* Author Bio */}
+        <div className="mt-12 flex items-start gap-4 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+          <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shrink-0">
+            Y
+          </div>
+          <div>
+            <p className="font-semibold text-gray-900 dark:text-white">
+              <a
+                href="https://yaqinhei.com"
+                target="_blank"
+                rel="noopener"
+                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                yaqinhei
+              </a>
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              AI 工程师，专注于 AI 自动化与内容创作工具开发。更多技术文章请访问{" "}
+              <a
+                href="https://yaqinhei.com"
+                target="_blank"
+                rel="noopener"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                yaqinhei.com
+              </a>
+            </p>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="mt-16 p-8 bg-blue-50 dark:bg-blue-950/30 rounded-xl text-center">
           <p className="text-lg font-medium text-gray-900 dark:text-white mb-2">
             想让 AI 帮你自动化内容创作？
           </p>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            加入 AutoContent 等候名单，第一时间体验
+            订阅 AutoContent 更新通知，或直接免费体验
           </p>
           <WaitlistForm />
         </div>

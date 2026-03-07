@@ -10,7 +10,7 @@ Target: 中文自媒体创作者 (微信公众号).
 
 ## Deploy
 Cloudflare Pages, static export.
-Domain: bustree.cn
+Domain: autocontent.net (landing) + app.autocontent.net (Content Studio app on Vercel)
 
 ## Structure
 - `/` — Landing page (waitlist)

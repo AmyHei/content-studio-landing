@@ -63,7 +63,7 @@ export default function Home() {
             <WaitlistForm />
           </div>
           <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
-            免费加入等候名单，第一时间获得使用资格
+            留下邮箱获取功能更新通知，或直接免费试用
           </p>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function Home() {
             准备好让 AI 帮你创作了吗？
           </h2>
           <p className="text-blue-100 text-lg mb-10">
-            加入等候名单，第一时间体验 AutoContent
+            订阅更新通知，或直接开始免费体验
           </p>
           <WaitlistForm variant="dark" />
         </div>

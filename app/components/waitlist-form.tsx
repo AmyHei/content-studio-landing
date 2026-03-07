@@ -30,10 +30,18 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
 
   if (status === "success") {
     return (
-      <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+      <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg space-y-3">
         <p className="text-green-700 dark:text-green-300 font-medium">
-          已加入等候名单！我们会尽快通知你。
+          订阅成功！有新功能会第一时间通知你。
         </p>
+        <a
+          href="https://app.autocontent.net"
+          target="_blank"
+          rel="noopener"
+          className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+        >
+          立即体验 AutoContent →
+        </a>
       </div>
     );
   }
@@ -46,19 +54,37 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
     ? "px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap"
     : "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap";
 
+  const tryLinkClasses = variant === "dark"
+    ? "text-blue-100 hover:text-white"
+    : "text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400";
+
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        required
-        className={inputClasses}
-      />
-      <button type="submit" disabled={status === "loading"} className={buttonClasses}>
-        {status === "loading" ? "提交中..." : "加入等候名单"}
-      </button>
-    </form>
+    <div className="space-y-3">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="your@email.com"
+          required
+          className={inputClasses}
+        />
+        <button type="submit" disabled={status === "loading"} className={buttonClasses}>
+          {status === "loading" ? "提交中..." : "订阅更新"}
+        </button>
+      </form>
+      <p className={`text-sm text-center ${tryLinkClasses} transition-colors`}>
+        或{" "}
+        <a
+          href="https://app.autocontent.net"
+          target="_blank"
+          rel="noopener"
+          className="underline underline-offset-2"
+        >
+          直接免费体验
+        </a>
+        {" "}· 早期版本，持续更新中
+      </p>
+    </div>
   );
 }
