@@ -14,22 +14,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AutoContent - AI 内容自动化工具",
+  metadataBase: new URL("https://autocontent.net"),
+  title: {
+    default: "AutoContent — AI 写公众号，从选题到发布一键搞定",
+    template: "%s",
+  },
   description:
-    "让 AI 帮你从选题到发布，一键搞定公众号内容。监控热点、AI 写稿、自动配图、一键发布微信公众号。",
+    "用 AI 自动化公众号内容创作：智能监控热点、AI 写稿、自动配图、一键发布微信草稿箱。免费试用，从每天 4 小时缩到 30 分钟。",
   keywords: [
-    "AI 写作",
+    "AI 写公众号",
     "公众号自动化",
-    "内容创作",
+    "AI 写作",
+    "公众号排版",
+    "爆款标题生成器",
+    "Markdown 转公众号",
+    "AI 写作免费",
     "自媒体工具",
-    "AutoContent",
-    "AI 内容生成",
     "微信公众号",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "AutoContent - AI 内容自动化工具",
+    title: "AutoContent — AI 写公众号，从选题到发布一键搞定",
     description:
-      "让 AI 帮你从选题到发布，一键搞定公众号内容。监控热点、AI 写稿、自动配图、一键发布微信公众号。",
+      "用 AI 自动化公众号内容创作：智能监控热点、AI 写稿、自动配图、一键发布。免费试用。",
     locale: "zh_CN",
     type: "website",
     url: "https://autocontent.net",
