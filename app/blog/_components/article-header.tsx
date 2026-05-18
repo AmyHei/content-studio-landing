@@ -46,7 +46,7 @@ export function ArticleHeader({
 
       {/* title */}
       <h1
-        className="text-[34px] md:text-[44px] leading-[1.15] font-bold tracking-tight mb-5"
+        className="text-[28px] md:text-[34px] leading-[1.25] font-bold tracking-tight mb-4"
         style={{
           fontFamily: "var(--font-display-zh)",
           color: "var(--ink)",
@@ -58,11 +58,8 @@ export function ArticleHeader({
       {/* excerpt */}
       {excerpt && (
         <p
-          className="text-[18px] md:text-[19px] leading-[1.6] font-light italic mb-8"
-          style={{
-            color: "var(--ink-soft)",
-            fontFamily: "var(--font-display-zh)",
-          }}
+          className="text-[15px] md:text-[16px] leading-[1.7] mb-8"
+          style={{ color: "var(--ink-soft)" }}
         >
           {excerpt}
         </p>
