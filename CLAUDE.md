@@ -136,11 +136,12 @@ app/components/marketing-shell.tsx
   - SectionLabel       caps divider helper
 
 app/blog/_components/
-  - tldr               本期速览 magazine card
-  - persona-section    01-04 colored persona section
-  - action-callout     "可以动手" card per persona
-  - keyword-table      SEO 长尾词 table (intent pills)
-  - feature-pick       末尾 "编辑推荐" CTA grid
+  - tldr               本期速览 magazine card — children-based (markdown ul)
+  - persona-section    01-04 colored persona section — wraps markdown children
+  - action-callout     "可以动手" card per persona — wraps markdown children
+  - feature-pick       末尾 "编辑推荐" CTA grid — children-based (markdown ul)
+  - keyword-table      [DEPRECATED] use plain markdown table instead
+                       (remark-gfm + .article-body table styles handle it)
   - article-header     blog post hero
   - article-footer     AI 搜索整理 byline + yaqinhei.com 反链
   - mdx-components.tsx  component map for MDXRemote
@@ -155,6 +156,47 @@ app/components/
 - Markdown tables auto-styled via `.article-body table` in globals.css (editorial: caps headers, mono numbers, hover tint)
 - Code blocks: `.article-body pre` has 3px accent top border
 - Article styling: use `.article-body` class on `<article>`, not Tailwind `prose`
+
+### MDX component API: children-based, NOT array prop
+
+All custom MDX components accept **children** (markdown content nested between tags), not array props. Array-prop form (`<TLDR points={[...]} />`) breaks MDX prerendering during static export — symptom: `TypeError: Cannot read properties of undefined`.
+
+**Correct usage** — note the blank lines around the markdown content:
+
+```mdx
+<TLDR>
+
+- 要点 1
+- 要点 2
+- 要点 3
+
+</TLDR>
+
+<PersonaSection persona="saas" number="01" title="给 SaaS / 独立开发者">
+
+[200-300 字 markdown]
+
+<ActionCallout persona="saas">
+[一句话 callout — 这里可以省略空行因为只有单段]
+</ActionCallout>
+
+</PersonaSection>
+
+## SEO 长尾词
+
+| 关键词 | 搜索意图 | 适合做的内容 |
+| --- | --- | --- |
+| ai 写公众号年入 200w | 交易 | 案例长文 + 实测截图 |
+
+<FeaturePick>
+
+- [AI 写公众号文章](/features/ai-wechat-article) — 选题、写稿、配图一站完成
+- [免费标题生成器](/tools/title-generator) — 8 种爆款模板 × 2 候选
+
+</FeaturePick>
+```
+
+**Rule of thumb**: blank line between opening tag and markdown content, blank line between markdown content and closing tag. Without these blank lines, MDX treats children as raw JSX nodes (not markdown) and the components receive unexpected types.
 
 ---
 
@@ -197,8 +239,14 @@ Always use `bg-[var(--paper-elevated)]` and `border-[var(--divider)]` so light/d
 ## 8. Blog post titles use display serif, not Geist
 The blog feels like a magazine, not a Stripe doc. If you see `text-3xl font-bold text-gray-900` on a blog page heading, that's wrong — fix to `--font-display-zh` + ink tokens.
 
-## 9. Weekly radar posts use the blog MDX component system
-Posts at `content/posts/weekly-radar-YYYY-MM-DD.mdx` use `<TLDR>`, `<PersonaSection>`, `<ActionCallout>`, `<KeywordTable>`, `<FeaturePick>` (defined in `app/blog/_components/`). The remote routine (Anthropic CCR trigger) writes these directly without `import` statements — the MDX component map handles resolution.
+## 9. Weekly radar posts use children-based MDX components (NOT array prop)
+Posts at `content/posts/weekly-radar-YYYY-MM-DD.mdx` use `<TLDR>`, `<PersonaSection>`, `<ActionCallout>`, `<FeaturePick>` defined in `app/blog/_components/`. All components are **children-based** — wrap markdown content between opening + closing tags, with blank lines.
+
+For keyword data, use a plain markdown table (remark-gfm parses, `.article-body table` styles).
+
+Do NOT use array-prop form like `<TLDR points={[...]} />` — it breaks MDX prerendering with `TypeError: Cannot read properties of undefined`. The remote Anthropic CCR routine's prompt already enforces this, but if you edit posts by hand, remember the children-based convention.
+
+See `## MDX setup → MDX component API` above for the full example.
 
 ## 10. Hub card hover must be visible
 Use `border-2` (not border-1) + `hover:shadow-md` + `hover:-translate-y-[2px]` for hub `/features` and `/tools` cards. Subtle hover gets missed by users.
