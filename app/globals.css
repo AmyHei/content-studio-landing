@@ -212,6 +212,77 @@ body {
   line-height: 1.3;
 }
 
+/* tables — editorial newsletter style */
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.article-body thead tr {
+  border-bottom: 2px solid var(--accent);
+}
+
+.article-body th {
+  text-align: left;
+  padding: 0.7em 0.8em 0.7em 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.article-body tbody tr {
+  border-bottom: 1px solid var(--divider);
+  transition: background 0.15s;
+}
+
+.article-body tbody tr:hover {
+  background: var(--paper-elevated);
+}
+
+.article-body td {
+  padding: 0.85em 0.8em 0.85em 0;
+  vertical-align: top;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.article-body td:first-child {
+  font-weight: 500;
+}
+
+/* numbers in tables: use mono for tabular alignment */
+.article-body td:not(:first-child) {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* code blocks — editorial style with line of accent on top */
+.article-body pre {
+  background: var(--paper-elevated);
+  border: 1px solid var(--divider);
+  border-top: 3px solid var(--accent);
+  border-radius: 3px;
+  padding: 1.2em 1.4em;
+  overflow-x: auto;
+  margin: 1.6em 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.article-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--ink);
+  font-size: inherit;
+}
+
 /* ornament divider */
 .article-body hr {
   border: none;

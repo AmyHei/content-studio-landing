@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+import remarkGfm from "remark-gfm";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { ArticleHeader } from "../_components/article-header";
 import { ArticleFooter } from "../_components/article-footer";
@@ -53,7 +54,15 @@ export default async function BlogPostPage({
         className="article-body max-w-[688px] mx-auto px-6"
         style={{ color: "var(--ink)" }}
       >
-        <MDXRemote source={post.content} components={mdxComponents} />
+        <MDXRemote
+          source={post.content}
+          components={mdxComponents}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+            },
+          }}
+        />
       </article>
 
       <ArticleFooter />
