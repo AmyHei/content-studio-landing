@@ -44,15 +44,12 @@ export default function BlogPage() {
             AutoContent · Journal
           </div>
           <h1
-            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[var(--ink)] dark:text-white"
+            className="text-[28px] md:text-[34px] font-bold tracking-tight mb-3 text-[var(--ink)] dark:text-white"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             博客
           </h1>
-          <p
-            className="text-[18px] md:text-[19px] leading-[1.6] italic text-[var(--ink-soft)] dark:text-gray-400"
-            style={{ fontFamily: "var(--font-display-zh)" }}
-          >
+          <p className="text-[14px] md:text-[15px] leading-[1.6] text-[var(--ink-soft)] dark:text-gray-400">
             趋势雷达周报 · AI 内容创作实战 · 公众号自动化方法论
           </p>
           <div
@@ -143,17 +140,14 @@ function FeaturedPostCard({
           </div>
 
           <h2
-            className="text-[28px] md:text-[36px] font-bold leading-[1.2] tracking-tight mb-4 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] dark:group-hover:text-[var(--accent)] transition-colors"
+            className="text-[22px] md:text-[26px] font-semibold leading-[1.3] tracking-tight mb-3 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] dark:group-hover:text-[var(--accent)] transition-colors"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             {post.title}
           </h2>
 
           {post.excerpt && (
-            <p
-              className="text-[16px] md:text-[17px] leading-[1.7] italic mb-5 text-[var(--ink-soft)] dark:text-gray-400"
-              style={{ fontFamily: "var(--font-display-zh)" }}
-            >
+            <p className="text-[14px] md:text-[15px] leading-[1.7] mb-4 text-[var(--ink-soft)] dark:text-gray-400">
               {post.excerpt}
             </p>
           )}
@@ -209,14 +203,14 @@ function ListPostItem({
         </div>
 
         <h3
-          className="text-[20px] md:text-[22px] font-bold leading-[1.3] mb-2 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] dark:group-hover:text-[var(--accent)] transition-colors"
+          className="text-[17px] md:text-[18px] font-semibold leading-[1.4] mb-2 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] dark:group-hover:text-[var(--accent)] transition-colors"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
           {post.title}
         </h3>
 
         {post.excerpt && (
-          <p className="text-[15px] leading-[1.65] text-[var(--ink-soft)] dark:text-gray-400">
+          <p className="text-[13px] md:text-[14px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400">
             {post.excerpt}
           </p>
         )}
