@@ -2,17 +2,17 @@ import { WaitlistForm } from "./components/waitlist-form";
 
 const painPoints = [
   {
-    icon: "\u23F0",
+    num: "01",
     title: "每天花 3-4 小时写公众号",
     desc: "选题、写稿、配图、排版…产出还不稳定",
   },
   {
-    icon: "\uD83D\uDD25",
+    num: "02",
     title: "热点来了反应慢",
     desc: "等你写完发出去，别人早就发了三遍了",
   },
   {
-    icon: "\uD83D\uDE2B",
+    num: "03",
     title: "多平台分发太繁琐",
     desc: "公众号、博客、Twitter…每个平台都要手动适配",
   },
@@ -49,42 +49,69 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="py-20 md:py-32 px-6">
+      <section className="pt-20 md:pt-28 pb-16 md:pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
-            让 AI 帮你从选题到发布，
+          <div className="text-[11px] font-mono tracking-[0.22em] uppercase mb-6 text-[var(--ink-muted)]">
+            AutoContent
+          </div>
+          <h1
+            className="text-[32px] md:text-[42px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
+            让 AI 帮你从选题到发布
             <br />
             一键搞定公众号内容
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            监控热点 → AI 写稿 → 自动配图 → 一键发布微信公众号，从每天 4 小时缩短到 30 分钟
+          <p className="mt-5 text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
+            监控热点 → AI 写稿 → 自动配图 → 一键发布微信公众号
+            <br />
+            从每天 4 小时缩短到 30 分钟
           </p>
           <div className="mt-10" id="waitlist">
             <WaitlistForm />
           </div>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
+          <p className="mt-4 text-[12px] text-[var(--ink-muted)]">
             留下邮箱获取功能更新通知，或直接免费试用
           </p>
         </div>
       </section>
 
       {/* Pain Points */}
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            自媒体创作者的痛
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center gap-3 mb-10">
+            <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+            <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-[var(--ink-muted)]">
+              自媒体创作者的痛
+            </span>
+            <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+          </div>
+          <div className="space-y-4">
             {painPoints.map((p) => (
               <div
                 key={p.title}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm"
+                className="p-5 md:p-6 rounded-sm border bg-white dark:bg-gray-900"
+                style={{ borderColor: "var(--divider)" }}
               >
-                <div className="text-4xl mb-4">{p.icon}</div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  {p.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">{p.desc}</p>
+                <div className="flex items-baseline gap-4">
+                  <span
+                    className="font-mono text-sm font-semibold shrink-0"
+                    style={{ color: "var(--accent)" }}
+                  >
+                    {p.num}
+                  </span>
+                  <div className="flex-1">
+                    <h3
+                      className="text-[16px] md:text-[17px] font-semibold mb-1 text-[var(--ink)] dark:text-white"
+                      style={{ fontFamily: "var(--font-display-zh)" }}
+                    >
+                      {p.title}
+                    </h3>
+                    <p className="text-[13px] md:text-[14px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400">
+                      {p.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -92,12 +119,18 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="py-20 px-6">
+      <section className="py-16 md:py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-16">
-            四步搞定内容创作
-          </h2>
-          <div className="space-y-20">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 mb-14">
+              <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+              <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-[var(--ink-muted)]">
+                四步搞定内容创作
+              </span>
+              <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+            </div>
+          </div>
+          <div className="space-y-16 md:space-y-20">
             {features.map((f, i) => (
               <div
                 key={f.step}
@@ -106,13 +139,19 @@ export default function Home() {
                 } gap-8 md:gap-12 items-center`}
               >
                 <div className="flex-1">
-                  <div className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2">
-                    STEP {f.step}
+                  <div
+                    className="text-[11px] font-mono tracking-[0.22em] uppercase mb-3"
+                    style={{ color: "var(--accent)" }}
+                  >
+                    STEP · {f.step}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h3
+                    className="text-[22px] md:text-[26px] font-semibold leading-[1.3] mb-3 text-[var(--ink)] dark:text-white"
+                    style={{ fontFamily: "var(--font-display-zh)" }}
+                  >
                     {f.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-lg">
+                  <p className="text-[14px] md:text-[16px] leading-[1.75] text-[var(--ink-soft)] dark:text-gray-400">
                     {f.desc}
                   </p>
                 </div>
@@ -120,7 +159,8 @@ export default function Home() {
                   <img
                     src={f.img}
                     alt={f.title}
-                    className="rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 w-full"
+                    className="rounded-sm border w-full"
+                    style={{ borderColor: "var(--divider)" }}
                   />
                 </div>
               </div>
@@ -130,21 +170,41 @@ export default function Home() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-20 px-6 bg-blue-600 dark:bg-blue-700">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            准备好让 AI 帮你创作了吗？
-          </h2>
-          <p className="text-blue-100 text-lg mb-10">
-            订阅更新通知，或直接开始免费体验
-          </p>
-          <WaitlistForm variant="dark" />
+      <section className="py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div
+            className="text-center rounded-sm border p-8 md:p-12"
+            style={{
+              borderColor: "var(--divider)",
+              background: "var(--paper-elevated)",
+            }}
+          >
+            <div className="text-[11px] font-mono tracking-[0.22em] uppercase mb-4 text-[var(--accent)]">
+              READY TO START
+            </div>
+            <h2
+              className="text-[22px] md:text-[28px] font-semibold mb-3 text-[var(--ink)] dark:text-white"
+              style={{ fontFamily: "var(--font-display-zh)" }}
+            >
+              准备好让 AI 帮你创作了吗？
+            </h2>
+            <p className="text-[14px] md:text-[15px] mb-8 text-[var(--ink-soft)] dark:text-gray-400">
+              订阅更新通知，或直接开始免费体验
+            </p>
+            <WaitlistForm />
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 text-center text-gray-500 dark:text-gray-500 text-sm">
-        &copy; 2026 AutoContent. All rights reserved.
+      <footer
+        className="py-8 px-6 text-center text-[12px] border-t"
+        style={{
+          color: "var(--ink-muted)",
+          borderColor: "var(--divider)",
+        }}
+      >
+        © 2026 AutoContent. All rights reserved.
       </footer>
     </div>
   );
