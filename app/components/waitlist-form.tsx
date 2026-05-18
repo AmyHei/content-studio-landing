@@ -35,7 +35,7 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
           订阅成功！有新功能会第一时间通知你。
         </p>
         <a
-          href="https://app.autocontent.net"
+          href="https://app.autocontent.net/register"
           target="_blank"
           rel="noopener"
           className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
@@ -76,7 +76,7 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
       <p className={`text-sm text-center ${tryLinkClasses} transition-colors`}>
         或{" "}
         <a
-          href="https://app.autocontent.net"
+          href="https://app.autocontent.net/register"
           target="_blank"
           rel="noopener"
           className="underline underline-offset-2"

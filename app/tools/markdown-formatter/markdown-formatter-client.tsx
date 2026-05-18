@@ -176,7 +176,7 @@ export function MarkdownFormatterClient() {
           这个工具只做排版。AutoContent 还能：AI 写稿、自动配图、智能选题、一键发布草稿箱。
         </div>
         <Link
-          href="https://app.autocontent.net"
+          href="https://app.autocontent.net/register"
           className="inline-block px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors"
         >
           免费试用完整版

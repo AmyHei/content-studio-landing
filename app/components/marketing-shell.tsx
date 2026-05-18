@@ -19,7 +19,7 @@ export function CTASection({
           </p>
         )}
         <Link
-          href="https://app.autocontent.net"
+          href="https://app.autocontent.net/register"
           className="inline-flex items-center justify-center rounded-lg bg-white text-blue-600 px-8 py-3 text-base font-semibold hover:bg-blue-50 transition-colors shadow"
         >
           免费体验
@@ -111,7 +111,7 @@ export function HeroBadge({ children }: { children: React.ReactNode }) {
 export function PrimaryCTAButton({ children }: { children: React.ReactNode }) {
   return (
     <Link
-      href="https://app.autocontent.net"
+      href="https://app.autocontent.net/register"
       className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-semibold text-white transition-colors shadow-sm"
     >
       {children}

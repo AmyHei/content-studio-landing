@@ -21,7 +21,7 @@ export function Nav() {
             博客
           </Link>
           <Link
-            href="https://app.autocontent.net"
+            href="https://app.autocontent.net/register"
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors"
           >
             免费体验

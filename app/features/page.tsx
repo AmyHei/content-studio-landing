@@ -136,7 +136,7 @@ export default function Page() {
               想直接试用所有功能？AutoContent 把以上能力一站打包，注册即用，每月免费 5 篇。
             </p>
             <Link
-              href="https://app.autocontent.net"
+              href="https://app.autocontent.net/register"
               className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2.5 text-sm font-medium text-white transition-colors"
             >
               免费试用 AutoContent

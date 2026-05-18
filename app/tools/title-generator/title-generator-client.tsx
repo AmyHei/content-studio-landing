@@ -182,7 +182,7 @@ export function TitleGeneratorClient() {
               这个工具用的是规则模板，AI 版本会读懂你的文章内容，按主题独家生成标题。
             </div>
             <Link
-              href="https://app.autocontent.net"
+              href="https://app.autocontent.net/register"
               className="inline-block px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors"
             >
               注册解锁 AI 版本
