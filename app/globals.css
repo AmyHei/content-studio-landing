@@ -5,13 +5,13 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* ─── article design system (letterpress newsletter) ─── */
-  --paper: #f8f4eb;
-  --paper-elevated: #fbf8f1;
+  /* ─── article design system (letterpress, but on site bg) ─── */
+  --paper: #ffffff;                 /* matches site bg */
+  --paper-elevated: #faf9f5;        /* subtle warm tint for cards/code only */
   --ink: #1c1a17;
   --ink-soft: #4a4640;
   --ink-muted: #837d72;
-  --divider: #e5dfd3;
+  --divider: #ebe8e0;
   --rule: #2a2622;
   --accent: #b1422d;
   --accent-wash: #f5e1d9;
@@ -44,8 +44,8 @@
     --background: #0a0a0a;
     --foreground: #ededed;
 
-    --paper: #1a1815;
-    --paper-elevated: #232017;
+    --paper: #030712;                /* matches gray-950 */
+    --paper-elevated: #111827;       /* slightly lighter for cards */
     --ink: #f0eae0;
     --ink-soft: #c7bfb1;
     --ink-muted: #8e867a;

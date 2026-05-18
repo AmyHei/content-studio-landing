@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+const linkClass =
+  "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm";
+
 export function Nav() {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
@@ -7,8 +10,14 @@ export function Nav() {
         <Link href="/" className="font-bold text-lg text-gray-900 dark:text-white">
           AutoContent
         </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm">
+        <div className="flex items-center gap-5 md:gap-6">
+          <Link href="/features" className={linkClass}>
+            功能
+          </Link>
+          <Link href="/tools" className={linkClass}>
+            工具
+          </Link>
+          <Link href="/blog" className={linkClass}>
             博客
           </Link>
           <Link
