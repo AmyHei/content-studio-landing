@@ -29,12 +29,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <article className="min-h-screen">
-      <section className="py-12 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-12 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h1
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
             Markdown 转公众号
           </h1>
-          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          <p className="mt-4 text-base text-[var(--ink-soft)] dark:text-gray-400 max-w-xl mx-auto">
             左边贴 Markdown，右边看公众号样式预览。一键复制带 inline 样式的 HTML。
             免费、不上传你的内容。
           </p>
@@ -43,12 +46,15 @@ export default function Page() {
 
       <MarkdownFormatterClient />
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             为什么需要这个工具
           </h2>
-          <div className="space-y-3 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
               微信公众号编辑器的 HTML 渲染引擎堪比 IE6。它会：
             </p>
@@ -58,10 +64,10 @@ export default function Page() {
               <li>把你的 Markdown 解析成 plain text，所有样式全部丢失</li>
             </ul>
             <p>
-              所以你必须把每一个 HTML 元素的样式 <strong className="text-gray-900 dark:text-white">直接 inline 写到 style 属性里</strong>。
+              所以你必须把每一个 HTML 元素的样式 <strong className="text-[var(--ink)] dark:text-white">直接 inline 写到 style 属性里</strong>。
               这个工具自动帮你做这件事——你写 Markdown，输出立刻就是公众号能正确显示的 HTML。
             </p>
-            <p className="text-sm text-gray-500 dark:text-gray-500 mt-4">
+            <p className="text-sm text-[var(--ink-muted)] dark:text-gray-500 mt-4">
               🔒 所有处理在你浏览器里完成，不上传任何内容到服务器。
             </p>
           </div>

@@ -1,5 +1,54 @@
 import Link from "next/link";
 
+/**
+ * Marketing shell components — used by all /features/[slug] and /tools/[slug] pages.
+ * Matches the editorial design system (terracotta accent, Noto Serif SC display,
+ * --paper-elevated cards, --divider borders).
+ */
+
+export function HeroBadge({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="inline-block text-[11px] font-mono tracking-[0.22em] uppercase mb-5"
+      style={{ color: "var(--accent)" }}
+    >
+      {children}
+    </div>
+  );
+}
+
+export function PrimaryCTAButton({ children }: { children: React.ReactNode }) {
+  return (
+    <Link
+      href="https://app.autocontent.net/register"
+      className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2.5 text-sm font-medium text-white transition-colors shadow-sm"
+    >
+      {children}
+    </Link>
+  );
+}
+
+export function SecondaryCTAButton({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center justify-center rounded-lg border px-6 py-2.5 text-sm font-medium transition-colors hover:border-[var(--accent)]"
+      style={{
+        borderColor: "var(--divider)",
+        color: "var(--ink-soft)",
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export function CTASection({
   title,
   subtitle,
@@ -8,23 +57,49 @@ export function CTASection({
   subtitle?: string;
 }) {
   return (
-    <section className="py-20 px-6 bg-blue-600 dark:bg-blue-700">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-          {title}
-        </h2>
-        {subtitle && (
-          <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto">
-            {subtitle}
-          </p>
-        )}
-        <Link
-          href="https://app.autocontent.net/register"
-          className="inline-flex items-center justify-center rounded-lg bg-white text-blue-600 px-8 py-3 text-base font-semibold hover:bg-blue-50 transition-colors shadow"
+    <section className="py-16 px-6">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+          <span
+            className="text-[10px] font-bold tracking-[0.22em] uppercase"
+            style={{ color: "var(--ink-muted)" }}
+          >
+            Ready to start
+          </span>
+          <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+        </div>
+        <div
+          className="text-center p-8 md:p-10 rounded-sm border"
+          style={{
+            borderColor: "var(--divider)",
+            background: "var(--paper-elevated)",
+          }}
         >
-          免费体验
-        </Link>
-        <p className="mt-3 text-xs text-blue-200">无需信用卡 · 注册即用</p>
+          <h2
+            className="text-[22px] md:text-[26px] font-semibold mb-3 text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
+            {title}
+          </h2>
+          {subtitle && (
+            <p
+              className="text-[14px] md:text-[15px] leading-[1.7] mb-7 max-w-xl mx-auto"
+              style={{ color: "var(--ink-soft)" }}
+            >
+              {subtitle}
+            </p>
+          )}
+          <Link
+            href="https://app.autocontent.net/register"
+            className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2.5 text-sm font-medium text-white transition-colors"
+          >
+            免费体验
+          </Link>
+          <p className="mt-3 text-[11px]" style={{ color: "var(--ink-muted)" }}>
+            无需信用卡 · 注册即用
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -32,14 +107,26 @@ export function CTASection({
 
 export function FAQItem({ q, a }: { q: string; a: string }) {
   return (
-    <details className="border-b border-gray-200 dark:border-gray-800 py-4 group">
-      <summary className="flex justify-between items-center cursor-pointer font-medium text-[15px] text-gray-900 dark:text-white list-none">
+    <details
+      className="border-b py-5 group"
+      style={{ borderColor: "var(--divider)" }}
+    >
+      <summary
+        className="flex justify-between items-center cursor-pointer font-semibold text-[15px] list-none text-[var(--ink)] dark:text-white"
+        style={{ fontFamily: "var(--font-display-zh)" }}
+      >
         {q}
-        <span className="text-gray-400 group-open:rotate-180 transition-transform ml-4">
+        <span
+          className="group-open:rotate-180 transition-transform ml-4 text-[var(--ink-muted)]"
+          aria-hidden
+        >
           ▾
         </span>
       </summary>
-      <p className="mt-3 text-gray-600 dark:text-gray-400 text-[14px] leading-relaxed">
+      <p
+        className="mt-3 text-[14px] leading-[1.75]"
+        style={{ color: "var(--ink-soft)" }}
+      >
         {a}
       </p>
     </details>
@@ -76,62 +163,130 @@ export function RelatedFeatures({ exclude }: { exclude: string }) {
   ].filter((f) => f.slug !== exclude);
 
   return (
-    <section className="py-16 px-6 max-w-5xl mx-auto">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-        相关功能
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {all.slice(0, 4).map((f) => (
-          <Link
-            key={f.slug}
-            href={`/features/${f.slug}`}
-            className="block p-5 rounded-xl border border-gray-200 dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-400 hover:shadow-sm transition-all bg-white dark:bg-gray-900"
+    <section className="px-6 pb-20">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+          <span
+            className="text-[10px] font-bold tracking-[0.22em] uppercase"
+            style={{ color: "var(--ink-muted)" }}
           >
-            <div className="font-semibold text-gray-900 dark:text-white mb-1">
-              {f.title}
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
-              {f.desc}
-            </div>
-          </Link>
-        ))}
+            相关功能
+          </span>
+          <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {all.slice(0, 4).map((f, i) => (
+            <Link
+              key={f.slug}
+              href={`/features/${f.slug}`}
+              className="group block p-5 rounded-sm border bg-white dark:bg-gray-900 transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[1px]"
+              style={{ borderColor: "var(--divider)" }}
+            >
+              <div className="flex items-baseline gap-3">
+                <span
+                  className="font-mono text-xs font-semibold shrink-0"
+                  style={{ color: "var(--accent)" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex-1">
+                  <div
+                    className="font-semibold text-[15px] mb-1 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] transition-colors"
+                    style={{ fontFamily: "var(--font-display-zh)" }}
+                  >
+                    {f.title}
+                  </div>
+                  <div
+                    className="text-[13px] leading-relaxed"
+                    style={{ color: "var(--ink-soft)" }}
+                  >
+                    {f.desc}
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-export function HeroBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="inline-block mb-4 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-medium">
-      {children}
-    </div>
-  );
-}
-
-export function PrimaryCTAButton({ children }: { children: React.ReactNode }) {
-  return (
-    <Link
-      href="https://app.autocontent.net/register"
-      className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-semibold text-white transition-colors shadow-sm"
-    >
-      {children}
-    </Link>
-  );
-}
-
-export function SecondaryCTAButton({
-  href,
-  children,
+/** 共享: 详情页顶部 hero (mono caps breadcrumb + 大标题 + 副标题 + ink rule) */
+export function PageHero({
+  breadcrumb,
+  title,
+  titleAccent,
+  subtitle,
+  cta,
+  secondaryCta,
 }: {
-  href: string;
-  children: React.ReactNode;
+  breadcrumb: string;
+  title: string;
+  titleAccent?: string;
+  subtitle?: string;
+  cta?: React.ReactNode;
+  secondaryCta?: React.ReactNode;
 }) {
   return (
-    <Link
-      href={href}
-      className="inline-flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 px-8 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
-    >
-      {children}
-    </Link>
+    <section className="pt-16 md:pt-24 pb-12 px-6">
+      <div className="max-w-3xl mx-auto text-center">
+        <div
+          className="text-[11px] font-mono tracking-[0.22em] uppercase mb-5"
+          style={{ color: "var(--accent)" }}
+        >
+          {breadcrumb}
+        </div>
+        <h1
+          className="text-[30px] md:text-[40px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
+          {title}
+          {titleAccent && (
+            <>
+              <br />
+              <span style={{ color: "var(--accent)" }}>{titleAccent}</span>
+            </>
+          )}
+        </h1>
+        {subtitle && (
+          <p
+            className="mt-5 text-[15px] md:text-[16px] leading-[1.7] max-w-2xl mx-auto"
+            style={{ color: "var(--ink-soft)" }}
+          >
+            {subtitle}
+          </p>
+        )}
+        {(cta || secondaryCta) && (
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            {cta}
+            {secondaryCta}
+          </div>
+        )}
+        <div
+          className="h-[2px] mt-12 max-w-2xl mx-auto"
+          style={{ background: "var(--rule)" }}
+        />
+      </div>
+    </section>
+  );
+}
+
+/** 共享: section 间用的小 caps 横线 label */
+export function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="max-w-3xl mx-auto mb-10">
+      <div className="flex items-center gap-3">
+        <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+        <span
+          className="text-[10px] font-bold tracking-[0.22em] uppercase"
+          style={{ color: "var(--ink-muted)" }}
+        >
+          {children}
+        </span>
+        <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
+      </div>
+    </div>
   );
 }

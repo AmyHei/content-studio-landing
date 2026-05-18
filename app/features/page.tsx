@@ -62,12 +62,12 @@ export default function Page() {
             AutoContent · Features
           </div>
           <h1
-            className="text-[28px] md:text-[34px] font-bold tracking-tight mb-3 text-[var(--ink)] dark:text-white"
+            className="text-[30px] md:text-[38px] font-bold tracking-tight mb-4 text-[var(--ink)] dark:text-white"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             全部功能
           </h1>
-          <p className="text-[14px] md:text-[15px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             覆盖公众号创作每个环节：从选题、写作、排版到发布。
             每个功能都有独立页面，下面是完整清单。
           </p>
@@ -81,7 +81,7 @@ export default function Page() {
             <Link
               key={f.slug}
               href={`/features/${f.slug}`}
-              className="group block p-6 rounded-sm border bg-white dark:bg-gray-900 hover:border-[var(--accent)] dark:hover:border-[var(--accent)] hover:shadow-sm transition-all"
+              className="group block p-6 rounded-sm border-2 bg-white dark:bg-gray-900 transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[2px]"
               style={{ borderColor: "var(--divider)" }}
             >
               <div

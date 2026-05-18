@@ -29,12 +29,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <article className="min-h-screen">
-      <section className="py-12 md:py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-12 md:py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h1
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
             公众号爆款标题生成器
           </h1>
-          <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+          <p className="mt-4 text-base text-[var(--ink-soft)] dark:text-gray-400 max-w-xl mx-auto">
             输入文章主题，用 8 种验证有效的爆款标题模板，立即生成 16 个候选。免费、无需注册。
           </p>
         </div>
@@ -42,15 +45,18 @@ export default function Page() {
 
       <TitleGeneratorClient />
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             为什么标题重要
           </h2>
-          <div className="space-y-3 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
               公众号订阅号每天只能推一条，用户在订阅列表里平均扫一眼就划过去。
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 标题不抓人，再好的内容也没机会被读到
               </strong>
               。
@@ -59,7 +65,7 @@ export default function Page() {
               头部账号的标题不是凭感觉写的——他们有自己的标题模板库，每篇文章按 5-10 个候选 A/B 选最优。
               这个工具帮你把这套方法工具化了。
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
+            <p className="text-sm text-[var(--ink-soft)] dark:text-gray-400 mt-4">
               💡 微信公众号订阅号标题超过 32 字会被截断，工具会自动提示。
             </p>
           </div>

@@ -36,14 +36,17 @@ export default function Page() {
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <HeroBadge>技术博客作者专属</HeroBadge>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+          <h1
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
             Markdown 转公众号
             <br />
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-[var(--accent)]">
               写代码的人也能轻松写公众号
             </span>
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             从 Notion / Obsidian / Typora / VS Code 写完直接贴，代码块、表格、公式、引用全部原样保留。
             技术文章的&ldquo;最后一公里&rdquo;问题解决了。
           </p>
@@ -53,12 +56,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             技术博主写公众号的痛
           </h2>
-          <div className="space-y-3 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
               你的工作流是这样的：在{" "}
               <code className="bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-xs">
@@ -76,14 +82,14 @@ export default function Page() {
             </p>
             <p>
               复制到公众号编辑器后：代码块没了语法高亮、表格塌成一堆字、数学公式变成乱码、缩进全消失。
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 你只能选择手动重新排版（30 分钟起）或者跳过公众号
               </strong>
               。
             </p>
             <p>
               AutoContent 的 Markdown → 公众号转换专门解决这个：原生 markdown 在，出来就是公众号风格的 HTML，复制贴回公众号编辑器，
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 所有样式完整保留
               </strong>
               。
@@ -93,10 +99,13 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-3"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           技术文章的关键元素，全部保留
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-10 text-sm">
+        <p className="text-center text-[var(--ink-soft)] dark:text-gray-400 mb-10 text-sm">
           程序员关心的细节，我们都关心
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -128,12 +137,12 @@ export default function Page() {
           ].map((f) => (
             <div
               key={f.t}
-              className="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
+              className="p-5 rounded-sm border border-[var(--divider)] dark:border-gray-800 bg-white dark:bg-gray-900"
             >
               <div className="font-semibold mb-1 text-blue-600 dark:text-blue-400">
                 {f.t}
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <div className="text-sm text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed">
                 {f.d}
               </div>
             </div>
@@ -141,12 +150,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-10"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             技术博主的标准工作流
           </h2>
-          <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 md:p-8">
+          <div className="bg-white dark:bg-gray-900 rounded-sm border border-[var(--divider)] dark:border-gray-800 p-6 md:p-8">
             <ol className="space-y-4 text-base">
               {[
                 "在 Obsidian / Notion / VS Code 写技术 markdown",
@@ -159,21 +171,24 @@ export default function Page() {
                   <span className="text-blue-600 dark:text-blue-400 font-mono shrink-0">
                     →
                   </span>
-                  <span className="text-gray-700 dark:text-gray-300">
-                    {i === 2 ? <strong className="text-gray-900 dark:text-white">{s}</strong> : s}
+                  <span className="text-[var(--ink-soft)] dark:text-gray-300">
+                    {i === 2 ? <strong className="text-[var(--ink)] dark:text-white">{s}</strong> : s}
                   </span>
                 </li>
               ))}
             </ol>
           </div>
-          <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-6">
+          <p className="text-center text-sm text-[var(--ink-soft)] dark:text-gray-400 mt-6">
             整套流程从&ldquo;写完到全平台发布&rdquo;控制在 5 分钟内
           </p>
         </div>
       </section>
 
       <section className="py-16 px-6 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           常见问题
         </h2>
         <FAQItem

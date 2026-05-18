@@ -37,14 +37,17 @@ export default function Page() {
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <HeroBadge>免费 AI 标题生成</HeroBadge>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+          <h1
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
             爆款标题 AI 生成器
             <br />
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-[var(--accent)]">
               公众号点击率翻倍
             </span>
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             输入文章主题，AI 用 7 种爆款模板秒出 10 个候选标题。
             数据驱动选模板，告别&ldquo;我写的标题没人点&rdquo;的焦虑。
           </p>
@@ -54,15 +57,18 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             标题决定 80% 的打开率
           </h2>
-          <div className="space-y-3 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
               公众号订阅号每天推送一条，用户在订阅列表里平均扫一眼就划过去。
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 标题不抓人，再好的内容也没机会被读到
               </strong>
               。
@@ -76,10 +82,13 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-3"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           7 种公众号爆款标题模板
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-10 text-sm">
+        <p className="text-center text-[var(--ink-soft)] dark:text-gray-400 mb-10 text-sm">
           每个模板都来自高点击文章的归纳
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -127,17 +136,17 @@ export default function Page() {
           ].map((t) => (
             <div
               key={t.t}
-              className="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-blue-600 dark:hover:border-blue-400 transition-colors"
+              className="p-5 rounded-sm border border-[var(--divider)] dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-blue-600 dark:hover:border-blue-400 transition-colors"
             >
               <div className="flex justify-between items-start mb-2 gap-2">
-                <div className="font-semibold text-gray-900 dark:text-white text-[15px]">
+                <div className="font-semibold text-[var(--ink)] dark:text-white text-[15px]">
                   {t.t}
                 </div>
                 <span className="text-[10px] font-medium text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/40 px-2 py-0.5 rounded-full whitespace-nowrap">
                   {t.tag}
                 </span>
               </div>
-              <div className="text-[13px] text-gray-600 dark:text-gray-400 leading-relaxed italic">
+              <div className="text-[13px] text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed italic">
                 &ldquo;{t.e}&rdquo;
               </div>
             </div>
@@ -145,9 +154,12 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-10"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             怎么用爆款标题生成器
           </h2>
           <ol className="space-y-5">
@@ -161,7 +173,7 @@ export default function Page() {
                 <div className="shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
                   {i + 1}
                 </div>
-                <div className="pt-1 text-[15px] text-gray-700 dark:text-gray-300">
+                <div className="pt-1 text-[15px] text-[var(--ink-soft)] dark:text-gray-300">
                   {s}
                 </div>
               </li>
@@ -171,7 +183,10 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           常见问题
         </h2>
         <FAQItem

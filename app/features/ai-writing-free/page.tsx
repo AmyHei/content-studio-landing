@@ -38,32 +38,38 @@ export default function Page() {
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <HeroBadge>免费在线 · 注册即用</HeroBadge>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+          <h1
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
             AI 写作工具
             <br />
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-[var(--accent)]">
               免费在线使用
             </span>
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             Claude 4.5、GPT-5、Gemini 2.5、Grok 4 全模型支持。公众号文章、技术博客、营销文案、社交媒体内容都能生成。
             每月免费 5 篇起，无需信用卡。
           </p>
           <div className="mt-10">
             <PrimaryCTAButton>立即免费试用</PrimaryCTAButton>
           </div>
-          <p className="mt-3 text-xs text-gray-500 dark:text-gray-500">
+          <p className="mt-3 text-xs text-[var(--ink-muted)] dark:text-gray-500">
             注册即送 5 篇免费额度
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-3"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             AI 能写什么
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-400 mb-10 text-sm">
+          <p className="text-center text-[var(--ink-soft)] dark:text-gray-400 mb-10 text-sm">
             不是&ldquo;写一切的玩具&rdquo;，是为内容创作者深度优化的工具
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -101,15 +107,15 @@ export default function Page() {
             ].map((c) => (
               <div
                 key={c.t}
-                className="p-5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
+                className="p-5 rounded-sm bg-white dark:bg-gray-900 border border-[var(--divider)] dark:border-gray-800"
               >
-                <div className="text-[10px] font-medium text-blue-600 dark:text-blue-400 mb-2 uppercase tracking-wide">
+                <div className="text-[10px] font-medium text-[var(--accent)] mb-2 uppercase tracking-wide">
                   {c.cat}
                 </div>
-                <div className="font-semibold text-gray-900 dark:text-white mb-1">
+                <div className="font-semibold text-[var(--ink)] dark:text-white mb-1">
                   {c.t}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                <div className="text-sm text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed">
                   {c.d}
                 </div>
               </div>
@@ -119,10 +125,13 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-3"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           支持的所有 AI 模型
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-10 text-sm">
+        <p className="text-center text-[var(--ink-soft)] dark:text-gray-400 mb-10 text-sm">
           系统按内容类型自动选最合适的模型，也可手动指定
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -138,12 +147,12 @@ export default function Page() {
           ].map((m) => (
             <div
               key={m.name}
-              className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-center hover:border-blue-600 dark:hover:border-blue-400 transition-colors"
+              className="p-4 rounded-lg border border-[var(--divider)] dark:border-gray-800 bg-white dark:bg-gray-900 text-center hover:border-blue-600 dark:hover:border-blue-400 transition-colors"
             >
-              <div className="font-semibold text-sm text-gray-900 dark:text-white mb-1">
+              <div className="font-semibold text-sm text-[var(--ink)] dark:text-white mb-1">
                 {m.name}
               </div>
-              <div className="text-xs text-gray-600 dark:text-gray-400">
+              <div className="text-xs text-[var(--ink-soft)] dark:text-gray-400">
                 {m.strong}
               </div>
             </div>
@@ -151,25 +160,28 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-6">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             为什么免费
           </h2>
-          <div className="space-y-3 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
               我们相信内容创作者大多数时候不需要为基础功能付费。
               每月 5 篇免费额度对个人副业号、刚起步的自媒体已经够用。
             </p>
             <p>
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 付费只为更高频的使用
               </strong>
               ——重度用户（每天 1-3 篇）、矩阵号运营、企业团队。Pro 版本主要解锁的是：额度、批量处理、多账号管理、高级模型（Opus 4.7、GPT-5 Pro）。
             </p>
             <p>
               不会出现&ldquo;免费版到处是水印&rdquo;或&ldquo;免费版只能用低端模型&rdquo;这种事。
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 免费用户和付费用户能用同一套核心 AI 模型
               </strong>
               。
@@ -179,7 +191,10 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           常见问题
         </h2>
         <FAQItem

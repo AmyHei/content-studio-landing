@@ -36,14 +36,17 @@ export default function Page() {
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <HeroBadge>免费在线 · 无需下载</HeroBadge>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
+          <h1
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            style={{ fontFamily: "var(--font-display-zh)" }}
+          >
             公众号 AI 排版
             <br />
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="text-[var(--accent)]">
               写完即发，告别手动调样式
             </span>
           </h1>
-          <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             Markdown 写完一键转换成公众号样式，标题层级、代码块、引用、分隔线自动套用。
             支持自定义模板，免费在线使用，无需下载客户端。
           </p>
@@ -56,21 +59,24 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             为什么公众号排版这么烦
           </h2>
-          <div className="space-y-4 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+          <div className="space-y-4 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 公众号编辑器是富文本，写作工具是 markdown
               </strong>
               。从 Notion / Obsidian / VS Code 复制过去，所有格式全没了——标题塌成普通段落，列表变成长串文字，代码块直接散架。
             </p>
             <p>
               市面上的&ldquo;排版工具&rdquo;有两类：一类要付费、一类要手动选模板调字号调间距，一篇 2000 字的文章排版要 30 分钟。
-              <strong className="text-gray-900 dark:text-white">
+              <strong className="text-[var(--ink)] dark:text-white">
                 真正解决问题的工具应该是&ldquo;贴上去就完事&rdquo;
               </strong>
               。
@@ -84,7 +90,10 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           支持的所有公众号样式
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -104,7 +113,7 @@ export default function Page() {
           ].map((s) => (
             <div
               key={s}
-              className="px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-sm text-gray-700 dark:text-gray-300"
+              className="px-4 py-3 rounded-lg bg-[var(--paper-elevated)] dark:bg-gray-900 border border-[var(--divider)] dark:border-gray-800 text-sm text-[var(--ink-soft)] dark:text-gray-300"
             >
               ✓ {s}
             </div>
@@ -112,9 +121,12 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
+          <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-10"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
             三步完成排版
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -139,10 +151,10 @@ export default function Page() {
                 <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white font-bold">
                   {s.n}
                 </div>
-                <div className="font-semibold text-gray-900 dark:text-white mb-1">
+                <div className="font-semibold text-[var(--ink)] dark:text-white mb-1">
                   {s.t}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                <div className="text-sm text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed">
                   {s.d}
                 </div>
               </div>
@@ -152,26 +164,29 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           对比其他公众号排版工具
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-gray-200 dark:border-gray-800">
+              <tr className="border-b border-[var(--divider)] dark:border-gray-800">
                 <th className="text-left py-3 px-3"></th>
                 <th className="text-center py-3 px-3 font-semibold text-blue-600 dark:text-blue-400">
                   AutoContent
                 </th>
-                <th className="text-center py-3 px-3 text-gray-600 dark:text-gray-400">
+                <th className="text-center py-3 px-3 text-[var(--ink-soft)] dark:text-gray-400">
                   传统排版工具
                 </th>
-                <th className="text-center py-3 px-3 text-gray-600 dark:text-gray-400">
+                <th className="text-center py-3 px-3 text-[var(--ink-soft)] dark:text-gray-400">
                   手动复制
                 </th>
               </tr>
             </thead>
-            <tbody className="text-gray-700 dark:text-gray-300">
+            <tbody className="text-[var(--ink-soft)] dark:text-gray-300">
               {[
                 ["Markdown 原生支持", "✓", "部分", "✗"],
                 ["排版耗时", "10 秒", "15-30 分钟", "30-60 分钟"],
@@ -193,7 +208,10 @@ export default function Page() {
       </section>
 
       <section className="py-16 px-6 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+        <h2
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          style={{ fontFamily: "var(--font-display-zh)" }}
+        >
           常见问题
         </h2>
         <FAQItem
