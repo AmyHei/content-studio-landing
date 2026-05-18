@@ -33,7 +33,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-display-zh: var(--font-noto-serif-sc), "Songti SC", "STSong", serif;
+  --font-display-zh: "Songti SC", "STSong", "SimSun", "PingFang SC", serif;
   --font-body-zh:
     var(--font-geist-sans), -apple-system, "PingFang SC", "Microsoft YaHei",
     sans-serif;
