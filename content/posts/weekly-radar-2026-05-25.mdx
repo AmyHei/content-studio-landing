@@ -1,0 +1,94 @@
+---
+title: "Figma AI 画布开放、四中文大模型同周涌现：本周开发圈五信号"
+date: "2026-05-25"
+excerpt: "Figma 5 月 20 日开放 AI Agent 直读写画布，SubQ 以非 Transformer 架构拿 $29M 种子，DeepSeek V4 等四个中文开源模型同周发布——AI 工具层的竞争这周突然密集了。"
+tags: ["趋势雷达", "SEO", "AI工具", "独立开发"]
+---
+
+5 月 20 日，Figma 宣布 AI Agent 可以直接在设计画布上读写操作，Claude Code 和 OpenAI Codex 都通过 MCP 接上了——这是 Figma 历史上第一次开放给外部 AI 操作画布。同一周，非 Transformer 架构的 SubQ 拿到 $29M 种子，四个中文开源模型同时冒出，供应链攻击打穿 TanStack 生态。密度不寻常。
+
+<TLDR>
+
+- Figma AI Design Agent 5 月 20 日上线 beta，Claude Code 经 MCP 可直读写 Figma 文件，Professional 计划免费试用
+- SubQ 以非 Transformer 架构拿下 $29M 种子轮，12M token 上下文成本仅为前沿模型 1/5，注意力计算最高快 52x
+- GLM-5.1 / Kimi K2.6 / MiniMax M2.7 / DeepSeek V4 四个中文开源模型同周发布，推理成本全面低于西方模型
+- TanStack 路由生态遭供应链攻击，170 个 npm 包沦陷，CVSS 9.6，OpenAI 员工设备被入侵
+
+</TLDR>
+
+<PersonaSection persona="saas" number="01" title="给 SaaS / 独立开发者">
+
+Figma 5 月 20 日开放 AI Agent 直接操作画布，Claude Code 和 Codex 都接上了 MCP，可以读取设计稿、生成组件、写回修改。beta 阶段对 Professional / Organization / Enterprise 计划免费。对独立开发者最直接的影响：design-to-code 工作流第一次有可能真正自动化——不是「AI 生成截图描述」，而是「Agent 读到设计稿结构，直接生成对应代码」。
+
+SubQ（Subquadratic 公司）同周以 $29M 种子轮亮相，主打非 Transformer 架构：原生 12M token 上下文，长上下文任务成本约为前沿模型 1/5，注意力计算最高快 52x。对做 SaaS 的人来说，这意味着大上下文功能（比如「把整个用户手册喂进去回答问题」「分析整个代码库」）的 API 成本可能在未来 6-12 个月内大幅下降。
+
+AI 驱动服务模式继续在 r/SaaS 发酵：不卖工具订阅，而是用 AI 自己完成客户的输出、以成果收费。独立运营者月入 $10k-$30k，80% 工作量由 AI 承担。这个模型的核心竞争力是「你的工作流设计」，不是代码本身。
+
+<ActionCallout persona="saas">
+如果你用 Claude Code，本周可以花 1 小时装上 Figma MCP，把你产品的一个设计稿扔给它试试——哪怕只是验证「它能不能读懂你的组件结构」，也比看评测文章实在。Figma beta 当前免费。
+</ActionCallout>
+
+</PersonaSection>
+
+<PersonaSection persona="wechat" number="02" title="给公众号 / 自媒体运营者">
+
+本周公众号圈有一个明确信号：「AI 去 AI 味」从技巧变成了刚需。知乎和腾讯云开发者社区的讨论里，「AI 写的内容怎么过原创检测」「公众号 AI 全链路怎么做不露痕迹」的提问频率在上升——说明用户不再问「能不能用 AI 写」，而在问「怎么用得更自然」。
+
+当前公众号 AI 工具生态：壹伴助手是市占最高的全链路工具（服务 400 万+ 新媒体运营者，20 秒出初稿，30 秒完成排版），但它的 AI 感比较重。一些运营者开始用「AI 生成骨架 + 人工注入观点 + Markdown 转排版」的混合工作流，把创作周期从 3 小时压到 45 分钟。
+
+公众号代运营的市场定价这周在几个中文科技平台被引用：一个月 3-4 篇原创、月费 3,000-8,000 元是当前行情。一个有 AI 工具加持的自由撰稿人接 3 个客户月入过万并不难，关键是建立自己的 Prompt 模板库和风格指纹。
+
+<ActionCallout persona="wechat">
+本周可以试试 [Markdown 转公众号排版](/features/markdown-to-wechat) 的工作流：AI 出初稿（格式要求是 Markdown）→ 在 Markdown 里加你的观点段落 → 一键转公众号样式。避免在公众号自带编辑器里手动排版，能省一半时间。
+</ActionCallout>
+
+</PersonaSection>
+
+<PersonaSection persona="sidehustle" number="03" title="给 AI 副业探索者">
+
+本周知乎上出现一篇 2026 年 AI 副业梳理文，核心结论：「伪风口」正在消退，能持续跑通的路径集中在三条——AI 文案代写（小红书种草笔记、朋友圈推广、职场总结等碎片需求）、公众号代运营（AI 做 80% + 人工把关）、AI 工具引流（建免费工具获取目标用户再转化）。
+
+AI 文案代写的实操定价：按篇 50-200 元不等，批量长期合作一般折扣，月稳定 2 万需要至少 15-20 个稳定客户或高单价项目。接单平台以闲鱼、猪八戒为主，垂类行业（医疗、法律、教育）单价最高但验证成本也最高。
+
+公众号矩阵路径：一人维护 3-5 个垂类账号，AI 负责选题 + 写稿 + 排版，人只做最后审稿和发布，下班 1 小时 / 天。月收入 1 万+ 的矩阵账号结构通常是「一个中等体量主号 + 2-3 个引流号」。
+
+<ActionCallout persona="sidehustle">
+本周可以用 [AI 写公众号功能](/features/ai-wechat-article) 从选题到排版完整跑一遍——目的不是发布，而是测你自己能不能做到「30 分钟内出一篇过得去的文章」。如果能，代运营接单的时间成本就变得可控了。
+</ActionCallout>
+
+</PersonaSection>
+
+<PersonaSection persona="engineer" number="04" title="给 AI 工程师 / 技术人">
+
+本周安全圈最严重的事件：TeamPCP 组织打穿了 TanStack 路由生态，170 个 npm 包 + 2 个 PyPI 包被注入蠕虫式 payload，CVSS 9.6。确认受害者包括 OpenAI 两名员工设备被入侵、Mistral AI 遭 $25,000 Monero 勒索、欧盟委员会公网被波及。OpenAI 宣布将于 6 月 12 日全面撤销 macOS 应用代码签名证书。如果你的项目用了 TanStack Router，现在就锁版本并检查依赖树。
+
+架构层：SubQ 的非 Transformer 设计值得关注——12M token 原生上下文，长上下文注意力计算最高比 Transformer 快 52x，定价约为前沿模型 1/5。Mercury 2（Inception）用扩散架构做推理模型，生成速度 >1,000 tokens/sec，目标是 agentic loop 和实时语音场景。两个项目都在用架构创新攻击 Transformer 的推理成本护城河。
+
+中文开源模型四家同周发布（GLM-5.1 / Kimi K2.6 / MiniMax M2.7 / DeepSeek V4），特点是推理成本全面低于西方模型，长上下文和代码类任务是共同发力点。r/LocalLLaMA 上的讨论重心已从「中文模型质量行不行」转向「哪个在特定场景成本最优」。
+
+<ActionCallout persona="engineer">
+如果你在做 agentic 产品，本周值得把 SubQ 列进技术雷达——目前 $29M 种子阶段还没有公开 API，但可以关注等待列表。成本 1/5 + 12M 上下文如果跑通，会直接改变大上下文 feature 的 unit economics。
+</ActionCallout>
+
+</PersonaSection>
+
+## SEO 长尾词侦察
+
+本周 Google 中文搜索新出现 / 上升的词：
+
+| 关键词 | 搜索意图 | 适合做的内容 |
+| --- | --- | --- |
+| AI 写公众号去 AI 味 | 信息 | 实操技巧 + 工具对比 |
+| 公众号代运营 AI 报价 2026 | 商业 | 定价参考 + 接单流程 |
+| Figma AI agent 中文教程 | 信息 | MCP 配置 + Claude Code 接入步骤 |
+| ai副业 2026 真实收入 | 信息 | 案例拆解 + 避坑指南 |
+| Markdown 转公众号排版 | 信息 | 工具教程 + 推荐 |
+| SubQ 模型 API | 信息/导航 | 产品评测 + 等待列表说明 |
+
+<FeaturePick>
+
+- [Markdown 转公众号](/features/markdown-to-wechat) — AI 出稿、Markdown 编辑、一键转公众号样式
+- [AI 写公众号文章](/features/ai-wechat-article) — 选题、写稿、配图、发布 30 秒搞定
+- [免费标题生成器](/tools/title-generator) — 8 种爆款模板 × 2 候选标题
+
+</FeaturePick>
