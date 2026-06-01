@@ -61,6 +61,7 @@ export default async function BlogPostPage({
             mdxOptions: {
               remarkPlugins: [remarkGfm],
             },
+            blockJS: false,
           }}
         />
       </article>

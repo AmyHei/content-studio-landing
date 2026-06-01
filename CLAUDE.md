@@ -140,8 +140,9 @@ app/blog/_components/
   - persona-section    01-04 colored persona section — wraps markdown children
   - action-callout     "可以动手" card per persona — wraps markdown children
   - feature-pick       末尾 "编辑推荐" CTA grid — children-based (markdown ul)
-  - keyword-table      [DEPRECATED] use plain markdown table instead
-                       (remark-gfm + .article-body table styles handle it)
+  - keyword-table      `<KeywordTable mode="seo|trend" rows={[...]} />`
+                       seo: keyword/intent/idea; trend: keyword/volume/growth/region/note
+  - region-compare     `<RegionCompare left={{...}} right={{...}} />` 国内 vs 国外并排
   - article-header     blog post hero
   - article-footer     AI 搜索整理 byline + yaqinhei.com 反链
   - mdx-components.tsx  component map for MDXRemote
@@ -157,11 +158,36 @@ app/components/
 - Code blocks: `.article-body pre` has 3px accent top border
 - Article styling: use `.article-body` class on `<article>`, not Tailwind `prose`
 
-### MDX component API: children-based, NOT array prop
+### Frontmatter schema
 
-All custom MDX components accept **children** (markdown content nested between tags), not array props. Array-prop form (`<TLDR points={[...]} />`) breaks MDX prerendering during static export — symptom: `TypeError: Cannot read properties of undefined`.
+Every post in `content/posts/*.mdx` must include:
 
-**Correct usage** — note the blank lines around the markdown content:
+```yaml
+---
+title: "..."           # required
+date: "YYYY-MM-DD"     # required, sort key
+excerpt: "..."         # required, list + meta description
+tags: ["...", "..."]   # required, array (can be empty)
+lang: "zh"             # required — explicit even for all-zh content
+---
+```
+
+**`lang` is required even though the site is currently all 中文.** Declaring it now means an English post can drop in with `lang: "en"` and zero loader changes. Use the BCP-47 short tag (`zh`, `en`, `ja`), not regional variants (`zh-CN`).
+
+`lib/posts.ts` uses gray-matter; unknown fields are ignored, so adding `lang` is non-breaking. When English support actually ships, extend `PostMeta` with `lang: "zh" | "en"` and plumb to `<html lang>` / hreflang.
+
+### MDX component API: children OR data props (both supported as of 2026-05-26)
+
+`MDXRemote` is configured with `blockJS: false` (in `app/blog/[slug]/page.tsx`), which lets MDX expression props (`{[{...}]}`, `{{...}}`) reach components. `blockDangerousJS` stays `true` so arbitrary code execution paths remain blocked.
+
+Two valid patterns:
+
+1. **Children-based** (markdown content between tags) — for prose-shaped components: `<TLDR>`, `<PersonaSection>`, `<ActionCallout>`, `<FeaturePick>`.
+2. **Data-prop based** (typed array/object props) — for table/comparison components: `<KeywordTable mode="trend" rows={[{...}, {...}]} />`, `<RegionCompare left={{...}} right={{...}} />`.
+
+**Historical note**: before 2026-05-26 the default `blockJS: true` stripped data props silently, so the project standard was "children-only". That workaround is no longer needed — see `notes/2026-05-26-mdx-blockjs-default.md` for the root-cause analysis.
+
+**Correct children usage** — note the blank lines around the markdown content:
 
 ```mdx
 <TLDR>
@@ -239,14 +265,14 @@ Always use `bg-[var(--paper-elevated)]` and `border-[var(--divider)]` so light/d
 ## 8. Blog post titles use display serif, not Geist
 The blog feels like a magazine, not a Stripe doc. If you see `text-3xl font-bold text-gray-900` on a blog page heading, that's wrong — fix to `--font-display-zh` + ink tokens.
 
-## 9. Weekly radar posts use children-based MDX components (NOT array prop)
-Posts at `content/posts/weekly-radar-YYYY-MM-DD.mdx` use `<TLDR>`, `<PersonaSection>`, `<ActionCallout>`, `<FeaturePick>` defined in `app/blog/_components/`. All components are **children-based** — wrap markdown content between opening + closing tags, with blank lines.
+## 9. Weekly radar posts: children for prose, data props for tables
+Posts at `content/posts/weekly-radar-YYYY-MM-DD.mdx` use:
+- **children-based** for prose components: `<TLDR>`, `<PersonaSection>`, `<ActionCallout>`, `<FeaturePick>` — wrap markdown between opening/closing tags with blank lines around content.
+- **data-prop based** for structured data: `<KeywordTable mode="trend" rows={[...]} />`, `<RegionCompare left={{...}} right={{...}} />` — pass typed arrays/objects directly.
 
-For keyword data, use a plain markdown table (remark-gfm parses, `.article-body table` styles).
+The historical "no array props" rule was a workaround for the default `blockJS: true` in `next-mdx-remote`. Since 2026-05-26 the option is set to `false` (in `app/blog/[slug]/page.tsx`), so data props work in both dev and static export. See `## MDX setup → MDX component API` above and `notes/2026-05-26-mdx-blockjs-default.md`.
 
-Do NOT use array-prop form like `<TLDR points={[...]} />` — it breaks MDX prerendering with `TypeError: Cannot read properties of undefined`. The remote Anthropic CCR routine's prompt already enforces this, but if you edit posts by hand, remember the children-based convention.
-
-See `## MDX setup → MDX component API` above for the full example.
+If you ever bump `next-mdx-remote` or hit `TypeError: Cannot read properties of undefined` on a component prop, first check whether `blockJS: false` is still in the `MDXRemote` options before changing the post.
 
 ## 10. Hub card hover must be visible
 Use `border-2` (not border-1) + `hover:shadow-md` + `hover:-translate-y-[2px]` for hub `/features` and `/tools` cards. Subtle hover gets missed by users.
