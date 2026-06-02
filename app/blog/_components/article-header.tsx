@@ -12,12 +12,14 @@ export function ArticleHeader({
   date,
   tags,
   category = "趋势雷达",
+  coverImage,
 }: {
   title: string;
   excerpt?: string;
   date: string;
   tags?: string[];
   category?: string;
+  coverImage?: string | null;
 }) {
   // 估算阅读时长 (按 400 字/分钟保守值)
   // 实际值由调用方传入更准, 这里给个 placeholder
@@ -82,6 +84,16 @@ export function ArticleHeader({
           ))}
         </div>
       )}
+
+      {/* cover image */}
+      {coverImage ? (
+        <img
+          src={coverImage}
+          alt=""
+          className="article-cover"
+          style={{ width: "100%", height: "auto", borderRadius: 8, marginBottom: 24 }}
+        />
+      ) : null}
 
       {/* closing rule */}
       <div

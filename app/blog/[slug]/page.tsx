@@ -28,6 +28,7 @@ export async function generateMetadata({
       description: post.excerpt,
       type: "article",
       locale: "zh_CN",
+      images: post.cover_image ? [{ url: post.cover_image }] : undefined,
     },
   };
 }
@@ -48,6 +49,7 @@ export default async function BlogPostPage({
         excerpt={post.excerpt}
         date={post.date}
         tags={post.tags}
+        coverImage={post.cover_image}
       />
 
       <article
