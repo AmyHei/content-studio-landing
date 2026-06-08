@@ -196,16 +196,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer
-        className="py-8 px-6 text-center text-[12px] border-t"
-        style={{
-          color: "var(--ink-muted)",
-          borderColor: "var(--divider)",
-        }}
-      >
-        © 2026 AutoContent. All rights reserved.
-      </footer>
     </div>
   );
 }
