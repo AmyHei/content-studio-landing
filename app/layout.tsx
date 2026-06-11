@@ -44,6 +44,11 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://autocontent.net",
   },
+  verification: {
+    other: {
+      "baidu-site-verification": "codeva-fES5PfhEGJ",
+    },
+  },
 };
 
 export default function RootLayout({
