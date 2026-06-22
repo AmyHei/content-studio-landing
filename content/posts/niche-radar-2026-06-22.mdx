@@ -1,0 +1,193 @@
+---
+title: "本周 niche 雷达 W25｜Claude 7/8 起要刷脸+证件验证身份引爆隐私争议 + 「隐私优先智能家居」搜索暴涨 +10600 + 22 个可立刻动手的 SEO 长尾词"
+date: "2026-06-22"
+excerpt: "Anthropic 宣布 7 月 8 日起对 Claude 消费用户(Free/Pro/Max)强制政府证件 + 自拍 + 面部几何验证,登上 HackerNews 第一(564 票)、隐私争议炸锅——「AI 工具要不要刷脸实名」成中英通吃的高传播选题;同一周瑞士全开源「主权 AI」模型 Apertus 重登 HN、pytrends「隐私优先智能家居」搜索暴涨 +10600、开源模型自托管划算线被算清。本周从 HackerNews + pytrends 跨 12 领域 + WebSearch 搜索整理出 17 个机会窗口,衍生 22 个可立刻动手的 SEO 长尾词。中文热榜本周唯一能建站的是「梅雨季除湿防潮」,其余全是赛事+地缘噪音,盲区照例标好。"
+tags: ["趋势雷达", "SEO", "关键词", "跨领域", "周报"]
+lang: "zh"
+cover_image: /blog-covers/niche-radar-2026-06-22.png
+---
+
+每周一更新的 niche 雷达。我每周扫 HackerNews 前 60 + Show/Ask HN + 百度实时热搜 + pytrends 跨 12 领域英文种子词 + Google 每日热搜 + 跨领域 WebSearch,用「不预设方向」的种子词**搜索整理**出本周值得加进 SEO 候选清单的真实信号——这一步是 AI 帮我把多个池子的原始数据汇总去重、交叉核查,不是凭空生成趋势。
+
+这一期最硬的一条:**AI 工具开始查你的身份证和脸**。Anthropic 宣布从 7 月 8 日起,Claude 的消费用户(Free / Pro / Max)要交政府证件照 + 一张实时自拍 + 面部几何模板才能继续用,采集交给第三方 Persona,Business / 企业 / API 用户豁免。这条登上 HackerNews 第一(564 票、505 评论),隐私争议直接炸锅。它把 AI 工具的叙事从去年的「能不能用」推到了**「用之前先证明你是谁」**——而「AI 产品该不该刷脸实名」这个问题,中文圈天天用 AI 写稿的人同样关心。同一周瑞士全开源「主权 AI」模型 Apertus 重登 HN、pytrends「隐私优先智能家居」暴涨 +10600。下面 17 行真实信号 + 22 个 SEO 长尾词,你大概能挑出 1-2 个能写一篇内容的 niche。
+
+<TLDR>
+  - **本周最强信号:Claude 要刷脸 + 验证证件了**。Anthropic 7/8 起对消费用户(Free/Pro/Max)强制政府证件 + 实时自拍 + 面部几何模板,第三方 Persona 采集,企业/API 豁免;HN 第一(564 票)隐私争议炸锅——"AI 工具要不要实名刷脸""为什么 Claude 要验证身份"是中英通吃的高传播解读选题,中文圈几乎空白
+  - **全开源「主权 AI」再起势:Apertus**。瑞士 ETH/EPFL 的 8B+70B 全开源模型(只用公开数据训练、尊重 robots.txt、EU AI Act 合规)重登 HN 180 票、ACL 2026 接收——"什么是主权 AI / sovereign AI"科普窗口(注:实为 2025-09 发布,本周 repost 再发酵,非全新)
+  - **跳出 AI 圈的消费赛道:隐私优先智能家居**。pytrends "private smart home alternatives" 暴涨 +10600,Home Assistant / Hubitat / Matter hub / 无 Alexa 本地语音是核心——延续上期漏水传感器,典型 affiliate 横评站
+  - **开源模型自托管的账被算清了**:HN "切到开源模型几乎没有下行风险"(38)+ "一台 DGX Spark 跑两个 Qwen3"(86)——~5M tokens/天就跨过自托管划算线,"self-host LLM 划算吗"长青
+  - **对做内容站的人最该看的一条:JSON-LD 结构化数据**。HN 159 票;2026 它是被 AI Overviews / AI Mode **整段引用**的关键(直接 GEO)——"个人网站怎么加 JSON-LD""怎么被 AI 引用"
+  - **中文唯一能建站的信号:梅雨季除湿防潮**(百度 7,617,801)。本周百度前 15 里唯一的真实季节消费 niche——除湿机横评 + 防霉防潮攻略,其余全是赛事+地缘
+  - **每周必读的隐藏陷阱**:本周百度前 15 大半是佛得角逼平乌拉圭 / 马宁给 C 罗黄牌 / 美伊谈判暂停 / 东风-17,Google RSS 全是球员和名人(geno smith / goldie hawn / oasis netflix)——增长率最猛但 24 小时归零,**一个 SEO niche 都不是**
+</TLDR>
+
+## 数据源 + 扫描方法(每期固定模块)
+
+**本期实际跑通的源**:
+
+- HackerNews Firebase API,过去 7 天 top 60 + Show/Ask HN
+- pytrends 跨 12 领域英文种子词(US,今天往前 7 天 rising):AI / SaaS / 副业 / 电商 / 健康 / 家居 / 游戏 / 教育 / 本地服务 / 海外营销(SEO)/ 加密 / agentic AI——第一批 5 个域触发 429 限流,加长 sleep 重试批补回
+- Google 每日热搜公开 RSS(`trends.google.com/trending/rss`)——本周全是球员/名人,无可用 niche
+- 百度实时热搜 top 15(`top.baidu.com/board?tab=realtime`)——大陆真实信号源
+- 跨领域 WebSearch:对本期 6 个最强信号(Claude 验证 / Apertus / 隐私智能家居 / 开源自托管 / JSON-LD / dropshipping)逐条做了事实核查
+
+**本期没跑通的盲区(数据为空 ≠ 没需求)**:
+
+- trends24.in(X 24h):本期 403 反爬,英语青年文化池子缺位
+- Reddit JSON API:403 依旧,OAuth **W23/W24/W25 三期都预告未接**——副业 / 电商 / 健康社区的"我愿意付费"信号继续缺(最大盲区,继续 defer)
+- pytrends 中文种子词(zh):**已知空,本期主动跳过**。W24 实测 8 个领域 7 个 rising 为空——Google Trends 的"中文圈"是海外华人 + 港台新加坡,跟大陆 14 亿搜索是两个池子;中文信号本期全靠百度
+- Product Hunt:Cloudflare;Exploding Topics:部分页面 404
+
+**判断准则(每期不变)**:
+
+1. **viral 名人 / 赛事 / 突发新闻不是 niche**。本周百度前 15 是佛得角逼平乌拉圭、马宁给 C 罗黄牌、美伊谈判暂停、东风-17 首次公开;Google RSS 是 geno smith、goldie hawn、oasis netflix——增长率惊人但 **24 小时到一周内归零**。做 SEO 站没意义。
+2. **HN 高赞 ≠ 高搜索量**。本周"Prefer duplication over the wrong abstraction"(425 票)、"The brain was not designed for this much bad news"(378 票)是情绪 / 观点讨论帖,搜索量低,适合写观点长文,不适合做 SEO。
+3. **被反爬挡住的源,数据为空 ≠ 没有需求**。下面的信号缺 Reddit + X 这两个池子,只代表本期工具链没够到。
+
+带着这三条往下看。
+
+## 本周 17 个机会窗口(跨 10 个领域)
+
+下表 17 行,按「领域多样性 + 信号强度」排序——**不**按单一增长率排,因为不同数据源的"增长"含义不同(HN 是票数 / 评论、pytrends 是 rising 指数、WebSearch 是引用强度、官方公告是上线事实)。每行的「备注」列告诉你**这个机会窗口适合做什么**。
+
+<KeywordTable
+  mode="trend"
+  rows={[
+    { keyword: "Claude 身份验证(刷脸+证件)", volume: "high", growth: "564 HN / 7-8 上线", region: "全球", note: "本周第一热;政府证件+自拍+面部几何,消费用户强制、企业豁免;'AI 工具要不要实名'中英通吃,中文圈几乎空白" },
+    { keyword: "Apertus 主权 AI 全开源模型", volume: "mid", growth: "180 HN 再发酵", region: "全球", note: "瑞士 8B+70B 全开源、合规;'什么是主权 AI'科普窗口(非本周新发,标注清楚)" },
+    { keyword: "隐私优先智能家居(本地控制)", volume: "high", growth: "+10600 rising", region: "US", note: "跳出 AI 圈消费赛道;Home Assistant/Hubitat/Matter hub/无 Alexa 本地语音;典型 affiliate 横评" },
+    { keyword: "开源模型自托管成本(Qwen3.5)", volume: "mid", growth: "86+38 HN", region: "全球", note: "~5M tokens/天跨过划算线;'self-host LLM 划算吗'+硬件量化教程,长青" },
+    { keyword: "JSON-LD 结构化数据(个人站+被AI引用)", volume: "mid", growth: "159 HN", region: "全球", note: "2026 被 AI Overviews/AI Mode 整段引用的关键;对做内容站的人元相关,直接 GEO" },
+    { keyword: "dropshipping 2026 转型", volume: "mid", growth: "rising", region: "US", note: "市场 290B→343B,通用店死、利基品牌活;'dropshipping 还能做吗'+高客单选品" },
+    { keyword: "梅雨季除湿防潮", volume: "high", growth: "百度 762 万", region: "CN", note: "本周百度唯一可建站的中文季节消费;除湿机横评+防霉攻略,affiliate(除湿机/防潮箱)" },
+    { keyword: "GLM 5.2 国产开源大模型(延续)", volume: "mid", growth: "450 rising", region: "全球", note: "延续上期持续高频;'GLM vs Qwen 怎么选'+本地部署长尾稳" },
+    { keyword: "Recall 本地 AI 项目记忆(Claude Code)", volume: "low", growth: "Show HN 65", region: "全球", note: "全本地的项目记忆,隐私卖点;AI 编码工具+本地隐私工具教程" },
+    { keyword: "AI 信息过载 / 坏消息脑科学", volume: "mid", growth: "378 HN / 311c", region: "全球", note: "'大脑不是为这么多坏消息设计的';数字戒断+信息节食观点长文,搜索量低标注" },
+    { keyword: "micro-saas 最小可售单元", volume: "low", growth: "126 HN", region: "全球", note: "'能卖钱的最小软件单元';独立开发者选题,观点+教程结合" },
+    { keyword: "开源维护者倦怠 burnout", volume: "low", growth: "115 HN / 59c", region: "全球", note: "OSS 可持续性话题;高讨论低搜索,适合观点不适合 SEO" },
+    { keyword: "旧工作只因欺诈存在?(职业反思)", volume: "low", growth: "195 HN", region: "全球", note: "AI 取代+岗位真伪的职业反思;情绪共鸣强、搜索量低,观点文" },
+    { keyword: "Moderna mRNA 获 FDA 顾问全票", volume: "low", growth: "94 HN", region: "US", note: "疫苗审批新闻;'mRNA 疫苗是什么'科普可长青,新闻本身会过气" },
+    { keyword: "HPV 疫苗降宫颈癌死亡近零", volume: "low", growth: "148 HN / 74c", region: "全球", note: "公共健康实证;'HPV 疫苗几岁打/有用吗'信息型长尾稳定" },
+    { keyword: "Google 达 50% IPv6", volume: "low", growth: "382 HN", region: "全球", note: "技术里程碑;'IPv6 是什么/要不要开'科普,低 SEO 商业价值" },
+    { keyword: "廉价 SEO 工具(ahrefs 替代)", volume: "mid", growth: "170 rising", region: "US", note: "'cheap seo tools like ahrefs'rising;工具横评+替代盘点,模板化好做" },
+  ]}
+/>
+
+## 国内 vs 国外:本周是「中文梅雨季 + 全是新闻,英文全是 AI 治理与工具」
+
+本周中国大陆热榜又被赛事 + 地缘新闻占满(佛得角逼平乌拉圭、马宁给 C 罗黄牌、美伊谈判暂停、东风-17 首次公开),前 15 里**唯一能算消费 niche 的只有「梅雨季应对攻略」**(762 万热度)——这倒是个真实的季节信号:南方梅雨季,除湿、防霉、防潮是刚需。而英文圈这边满屏是 Claude 刷脸验证 / 主权 AI / 隐私智能家居 / 开源自托管——**AI 治理、隐私与工具的密度极高**。这种错位本身就是本周的功课:
+
+- **大陆主流注意力本周几乎全在赛事和地缘上**。佛得角逼平乌拉圭、洲际导弹、东风-17 这些热度数字吓人,但你做不了 SEO 内容站。唯一例外是「梅雨季」——它是**真季节消费 niche**,但要赶节气窗口(华南/江南 6 月正当时)。真正的中文消费 niche 大多**不在百度热搜里**,得去小红书 / 抖音的品类池子捞。这再次印证:[做中文 AI 内容靠搜索量起量很难,得靠平台推荐分发](/blog/ai-auto-wechat-content)
+- **英文圈本周是「AI 治理 + 开源/主权 + 本地隐私」三主轴**。Claude 要刷脸了(身份验证)、瑞士开源主权模型(Apertus)、隐私智能家居 + 本地 LLM 自托管——做英文站走 technical 解读 + 隐私/合规科普 + 工具横评最容易出头
+- **唯一中外都能落地的交叉点是「AI 工具要不要实名刷脸」**:它既是英文圈 HN 第一热点,又直接戳中文圈每个用 AI 工具的人——"为什么 Claude 要验证身份""AI 产品该不该收集人脸"是中英文都能写、都有人搜的稀有交叉选题
+
+<RegionCompare
+  left={{
+    title: "中国大陆 (百度实时热搜)",
+    subtitle: "百度热榜前 15,2026-06-22 抓取(足球友谊赛+地缘新闻日)",
+    takeaway: "本周百度前 15 几乎全是赛事/地缘/社会新闻,唯一可建站的是「梅雨季除湿防潮」这个季节消费 niche(要赶节气窗口)。真正的中文消费信号本周不在搜索榜,得去小红书品类池;做中文站靠平台推荐分发,不靠百度搜索;唯一能落地的观点选题是「AI 工具要不要刷脸实名」这种中英通吃的话题",
+    items: [
+      { keyword: "梅雨季 除湿防潮 攻略", metric: "762 万 (可建站)", tone: "potential" },
+      { keyword: "AI 工具要不要刷脸实名", metric: "中英通吃选题", tone: "potential" },
+      { keyword: "佛得角逼平乌拉圭", metric: "781 万 (赛事)", tone: "hot" },
+      { keyword: "美伊谈判暂停", metric: "752 万 (地缘)", tone: "hot" },
+      { keyword: "东风-17 发射状态首次公开", metric: "714 万 (新闻)", tone: "neutral" },
+      { keyword: "马宁称给 C 罗黄牌没压力", metric: "666 万 (赛事)", tone: "neutral" },
+    ],
+  }}
+  right={{
+    title: "英文圈 + 全球 (HN + pytrends + WebSearch)",
+    subtitle: "跨 10 领域,AI 治理/隐私/开源主权/本地工具信号密集",
+    takeaway: "英文圈本周聚焦「AI 治理(刷脸验证)+ 开源主权模型 + 本地隐私工具」三主轴,外加隐私智能家居、自托管成本这类跳出 AI 圈或贴近落地的赛道。做英文站走 technical 解读 + 隐私/合规科普 + 工具横评最容易出头",
+    items: [
+      { keyword: "Claude 身份验证(刷脸)", metric: "564 HN / 7-8 上线", tone: "hot" },
+      { keyword: "Apertus 主权 AI 开源", metric: "180 HN", tone: "potential" },
+      { keyword: "隐私优先智能家居", metric: "+10600 rising", tone: "potential" },
+      { keyword: "开源模型自托管成本", metric: "86 HN", tone: "potential" },
+      { keyword: "JSON-LD 结构化数据", metric: "159 HN", tone: "potential" },
+      { keyword: "dropshipping 2026 转型", metric: "rising", tone: "neutral" },
+    ],
+  }}
+/>
+
+## 三个数据陷阱(每个对应一条「不要做」)
+
+### 陷阱 1:增长率最高的,SEO 价值往往最低
+
+本周百度热度最高的是「纸短情长」(790 万)、佛得角逼平乌拉圭(781 万)、美伊谈判暂停(752 万),Google RSS 是 geno smith、goldie hawn、oasis netflix——瞬时搜索量极高,但**赛事 / 突发新闻 / 名人,过了这周就塌**。
+
+**判断标准**:这个词 6 个月后还会有人搜吗?会(`什么是主权 AI`、`best privacy smart home hub`、`json-ld 怎么加`、`梅雨季除湿机推荐`),做;不会(`佛得角逼平乌拉圭`、`美伊谈判暂停`),不做。
+
+### 陷阱 2:HN 票数 ≠ 搜索量,要看「有没有商业意图长尾」
+
+平时 HN 高赞经常只代表程序员社区在讨论,搜索量为零——比如本周「Prefer duplication over the wrong abstraction」425 票、「The brain was not designed for this much bad news」378 票、「Did my old job only exist because of fraud?」195 票,都是情绪 / 观点帖,适合写观点长文不适合做 SEO。但「Claude 身份验证」「隐私智能家居」「JSON-LD」这种,WebSearch 里已经能看到 "best X 2026"、"X 是什么"、"how to X" 这类成型的商业 / 信息意图长尾,才真正值得进关键词矩阵。
+
+**判断标准**:HN 单帖高赞 → 写一篇有观点的解读文;一个主题已经长出 "best / vs / how to / 是什么" 长尾 → 进 SEO 关键词矩阵。
+
+### 陷阱 3:种子词决定你能看到什么
+
+做 niche 调研最容易翻车的,是用一组**预设方向**的种子词去查趋势工具,误以为跑出来的就是「全网真实信号」。事实是种子词预先就在替你筛数据。
+
+- **只用 AI 种子词就只能看见 AI 圈**:如果本周只跑 `ai agent`,我永远不会发现「隐私智能家居 +10600」「梅雨季除湿」这两个跳出 AI 圈的真机会。所以这期我强制跨了 12 个领域种子词
+- **Google Trends 在大陆不可用**,它跑出的「中文圈」是海外华人 + 港台新加坡,跟国内 14 亿搜索行为是两个池子。本期我直接跳过了中文 pytrends(W24 已实测 8 个种子词 7 个为空),中文信号全靠百度——做中文站必须接百度 / 小红书
+- **每个数据源都有盲区**:HN 看技术圈、X 看英语青年文化、百度看大陆主流、pytrends 看英文搜索——单一数据源 = 偏狭世界观。本周 X 和 Reddit 都被反爬挡住,英语社区"我愿意付费"信号缺位
+
+**判断标准**:做新 niche 之前至少跨 3 个数据源验证。本周进 SEO 候选清单的词,我都在 HN / pytrends / WebSearch 至少 2-3 个池子里交叉看过,且对前 6 强做了 WebSearch 事实核查。
+
+## 22 个可立刻动手的 SEO 长尾词(跨 10 个领域)
+
+从本周 17 个机会窗口衍生的可立刻动手内容选题,每个标了搜索意图 + 适合做的内容形态:
+
+- **信息** = 科普 / 教程(SEO 友好,门槛最低)
+- **商业** = 横评 / 对比(高转化,适合带 affiliate)
+- **交易** = 购买决策(最高商业价值,竞争最猛)
+- **导航** = 品牌 / 工具名(适合自建 wrapper)
+
+下面 22 个里挑 1-2 个本周就能写一篇:
+
+<KeywordTable
+  rows={[
+    { keyword: "为什么 Claude 要验证身份 / 怎么办", intent: "信息", idea: "Claude 7/8 刷脸验证解读(政府证件+自拍+面部几何),中文圈空白,先发优势" },
+    { keyword: "claude 身份验证 拒绝/不通过会怎样", intent: "信息", idea: "拒绝验证的后果 + 替代方案(契合隐私焦虑受众)" },
+    { keyword: "ai 工具要不要实名刷脸 隐私", intent: "信息", idea: "AI 产品生物识别采集的观点长文(中英通吃,高传播)" },
+    { keyword: "什么是主权 AI / sovereign ai", intent: "信息", idea: "主权 AI 科普(以 Apertus 为例),技术博客,中文几乎空白" },
+    { keyword: "apertus 模型 怎么用 / 本地部署", intent: "导航", idea: "瑞士开源 8B/70B 模型上手 + 合规卖点(导航+信息)" },
+    { keyword: "best privacy smart home hub 2026", intent: "商业", idea: "隐私智能家居中枢横评 + affiliate(Home Assistant/Hubitat/Matter)" },
+    { keyword: "local voice assistant without alexa", intent: "商业", idea: "无 Alexa/Google 的本地语音方案对比(隐私卖点,转化高)" },
+    { keyword: "home assistant vs hubitat 怎么选", intent: "商业", idea: "两大本地智能家居平台对比(决策轴清晰)" },
+    { keyword: "matter hub 选购 隐私", intent: "交易", idea: "Matter 中枢选购指南(本地控制,交易意图)" },
+    { keyword: "self host llm 划算吗 成本", intent: "信息", idea: "自托管 LLM 的算账(~5M tokens/天划算线),工程师高相关" },
+    { keyword: "qwen3 vs deepseek 自部署 哪个好", intent: "商业", idea: "开源模型自托管对比 + 硬件需求(高转化)" },
+    { keyword: "h100 跑大模型 一小时多少钱", intent: "信息", idea: "GPU 自托管成本拆解(H100/H200 时价),决策参考" },
+    { keyword: "个人网站怎么加 json-ld", intent: "信息", idea: "JSON-LD 结构化数据实操教程(被 AI 引用的关键,元相关)" },
+    { keyword: "结构化数据怎么被 ai 引用", intent: "信息", idea: "用 schema 提高被 AI Overviews 抽取概率(GEO 选题,前沿)" },
+    { keyword: "dropshipping 2026 还能做吗", intent: "信息", idea: "无货源电商现状解读(通用店死/利基活),副业受众" },
+    { keyword: "高客单 dropshipping 选品 niche", intent: "商业", idea: "高客单利基选品盘点(转型后的活法,模板化)" },
+    { keyword: "梅雨季 除湿机 推荐 2026", intent: "商业", idea: "梅雨季除湿机横评 + affiliate(季节窗口,赶节气)" },
+    { keyword: "梅雨季 防霉防潮 攻略", intent: "信息", idea: "南方梅雨季防潮全攻略(衣物/家具/食物),季节流量" },
+    { keyword: "glm 5.2 vs qwen 怎么选", intent: "商业", idea: "国产开源大模型对比 + 部署成本(延续,工程师高转化)" },
+    { keyword: "本地 ai 项目记忆 claude code", intent: "导航", idea: "全本地的编码助手记忆工具(Recall 及类似),隐私卖点" },
+    { keyword: "micro saas 怎么做 最小可售", intent: "信息", idea: "独立开发者的最小可售软件单元方法论(观点+教程)" },
+    { keyword: "cheap seo tools like ahrefs", intent: "商业", idea: "廉价 SEO 工具替代盘点(ahrefs 平替,横评模板化)" },
+  ]}
+/>
+
+## 下期(W26)会扩到什么
+
+每周会在这个池子里加一个新数据源,这样雷达半年后会变得**比 ahrefs 免费版更全面**(因为接的是大陆中文池子 + 跨领域种子词):
+
+- **W26 计划接入**:Reddit OAuth API 解决 403(W23/W24/W25 三期都欠着的最大盲区)。本周 Claude 验证、隐私智能家居这些都还没拿到 Reddit 的"我愿意付费"信号
+- **W27**:微信搜一搜公开页面 + 小红书话题 trending——本周中文消费 niche 几乎全程缺位(只有梅雨季冒头),就是因为还没接这两个大陆年轻消费 + 内容创作圈的池子
+- **W28+**:ahrefs / semrush 免费查询接口(每天 3-5 次配额),给关键词加上真实搜索量数字,把「564 HN 票」「+10600 rising」这类相对指标补上绝对搜索量
+
+**想看具体 niche 的可以留言**——如果三个人以上提到同一个 niche,下一期会专门做一个深挖。本周呼声最高的候选我已经标好:**「AI 工具刷脸实名」**(Claude 验证引爆、中英通吃、中文圈空白)和**隐私优先智能家居**(真正跳出 AI 圈红海的消费 affiliate 赛道)。
+
+上一期 [W24 万事达「AI 智能体支付」专题](/blog/niche-radar-2026-06-15) 在这。每周一更新,把这篇加个书签,W26 见。
+
+<FeaturePick>
+
+- [AI 写公众号文章](/features/ai-wechat-article) — 把英文圈本周的 rising 词喂进去,30 秒出中文版选题初稿
+- [免费标题生成器](/tools/title-generator) — 给 SEO 长尾词配 8 种爆款标题模板
+- [公众号 AI 排版](/features/wechat-formatter) — Markdown 一键转公众号样式,周报场景一键导出
+
+</FeaturePick>
