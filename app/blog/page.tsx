@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "博客 - AutoContent",
   description:
     "关于 AI 内容创作、公众号自动化、自媒体运营的实用文章和教程。每周一更新趋势雷达周报。",
+  alternates: { canonical: "/blog" },
 };
 
 const CATEGORY_MAP: Record<string, { label: string; tone: "accent" | "muted" }> =

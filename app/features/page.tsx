@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     "公众号自动化功能",
     "AI 内容创作工具",
   ],
+  alternates: { canonical: "/features" },
   openGraph: {
     title: "全部功能 - AutoContent",
     description: "覆盖公众号创作每个环节的 AI 工具集",

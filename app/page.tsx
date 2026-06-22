@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { WaitlistForm } from "./components/waitlist-form";
+
+// Homepage owns the site-root canonical. It must NOT live in app/layout.tsx,
+// or every descendant page that omits its own canonical inherits "/" and
+// wrongly canonicalizes to the homepage (the 2026-06-22 index-killer bug).
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const painPoints = [
   {

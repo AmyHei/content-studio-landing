@@ -33,9 +33,10 @@ export const metadata: Metadata = {
     "自媒体工具",
     "微信公众号",
   ],
-  alternates: {
-    canonical: "/",
-  },
+  // NOTE: no site-wide `alternates.canonical` here on purpose. Next.js metadata
+  // is inherited, so a canonical in the root layout makes every page that omits
+  // its own canonical point at "/" (the 2026-06-22 index-killer bug). Each route
+  // declares its own canonical: homepage in app/page.tsx, blog in app/blog/*.
   openGraph: {
     title: "AutoContent — AI 写公众号，从选题到发布一键搞定",
     description:
