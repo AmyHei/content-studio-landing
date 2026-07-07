@@ -1,0 +1,195 @@
+---
+title: "本周 niche 雷达 W27｜你用 AI「一把梭」做的小工具正在欠安全债(45% 带漏洞、有人 3 天泄 150 万条 token)+ 国产 GLM 5.2 把闭源大模型利润打到 1/6 + 26 个可立刻动手的 SEO 长尾词"
+date: "2026-07-07"
+excerpt: "本周最硬的两条都压在 AI 工具的『第二波』上。一是 vibe coding 的安全债正在爆:Veracode 测 100+ 模型发现 45% 的 AI 生成代码带 OWASP Top 10 漏洞、Georgia Tech 单月追踪到 35 个直接归因 AI 编码工具的 CVE、一个『没写一行代码』纯 AI 搭的社交网 Moltbook 上线 3 天就被扒出泄露整个生产库(150 万 API token),外加 slopsquatting 抢注幻觉包、Anthropic 官方 MCP SDK 命令注入波及 20 万实例——『你一把梭做的小工具/小站到底安不安全』中英通吃、正戳独立开发者。二是智谱开源的 GLM-5.2(744B/MIT、2026-06-16 发布)在多个 coding 基准上超 GPT-5.5、价格只有六分之一,且改个 base URL 就能让 Claude Code 直接跑它——『开源国产模型把闭源利润打崩』登上 HackerNews。另有本地小模型下沉边缘、离线/非 AI/自托管工具持续走红、在家测全基因组平民化、除湿机能不能降温、UGC 副业申请潮。本周从 HackerNews 前 50 + 百度实时热搜 + pytrends 跨 12 领域 + Reddit OAuth + WebSearch 搜索整理出 9 个领域的机会窗口,衍生 26 个可立刻动手的 SEO 长尾词。"
+tags: ["趋势雷达", "SEO", "关键词", "跨领域", "周报"]
+lang: "zh"
+cover_image: /blog-covers/niche-radar-2026-07-07.png
+---
+
+每周一更新的 niche 雷达。我每周扫 HackerNews 前 50 + 百度实时热搜 + pytrends 跨 12 领域英文种子词 + Reddit OAuth + Google/百度 autocomplete + 跨领域 WebSearch,用「不预设方向」的种子词**搜索整理**出本周值得加进 SEO 候选清单的真实信号——这一步是 AI 帮我把多个池子的原始数据汇总去重、交叉核查、对最强信号逐条事实核实,不是凭空生成趋势。
+
+这一期两条主线都指向同一个母题:**AI 工具「能用」之后,第二波问题来了——可靠不可靠、划不划算、私有还是开源。** 第一条最戳独立开发者:过去一年大家用 AI「一把梭」(vibe coding)做小工具、小站爽到飞起,但安全债这周集中引爆了——Veracode 测过 100 多个模型,发现 **45% 的 AI 生成代码带 OWASP Top 10 漏洞**,且这个比例「vendor 天天说改进了」却纹丝不动;Georgia Tech 的 Vibe Security Radar 单月(2026-03)就追踪到 **35 个直接归因于 AI 编码工具的 CVE**,估计真实数是 5-10 倍;最出圈的案例是 Moltbook——一个创始人公开说「我没写一行代码」、纯靠 AI 搭起来的 AI 社交网,2026-01-28 上线,**3 天内**就被 Wiz 的研究员扒出暴露了整个生产数据库,含 150 万条 API token、3.5 万邮箱和私信。第二条是智谱 GLM-5.2 把开源权重模型往「打崩闭源利润」又推了一大步(下面细说)。下面 9 个领域的真实信号 + 26 个 SEO 长尾词,你大概能挑出 1-2 个能写一篇内容的 niche。
+
+<TLDR>
+  - **本周最强信号:vibe coding 的安全债集中引爆**。Veracode 测 100+ 模型发现 45% AI 生成代码带 OWASP Top 10 漏洞;Georgia Tech 单月追踪 35 个归因 AI 编码工具的 CVE(真实数估 5-10 倍);「没写一行代码」的 AI 社交网 Moltbook 上线 3 天泄露整个生产库(150 万 API token/3.5 万邮箱);还有 slopsquatting(约 20% 生成代码引用不存在的包→攻击者抢注恶意包)、Anthropic 官方 MCP SDK 命令注入波及 20 万实例(Cursor/Windsurf/Claude Code/Copilot 全中)。「你一把梭做的东西安不安全/怎么自查」中英通吃、正戳独立开发者
+  - **国产开源逼宫第二季:GLM 5.2 把价格打到 1/6**。智谱 Z.ai 的 GLM-5.2(2026-06-16 发布、开源 744B/40B active、1M 上下文、MIT)在多个 long-horizon coding 基准上超 GPT-5.5,API 只要 \$1.4/\$4.4(GPT-5.5 约 \$5/\$30、Opus 约 \$5/\$25);杀招是它给 OpenAI/Anthropic 兼容 endpoint——**改个 base URL 就能让 Claude Code / Codex 直接跑 GLM**,迁移成本几乎为零。「GLM 5.2 怎么本地部署/换后端/对比 Opus」工程师长尾稳,且是能穿透中英两圈的国产 AI 硬信号
+  - **AI 从云端往本地/边缘下沉**。IEEE「小型 AI 模型在网络不稳的地方走红」、AMD Ryzen AI Halo \$4k 本地 AI 开发套件(275 票)、Ternlight 7MB 浏览器里跑的 embedding 模型(WASM)、CoMaps 离线开源地图(312 票)——「笔记本能不能本地跑大模型/离线 AI 工具」是 GLM 本地化的配套长尾
+  - **离线 / 无注册 / 非 AI / 自托管工具继续涨(续 W26)**。本周新接通的 Reddit 又捞到:零注册离线 PDF 编辑器 10 万下载、「找不到不含 AI 的 logo 工具就自己做了一个」、自托管 Obsidian 替代、NAS vs 云存 2TB 家庭照片——隐私 + 数据主权卖点,独立开发者工具横评稳
+  - **在家测全基因组平民化**。HN「我在厨房桌上用 Nanopore MinION 给自己测了全基因组」+「给工程师的基因组学入门」(238 票)+ 胚胎精准编辑研究;WebSearch 实锤:临床级 30X 全基因组已跌破 \$500、MyHeritage 首家大规模转全基因组、市场 2025 年 \$373 亿→2034 年预计 \$939 亿——新兴消费科技 niche
+  - **季节家居 informational 稳定复现**。pytrends「除湿机能不能给房间降温(will a dehumidifier cool a room)」一整串上升,续 W25 除湿防潮 / W26 高温线;「best robot lawn mower without perimeter wire(无边界线割草机器人)」+300,产品横评 affiliate
+  - **副业信号:UGC creator 申请潮**。pytrends「apply to be a ugc creator」暴涨 +30600,creator economy 门槛型副业,「怎么成为 UGC 创作者/怎么接单」信息型长尾
+  - **就业焦虑第 N 季:「还要不要学编程」**。HN「学编程仍然值得(101 票)」对上「企业采用 AI 后反而多招人(Ramp 数据)」「AI 的 ROI 在科技行业之外的跑道更长(Apollo)」——AICareerSync 那条线的搜索侧回声
+  - **每周必读的隐藏陷阱**:本周百度前 50 大半是世界杯(西班牙补时绝杀葡萄牙、C罗告别)、湖北广西暴雨龙卷防汛、七七事变、中日/地缘——热度数字吓人但 24 小时到一周归零,**一个 SEO niche 都不是**;Google 每日热搜 RSS 与 X(trends24)本周双双 403,是本期盲区
+</TLDR>
+
+## 数据源 + 扫描方法(每期固定模块)
+
+**本期实际跑通的源**:
+
+- HackerNews Firebase API,top 50(含 Show HN)——本周技术圈信号主力
+- 百度实时热搜 top 50(`top.baidu.com/board?tab=realtime`)——大陆真实信号源(本周几乎全是赛事 + 汛情)
+- pytrends 跨 12 领域英文种子词(US,往前 7 天 rising):AI / SaaS / 副业 / 电商 / 健康 / 家居 / 游戏 / 教育 / 本地服务 / 海外营销 / 加密 / agentic AI——家居 / 园艺 / 本地服务 / 海外营销 / 加密 / 游戏 跑通,AI / SaaS / 副业 / 电商 / agentic 触发 429 限流
+- **Reddit OAuth**:用应用级 OAuth(client_credentials)绕过匿名 JSON 的 403,搜了 4 个独立开发 / SaaS / 副业子版的「愿付费 / 求工具」短语——本周捞到「离线 / 非 AI / 自托管工具」这条线
+- 跨领域 WebSearch:对本期最硬的两条(vibe coding 安全债、GLM 5.2)逐条做了事实核查,并核实了在家测基因的市场数据
+
+**本期没跑通的盲区(数据为空 ≠ 没需求)**:
+
+- Google 每日热搜 RSS(`trends.google.com/trending/rss?geo=US`):本周 **403 反爬**,拿不到当日 US trending,是本期新增盲区
+- X 24h 累计(trends24.in):**403**;改用备用后拿到的也几乎全是世界杯 + Kalshi 预测市场 + Bezos,英语青年文化池子无可用 niche
+- **Reddit request-type 过滤仍未上线**(承接 W26 说的 W27 计划):本期 Reddit 仍是「按相关性返回 + 混着『我做到 \$Xk MRR』成功故事帖」,已人工筛出真需求,句式过滤下期继续做
+- pytrends 中文种子词(zh):已知空(W24 实测 8 域 7 空),本期中文信号全靠百度
+- Product Hunt:Cloudflare;微博 / 知乎 / 小红书:反爬未解
+
+**判断准则(每期不变)**:
+
+1. **viral 名人 / 赛事 / 突发新闻不是 niche**。本周百度前 50 是世界杯西班牙绝杀葡萄牙、C罗告别、湖北龙卷风、广西暴雨防汛——增长率惊人但 **24 小时到一周内归零**,做 SEO 站没意义。
+2. **HN 高赞 ≠ 高搜索量**。本周「学编程仍然值得(101 票)」「拒绝把 AI 当默认执行引擎」是观点 / 情怀帖,搜索量低,适合写观点长文不适合做 SEO。
+3. **被反爬挡住的源,数据为空 ≠ 没有需求**。本周缺 Google RSS + X 这两个池子,只代表工具链没够到。
+
+带着这三条往下看。
+
+## 本周 12 个机会窗口(跨 9 个领域)
+
+下表 12 行,按「领域多样性 + 信号强度」排序——**不**按单一增长率排,因为不同数据源的"增长"含义不同(HN 是票数 / 评论、pytrends 是 rising 指数、百度是热度、autocomplete 是成熟度、WebSearch 是引用强度)。每行的「备注」列告诉你**这个机会窗口适合做什么**。
+
+<KeywordTable
+  mode="trend"
+  rows={[
+    { keyword: "vibe coding 安全债 / AI 生成代码漏洞", volume: "high", growth: "WebSearch 多源实锤", region: "中英双圈", note: "本周第一;Veracode 45% 含 OWASP Top 10、Georgia Tech 单月 35 CVE、Moltbook 3 天泄 150 万 token、slopsquatting、MCP SDK 注入 20 万实例;'AI 写的代码安不安全/发布前怎么自查'中英通吃、正戳一把梭做产品的独立开发者" },
+    { keyword: "开源权重模型 GLM 5.2(换后端 / 本地部署)", volume: "high", growth: "154 HN + 6/16 发布", region: "中英双圈", note: "智谱开源 744B/40B/1M/MIT;多个 coding 基准超 GPT-5.5、价格 1/6;OpenAI/Anthropic 兼容 endpoint,改 base URL 就能让 Claude Code 跑它;'GLM 5.2 vs Opus/本地部署/换后端'工程师长尾,穿透中英两圈的国产 AI 硬信号" },
+    { keyword: "本地 / 边缘小型 AI 模型", volume: "mid", growth: "275+67 HN + IEEE", region: "英文圈", note: "AMD Ryzen AI Halo $4k 本地 AI 套件、Ternlight 7MB 浏览器 embedding、IEEE 小模型在弱网走红、CoMaps 离线地图;'笔记本能跑大模型吗/本地 7B 模型'是 GLM 本地化配套长尾" },
+    { keyword: "离线 / 非 AI / 自托管工具需求", volume: "mid", growth: "Reddit 100-220↑ 多帖", region: "英文圈", note: "续 W26:零注册离线 PDF 编辑器 10 万下载(213↑)、自建非 AI logo 工具(87↑)、自托管 Obsidian 替代(224↑)、NAS vs 云存家庭照片;隐私 + 数据主权卖点,独立开发者工具横评/教程" },
+    { keyword: "在家全基因组测序(消费科技)", volume: "mid", growth: "238 HN + WebSearch", region: "英文圈", note: "厨房桌上用 Nanopore MinION 自测全基因组 + '给工程师的基因组学入门'(238);临床级 30X 跌破 $500、MyHeritage 转全基因组、市场 $373 亿→$939 亿;新兴消费科技 niche,信息型科普长尾稳" },
+    { keyword: "除湿机能不能降温(季节家居)", volume: "mid", growth: "pytrends rising 一串", region: "中英双圈", note: "'will a dehumidifier cool a room'一整串上升,续 W25 除湿防潮 / W26 高温;信息型门槛低,中英同款需求,赶盛夏窗口" },
+    { keyword: "无边界线割草机器人", volume: "mid", growth: "pytrends +300", region: "英文圈", note: "'best robot lawn mower without perimeter wire'+300;免布线是今年园艺硬需求,产品横评 affiliate,转化型" },
+    { keyword: "UGC creator 副业", volume: "mid", growth: "pytrends +30600", region: "英文圈", note: "'apply to be a ugc creator'暴涨 +30600;creator economy 门槛型副业,'怎么成为 UGC 创作者/怎么接单/薪资'信息型长尾" },
+    { keyword: "AI agent 操作 Office 文件", volume: "low", growth: "126 HN", region: "全球", note: "OfficeCLI:让 AI agent 读写 Word/Excel/PPT;'ai 自动处理 excel/让 ai 改 word'办公自动化,工程师 + 效率受众" },
+    { keyword: "确定性 AI vs LLM 执行引擎", volume: "low", growth: "HN 双帖", region: "全球", note: "'不是所有事都该花 token'+'LLM 不该当默认执行引擎';AI 可靠性 / 何时别用 LLM 的观点+工程长文,讨论高交易低" },
+    { keyword: "预测市场 Kalshi", volume: "mid", growth: "X #1 + pytrends", region: "英文圈", note: "Kalshi 登 X 趋势第一 + pytrends 'kalshi/trump prediction market'上升;'预测市场怎么玩/Kalshi 合法吗'观望,监管+博彩噪音高,标注观察不建站" },
+    { keyword: "「还要不要学编程」(就业焦虑)", volume: "low", growth: "101 HN + Ramp/Apollo", region: "全球", note: "HN'学编程仍值得(101)'对上'企业采用 AI 后反而多招人''AI 的 ROI 在科技行业外跑道更长';观点+职业规划长文,呼应就业雷达线" },
+  ]}
+/>
+
+## 国内 vs 国外:中文圈本周被赛事+汛情占满,唯一穿透两圈的是 GLM 5.2
+
+本周这张对照表又回到了常态的「错位」——中文圈百度前 50 里,能建 SEO 站的真消费/理财信号几乎为零,大半是世界杯(西班牙补时绝杀葡萄牙、C罗最后一舞)、防汛(湖北龙卷风致 8 死、广西暴雨)、七七事变、中日地缘。**这些热度数字都在 300-800 万区间,但没有一个能撑起一篇半年后还有人搜的内容**。
+
+- **大陆主流注意力本周被新闻彻底占满**:世界杯 + 汛情 + 历史纪念 + 地缘,是典型的「增长率极高、SEO 价值为零」组合。真正能穿透中文圈的 AI 硬信号只有一条——**GLM 5.2**,因为它是智谱(国产)开源、且中文独立开发者会实打实关心「能不能改个 base URL 把 Claude Code 后端换成 GLM 省钱」。这是本周中文圈唯一该抄的作业。
+- **英文圈本周是「AI 工具化的第二波」一条主轴**:vibe coding 安全债、开源模型打崩利润、本地小模型下沉、离线/自托管工具、在家测基因——全部指向同一个母题,即 AI「能用」之后开始被追问**可靠不可靠(安全债)、划不划算(GLM 打价格)、私有还是自己掌握(本地/离线/自托管)**。做英文站沿这条主轴走,题材彼此串联、复用度高。
+- **唯一中外都能落地的交叉点是「AI 写的代码/工具到底安不安全」**:它在英文圈是 vibe coding security 的技术话题,在中文圈是每个用 AI「一把梭」做小工具、小程序、小站的人的切身问题——**中文圈这个角度几乎空白**,是本周最值得先发的隐私/安全科普选题。
+
+<RegionCompare
+  left={{
+    title: "中国大陆 (百度实时热搜)",
+    subtitle: "百度热榜前 50,2026-07-07 抓取(世界杯+汛情+历史纪念日)",
+    takeaway: "本周百度前 50 几乎全是世界杯/防汛/七七事变/地缘,能建站的真消费/理财信号趋近于零。唯一穿透两圈的 AI 硬信号是 GLM 5.2(智谱国产开源,中文独立开发者关心换后端省钱)。真正的中文消费信号大多不在搜索榜,得去小红书品类池;做中文站靠平台推荐分发,不靠百度搜索",
+    items: [
+      { keyword: "GLM 5.2 换 Claude Code 后端", metric: "国产开源 (可建站)", tone: "potential" },
+      { keyword: "AI 写的代码安不安全(空白)", metric: "中文圈空白 (先发)", tone: "potential" },
+      { keyword: "西班牙补时绝杀葡萄牙", metric: "781 万 (赛事)", tone: "hot" },
+      { keyword: "C罗最后一舞遗憾落幕", metric: "637 万 (赛事)", tone: "hot" },
+      { keyword: "湖北强对流致 8 死 1 失联", metric: "648 万 (突发)", tone: "hot" },
+      { keyword: "七七事变 89 年", metric: "724 万 (纪念)", tone: "neutral" },
+    ],
+  }}
+  right={{
+    title: "英文圈 + 全球 (HN + Reddit + pytrends + WebSearch)",
+    subtitle: "跨 8 领域,主轴是「AI 工具化的第二波:可靠/成本/主权」",
+    takeaway: "英文圈本周一条主轴打穿多个信号:vibe coding 安全债(可靠)、GLM 5.2 打崩利润(成本)、本地小模型+离线/自托管工具(主权)。做英文站沿这条主轴走,题材彼此串联复用度高;外加在家测基因这个独立的新兴消费科技 niche",
+    items: [
+      { keyword: "vibe coding 安全债(本周第一)", metric: "45% 带漏洞", tone: "hot" },
+      { keyword: "GLM 5.2 开源打崩利润", metric: "154 HN / 1/6 价", tone: "hot" },
+      { keyword: "本地/边缘小型 AI 模型", metric: "275+67 HN", tone: "potential" },
+      { keyword: "离线/非 AI/自托管工具", metric: "Reddit 多帖", tone: "potential" },
+      { keyword: "在家测全基因组", metric: "238 HN", tone: "potential" },
+      { keyword: "除湿机能不能降温", metric: "pytrends rising", tone: "neutral" },
+    ],
+  }}
+/>
+
+## 三个数据陷阱(每个对应一条「不要做」)
+
+### 陷阱 1:增长率最高的,SEO 价值往往最低
+
+本周百度热度最高的是「总书记鼓励我好好干」、西班牙绝杀葡萄牙、湖北龙卷风——瞬时搜索量极高,但**赛事 / 突发新闻 / 时政 / 灾害,过了这周就塌**。
+
+**判断标准**:这个词 6 个月后还会有人搜吗?会(`vibe coding 安全风险`、`glm 5.2 本地部署`、`will a dehumidifier cool a room`、`在家全基因组测序费用`),做;不会(`西班牙绝杀葡萄牙`、`湖北龙卷风`),不做。
+
+### 陷阱 2:HN 票数 ≠ 搜索量,要看「有没有商业意图长尾」
+
+平时 HN 高赞经常只代表程序员社区在讨论,搜索量为零——比如本周「学编程仍然值得」101 票、「拒绝把 LLM 当默认执行引擎」,都是观点 / 情怀帖,适合写观点长文不适合做 SEO。但「vibe coding security」「GLM 5.2」「robot lawn mower」这种,autocomplete 里已经长出 `how to secure a vibe coded app`、`glm 5.2 vs claude`、`robot lawn mower without perimeter wire` 这类成型的商业 / 信息意图长尾,才真正值得进关键词矩阵。
+
+**判断标准**:HN 单帖高赞 → 写一篇有观点的解读文;一个主题已经长出 "best / vs / how to / 是什么" 长尾 → 进 SEO 关键词矩阵。
+
+### 陷阱 3:种子词决定你能看到什么
+
+做 niche 调研最容易翻车的,是用一组**预设方向**的种子词去查趋势工具,误以为跑出来的就是「全网真实信号」。事实是种子词预先就在替你筛数据。
+
+- **只用 AI 种子词就只能看见 AI 圈**:本周我强制跨了 12 个领域种子词,才在 AI 主线之外捞到「除湿机能不能降温」「无边界线割草机器人」「UGC 副业」这些跳出 AI 圈的季节 / 电商 / 副业机会。
+- **Google Trends 在大陆不可用**,它跑出的「中文圈」是海外华人 + 港台新加坡,跟国内 14 亿搜索行为是两个池子。本期中文信号全靠百度——做中文站必须接百度 / 小红书。
+- **每个数据源都有盲区**:本周 Google RSS + X 双双 403,只靠 HN(技术圈)+ 百度(大陆主流)+ pytrends(英文搜索)+ Reddit(独立开发)四个池子交叉。单一数据源 = 偏狭世界观。
+
+**判断标准**:做新 niche 之前至少跨 3 个数据源验证。本周进 SEO 候选清单的词,我都在 HN / 百度 / autocomplete / pytrends / Reddit 至少 2-3 个池子里交叉看过,且对最硬的两条(vibe coding 安全债、GLM 5.2)做了 WebSearch 事实核查。
+
+## 26 个可立刻动手的 SEO 长尾词(跨 9 个领域)
+
+从本周 12 个机会窗口衍生的可立刻动手内容选题,每个标了搜索意图 + 适合做的内容形态:
+
+- **信息** = 科普 / 教程(SEO 友好,门槛最低)
+- **商业** = 横评 / 对比(高转化,适合带 affiliate)
+- **交易** = 购买决策(最高商业价值,竞争最猛)
+- **导航** = 品牌 / 工具名(适合自建 wrapper)
+
+下面 26 个里挑 1-2 个本周就能写一篇:
+
+<KeywordTable
+  rows={[
+    { keyword: "vibe coding 安全风险 有哪些", intent: "信息", idea: "AI 一把梭做产品的安全债盘点(Moltbook/slopsquatting 做案例),中文圈空白先发" },
+    { keyword: "ai 生成代码 发布前 怎么自查", intent: "信息", idea: "独立开发者发布前 5 分钟安全自查清单(.env 泄漏/硬编码 key/XSS),可做下载磁铁" },
+    { keyword: "how to secure a vibe coded app", intent: "信息", idea: "vibe coded app 加固教程(英文站,承接 Veracode 45% 数据)" },
+    { keyword: "slopsquatting 是什么 怎么防", intent: "信息", idea: "幻觉包 + 供应链攻击科普(约 20% 生成代码引用不存在的包)" },
+    { keyword: "ai code security scanner 对比", intent: "商业", idea: "AI 代码安全扫描工具横评(Snyk/Semgrep 等,工程师转化)" },
+    { keyword: "mcp server 安全吗 / 命令注入", intent: "信息", idea: "MCP SDK 命令注入解读 + 加固(承接 OX Security 20 万实例)" },
+    { keyword: "glm 5.2 怎么本地部署 / 多少显存", intent: "信息", idea: "GLM-5.2(744B/40B)自部署硬件需求 + Unsloth GGUF 量化拆解" },
+    { keyword: "glm 5.2 vs claude opus 怎么选", intent: "商业", idea: "国产开源 vs 闭源大模型对比 + 成本账(工程师高转化)" },
+    { keyword: "claude code 换 glm 后端 教程", intent: "导航", idea: "把 Claude Code/Codex base URL 指向 GLM 的实操(1/6 成本,导航+教程)" },
+    { keyword: "开源大模型 自托管 省钱吗 划算吗", intent: "信息", idea: "自托管 vs API 的成本盈亏平衡测算(工程师决策向)" },
+    { keyword: "best open weight coding model 2026", intent: "商业", idea: "开源编码模型横评(GLM/Qwen/Llama/DeepSeek,工程师转化)" },
+    { keyword: "笔记本 能跑 大模型 吗 / 本地 7b", intent: "信息", idea: "消费级硬件本地跑模型的可行性(承接 AMD 套件 + Ternlight)" },
+    { keyword: "offline pdf editor no signup", intent: "商业", idea: "离线/零注册 PDF 工具横评(Reddit 实捞 10 万下载需求,隐私卖点)" },
+    { keyword: "self hosted obsidian alternative", intent: "商业", idea: "自托管笔记工具盘点(数据主权,独立开发受众)" },
+    { keyword: "nas vs cloud 家庭照片 备份 哪个好", intent: "商业", idea: "NAS vs 云存家庭照片对比(2TB 场景,带硬件 affiliate)" },
+    { keyword: "非 ai logo 制作工具 推荐", intent: "商业", idea: "非 AI / 真人质感 logo 工具盘点(反 AI-slop 需求)" },
+    { keyword: "在家全基因组测序 怎么做 / 费用", intent: "信息", idea: "Nanopore MinION 个人测序流程 + 成本(<$500 30X,科普门槛低)" },
+    { keyword: "whole genome sequencing at home cost 2026", intent: "信息", idea: "在家全基因组测序成本盘点(英文站,承接市场数据)" },
+    { keyword: "消费级 dna 检测 哪家好 2026", intent: "商业", idea: "消费级基因检测横评(Nebula/MyHeritage/23魔方,带导流)" },
+    { keyword: "will a dehumidifier cool a room", intent: "信息", idea: "除湿机能不能降温科普(pytrends 实捞,盛夏季节,门槛最低)" },
+    { keyword: "除湿机 能降温吗 / 有用吗", intent: "信息", idea: "除湿机使用误区科普(国内同款需求,续 W25 除湿线)" },
+    { keyword: "best robot lawn mower without perimeter wire", intent: "商业", idea: "无边界线割草机器人横评(+300,免布线是硬需求,affiliate)" },
+    { keyword: "how to become a ugc creator 2026", intent: "信息", idea: "UGC 创作者入门 + 接单路径(+30600,门槛型副业)" },
+    { keyword: "ai 自动处理 excel / 让 ai 改 word", intent: "信息", idea: "AI agent 操作 Office 文件教程(承接 OfficeCLI,效率受众)" },
+    { keyword: "什么时候 不该用 llm / 确定性 ai", intent: "信息", idea: "AI 可靠性:何时用确定性逻辑替代 LLM(观点+工程,可靠性叙事)" },
+    { keyword: "2026 还要不要学编程", intent: "信息", idea: "AI 时代学编程值不值(HN 101 票 + Ramp/Apollo 数据,职业规划观点文)" },
+  ]}
+/>
+
+## 下期(W28)会扩到什么
+
+每周会在这个池子里加一个新数据源,这样雷达半年后会变得**比 ahrefs 免费版更全面**(因为接的是大陆中文池子 + 跨领域种子词):
+
+- **W28 计划:给 Reddit 上 request-type 过滤(承接 W26/W27 一直在推的这条)**。Reddit OAuth 已接通三期,但搜索仍按相关性返回、混着「我做到 \$Xk MRR」成功故事帖;下期上句式过滤(只留 "looking for a tool / wish there was / willing to pay" 的真请求),把这条源从「能用」做到「干净」
+- **W28-29**:微信搜一搜公开页面 + 小红书话题 trending——本周中文消费 niche 又几乎缺位(只有 GLM 5.2 一条 AI 信号冒头),就是因为还没接这两个大陆年轻消费 + 内容创作圈的池子
+- **W30+**:ahrefs / semrush 免费查询接口(每天 3-5 次配额),给关键词加上真实搜索量数字,把「154 HN 票」「+30600」这类相对指标补上绝对搜索量
+
+**想看具体 niche 的可以留言**——如果三个人以上提到同一个 niche,下一期会专门做一个深挖。本周呼声最高的候选我已经标好:**vibe coding 安全债自查**(中英通吃、中文圈空白、正戳独立开发者)和**GLM 5.2 换后端省钱**(国产开源、改个 base URL 就能省 5/6 的钱)。
+
+上一期 [W26 欧洲高温→中国便携空调卖爆专题](/blog/niche-radar-2026-06-29) 在这——上期的离线/隐私线,本周被「vibe coding 安全债 + 自托管工具」接了下去。每周一更新,把这篇加个书签,W28 见。
+
+<FeaturePick>
+
+- [AI 写公众号文章](/features/ai-wechat-article) — 把英文圈本周的 rising 词喂进去,30 秒出中文版选题初稿
+- [免费标题生成器](/tools/title-generator) — 给 SEO 长尾词配 8 种爆款标题模板
+- [公众号 AI 排版](/features/wechat-formatter) — Markdown 一键转公众号样式,周报场景一键导出
+
+</FeaturePick>
