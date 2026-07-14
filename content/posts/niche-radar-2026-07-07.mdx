@@ -13,10 +13,10 @@ cover_image: /blog-covers/niche-radar-2026-07-07.png
 
 <TLDR>
   - **本周最强信号:vibe coding 的安全债集中引爆**。Veracode 测 100+ 模型发现 45% AI 生成代码带 OWASP Top 10 漏洞;Georgia Tech 单月追踪 35 个归因 AI 编码工具的 CVE(真实数估 5-10 倍);「没写一行代码」的 AI 社交网 Moltbook 上线 3 天泄露整个生产库(150 万 API token/3.5 万邮箱);还有 slopsquatting(约 20% 生成代码引用不存在的包→攻击者抢注恶意包)、Anthropic 官方 MCP SDK 命令注入波及 20 万实例(Cursor/Windsurf/Claude Code/Copilot 全中)。「你一把梭做的东西安不安全/怎么自查」中英通吃、正戳独立开发者
-  - **国产开源逼宫第二季:GLM 5.2 把价格打到 1/6**。智谱 Z.ai 的 GLM-5.2(2026-06-16 发布、开源 744B/40B active、1M 上下文、MIT)在多个 long-horizon coding 基准上超 GPT-5.5,API 只要 \$1.4/\$4.4(GPT-5.5 约 \$5/\$30、Opus 约 \$5/\$25);杀招是它给 OpenAI/Anthropic 兼容 endpoint——**改个 base URL 就能让 Claude Code / Codex 直接跑 GLM**,迁移成本几乎为零。「GLM 5.2 怎么本地部署/换后端/对比 Opus」工程师长尾稳,且是能穿透中英两圈的国产 AI 硬信号
-  - **AI 从云端往本地/边缘下沉**。IEEE「小型 AI 模型在网络不稳的地方走红」、AMD Ryzen AI Halo \$4k 本地 AI 开发套件(275 票)、Ternlight 7MB 浏览器里跑的 embedding 模型(WASM)、CoMaps 离线开源地图(312 票)——「笔记本能不能本地跑大模型/离线 AI 工具」是 GLM 本地化的配套长尾
+  - **国产开源逼宫第二季:GLM 5.2 把价格打到 1/6**。智谱 Z.ai 的 GLM-5.2(2026-06-16 发布、开源 744B/40B active、1M 上下文、MIT)在多个 long-horizon coding 基准上超 GPT-5.5,API 只要 $1.4/$4.4(GPT-5.5 约 $5/$30、Opus 约 $5/$25);杀招是它给 OpenAI/Anthropic 兼容 endpoint——**改个 base URL 就能让 Claude Code / Codex 直接跑 GLM**,迁移成本几乎为零。「GLM 5.2 怎么本地部署/换后端/对比 Opus」工程师长尾稳,且是能穿透中英两圈的国产 AI 硬信号
+  - **AI 从云端往本地/边缘下沉**。IEEE「小型 AI 模型在网络不稳的地方走红」、AMD Ryzen AI Halo $4k 本地 AI 开发套件(275 票)、Ternlight 7MB 浏览器里跑的 embedding 模型(WASM)、CoMaps 离线开源地图(312 票)——「笔记本能不能本地跑大模型/离线 AI 工具」是 GLM 本地化的配套长尾
   - **离线 / 无注册 / 非 AI / 自托管工具继续涨(续 W26)**。本周新接通的 Reddit 又捞到:零注册离线 PDF 编辑器 10 万下载、「找不到不含 AI 的 logo 工具就自己做了一个」、自托管 Obsidian 替代、NAS vs 云存 2TB 家庭照片——隐私 + 数据主权卖点,独立开发者工具横评稳
-  - **在家测全基因组平民化**。HN「我在厨房桌上用 Nanopore MinION 给自己测了全基因组」+「给工程师的基因组学入门」(238 票)+ 胚胎精准编辑研究;WebSearch 实锤:临床级 30X 全基因组已跌破 \$500、MyHeritage 首家大规模转全基因组、市场 2025 年 \$373 亿→2034 年预计 \$939 亿——新兴消费科技 niche
+  - **在家测全基因组平民化**。HN「我在厨房桌上用 Nanopore MinION 给自己测了全基因组」+「给工程师的基因组学入门」(238 票)+ 胚胎精准编辑研究;WebSearch 实锤:临床级 30X 全基因组已跌破 $500、MyHeritage 首家大规模转全基因组、市场 2025 年 $373 亿→2034 年预计 $939 亿——新兴消费科技 niche
   - **季节家居 informational 稳定复现**。pytrends「除湿机能不能给房间降温(will a dehumidifier cool a room)」一整串上升,续 W25 除湿防潮 / W26 高温线;「best robot lawn mower without perimeter wire(无边界线割草机器人)」+300,产品横评 affiliate
   - **副业信号:UGC creator 申请潮**。pytrends「apply to be a ugc creator」暴涨 +30600,creator economy 门槛型副业,「怎么成为 UGC 创作者/怎么接单」信息型长尾
   - **就业焦虑第 N 季:「还要不要学编程」**。HN「学编程仍然值得(101 票)」对上「企业采用 AI 后反而多招人(Ramp 数据)」「AI 的 ROI 在科技行业之外的跑道更长(Apollo)」——AICareerSync 那条线的搜索侧回声
@@ -37,7 +37,7 @@ cover_image: /blog-covers/niche-radar-2026-07-07.png
 
 - Google 每日热搜 RSS(`trends.google.com/trending/rss?geo=US`):本周 **403 反爬**,拿不到当日 US trending,是本期新增盲区
 - X 24h 累计(trends24.in):**403**;改用备用后拿到的也几乎全是世界杯 + Kalshi 预测市场 + Bezos,英语青年文化池子无可用 niche
-- **Reddit request-type 过滤仍未上线**(承接 W26 说的 W27 计划):本期 Reddit 仍是「按相关性返回 + 混着『我做到 \$Xk MRR』成功故事帖」,已人工筛出真需求,句式过滤下期继续做
+- **Reddit request-type 过滤仍未上线**(承接 W26 说的 W27 计划):本期 Reddit 仍是「按相关性返回 + 混着『我做到 $Xk MRR』成功故事帖」,已人工筛出真需求,句式过滤下期继续做
 - pytrends 中文种子词(zh):已知空(W24 实测 8 域 7 空),本期中文信号全靠百度
 - Product Hunt:Cloudflare;微博 / 知乎 / 小红书:反爬未解
 
@@ -178,7 +178,7 @@ cover_image: /blog-covers/niche-radar-2026-07-07.png
 
 每周会在这个池子里加一个新数据源,这样雷达半年后会变得**比 ahrefs 免费版更全面**(因为接的是大陆中文池子 + 跨领域种子词):
 
-- **W28 计划:给 Reddit 上 request-type 过滤(承接 W26/W27 一直在推的这条)**。Reddit OAuth 已接通三期,但搜索仍按相关性返回、混着「我做到 \$Xk MRR」成功故事帖;下期上句式过滤(只留 "looking for a tool / wish there was / willing to pay" 的真请求),把这条源从「能用」做到「干净」
+- **W28 计划:给 Reddit 上 request-type 过滤(承接 W26/W27 一直在推的这条)**。Reddit OAuth 已接通三期,但搜索仍按相关性返回、混着「我做到 $Xk MRR」成功故事帖;下期上句式过滤(只留 "looking for a tool / wish there was / willing to pay" 的真请求),把这条源从「能用」做到「干净」
 - **W28-29**:微信搜一搜公开页面 + 小红书话题 trending——本周中文消费 niche 又几乎缺位(只有 GLM 5.2 一条 AI 信号冒头),就是因为还没接这两个大陆年轻消费 + 内容创作圈的池子
 - **W30+**:ahrefs / semrush 免费查询接口(每天 3-5 次配额),给关键词加上真实搜索量数字,把「154 HN 票」「+30600」这类相对指标补上绝对搜索量
 
