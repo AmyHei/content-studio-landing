@@ -72,7 +72,7 @@ def hello():
 
 ### 引用
 
-> 一个好的标题等于一半的点击率。
+> 预览之后，还要检查复制、粘贴和最终发布效果。
 
 ---
 
@@ -88,9 +88,41 @@ img{max-width:100%;}
 </style></head><body>${bodyHtml}</body></html>`;
 }
 
+// Only export the formatting elements supported by this tool. Raw HTML from a
+// pasted Markdown document must not carry scripts, handlers or custom CSS out.
+function prepareClipboardContent(html: string) {
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  doc.querySelectorAll("script,style,iframe,object,embed,svg,math,form,link,meta,base").forEach((node) => node.remove());
+  const allowed = new Set("h1 h2 h3 h4 h5 h6 p br ul ol li blockquote pre code hr a strong em del table thead tbody tfoot tr th td img".split(" "));
+  for (const node of Array.from(doc.body.querySelectorAll("*")).reverse()) {
+    const tag = node.tagName.toLowerCase();
+    if (!allowed.has(tag)) {
+      node.replaceWith(...Array.from(node.childNodes));
+      continue;
+    }
+    for (const attr of Array.from(node.attributes)) {
+      const name = attr.name.toLowerCase();
+      let keep = name === "alt" || name === "title";
+      if ((tag === "a" && name === "href") || (tag === "img" && name === "src")) {
+        try {
+          const url = new URL(attr.value, window.location.origin);
+          keep = ["https:", "http:"].includes(url.protocol) || (tag === "a" && url.protocol === "mailto:");
+        } catch { keep = false; }
+      }
+      if (!keep) node.removeAttribute(attr.name);
+    }
+  }
+  const textDoc = doc.body.cloneNode(true) as HTMLElement;
+  textDoc.querySelectorAll("br").forEach((node) => node.replaceWith("\n"));
+  textDoc.querySelectorAll("h1,h2,h3,h4,h5,h6,p,li,blockquote,pre,tr").forEach((node) => node.append("\n"));
+  textDoc.querySelectorAll("th,td").forEach((node) => node.append("\t"));
+  return { html: applyInlineStyles(doc.body.innerHTML), text: textDoc.textContent ?? "" };
+}
+
 export function MarkdownFormatterClient() {
   const [md, setMd] = useState(SAMPLE);
   const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState("");
 
   const html = useMemo(() => {
     try {
@@ -110,12 +142,22 @@ export function MarkdownFormatterClient() {
   }, [md]);
 
   const handleCopy = async () => {
+    setCopied(false);
+    setCopyError("");
     try {
-      await navigator.clipboard.writeText(html);
+      if (!navigator.clipboard?.write || typeof ClipboardItem === "undefined") {
+        setCopyError("当前浏览器不支持复制排版内容，请换用最新版 Chrome、Edge 或 Safari，或直接选中右侧预览后复制。");
+        return;
+      }
+      const content = prepareClipboardContent(html);
+      await navigator.clipboard.write([new ClipboardItem({
+        "text/html": new Blob([content.html], { type: "text/html" }),
+        "text/plain": new Blob([content.text], { type: "text/plain" }),
+      })]);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
-      // ignore
+      setCopyError("复制未成功。请允许浏览器访问剪贴板后重试，或直接选中右侧预览后复制。");
     }
   };
 
@@ -142,8 +184,9 @@ export function MarkdownFormatterClient() {
             onClick={handleCopy}
             className="mt-3 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors"
           >
-            {copied ? "✓ HTML 已复制" : "复制公众号 HTML"}
+            {copied ? "✓ 排版内容已复制" : "复制排版内容"}
           </button>
+          <p role="status" aria-live="polite" className="mt-2 text-sm text-[var(--accent-strong)]">{copyError}</p>
         </div>
 
         {/* Preview (iframe sandbox 隔离用户输入) */}
@@ -153,7 +196,7 @@ export function MarkdownFormatterClient() {
               公众号预览
             </label>
             <span className="text-xs text-gray-500 dark:text-gray-500">
-              实际效果（含 inline 样式）
+              浏览器预览，粘贴后请再次检查
             </span>
           </div>
           <iframe
@@ -163,8 +206,11 @@ export function MarkdownFormatterClient() {
             className="flex-1 min-h-[500px] w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white"
           />
           <p className="mt-3 text-xs text-gray-500 dark:text-gray-500">
-            把 HTML 复制后，到公众号编辑器右上角点「全屏编辑」→ 顶部点 ⟨/⟩ 按钮粘贴
+            点击「复制排版内容」，在公众号图文正文中直接粘贴。发布前检查标题、列表、表格和图片；不要使用“粘贴为纯文本”。
           </p>
+          <Link href="/blog/markdown-wechat-copy-format" className="mt-2 text-sm text-[var(--accent)] underline">
+            复制后出现代码或格式丢失？查看检查步骤与实测记录
+          </Link>
         </div>
       </div>
 
