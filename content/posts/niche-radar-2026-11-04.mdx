@@ -1,0 +1,181 @@
+---
+title: 12 月共享额度预告之外，AI 长任务还缺什么｜本周 13 个 AI 观察项
+date: '2026-11-04'
+excerpt: ChatGPT 与 Codex 预告共享额度，Claude 更新长对话接口，模型来源证明和权重编程研究也进入讨论。本期从费用、连续工作与结果验证三个角度，把 13 个 AI 观察项串起来，附 3 个可继续动手的选题。
+tags:
+- 趋势雷达
+- SEO
+- 关键词
+- AI
+- 周报
+lang: zh
+cover_image: /blog-covers/niche-radar-2026-11-04.png
+---
+
+这一周的 AI 消息，一头在重新计算额度，另一头在试着让长任务更连贯、结果更可核实。
+
+从 ChatGPT / Codex 的共享用量预告，到 Claude 长对话接口，再到模型来源证明，变化已经不只发生在回答得好不好这一件事上。
+
+这是 W41 的周中阶段版，观察到 11 月 4 日，按当期要求只看 AI：**工具能连续做事之后，费用、过程和结果也需要放到同一张记录里。**
+
+<TLDR>
+
+- **ChatGPT 与 Codex 预告十二月共享额度**：涉及 Plus、Pro、Business，Instant 不占这份用量。当期尚未生效，不能按预告替读者计算未来能完成多少任务。[官方说明](https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits)
+- **Claude 长对话接口减少重复上传历史**：11 月 2 日的 Message Threads beta 允许后续请求提交增量，但应用仍需保存历史并处理线程失效。[文档](https://platform.claude.com/docs/en/build-with-claude/message-threads)
+- **证明“由哪个模型生成”开始有研究方案**：11 月 2 日的 FlashProve 研究讨论可验证推理。来源证明与回答是否正确是两个问题。[研究](https://www.anthropic.com/research/provable-inference)
+- **水印也不能替代事实核查**：Claude 11 月 3 日更新部分文本水印覆盖；具体模型、平台和参数存在边界，不能泛化到所有输出。[文档](https://platform.claude.com/docs/en/build-with-claude/text-watermark)
+- **并行 Agent 给基础设施带来的压力更具体了**：OpenAI 的 Pando 工程文报告内部 Git 推送中位延迟下降近八成。这是特定系统结果，不是每位用户都能获得的效率提升。[原文](https://openai.com/index/scaling-git-at-openai/)
+- **权重编程的演示，要连同实验条件读**：研究、个人复现与批评分别涉及不同模型和工具条件；不能合并成“AI 已经能普遍自我改进”。[研究](https://rikiyat.github.io/blog/weight-space-programming/)、[拆解](https://honnibal.dev/blog/astra-read-write-misleading)
+- **中国地区的功能开放，日期需要拆开看**：Apple 10 月 31 日公告、11 月 4 日测试与十二月正式计划是不同节点；DeepSeek 功能页面也不等于本周首发记录。[Apple 公告](https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/)
+- **产品讨论不都等于已确认事件**：Postman 插件授权是用户报告，尚不能认定数据外泄；Gemini Carbon 的公告日期为 10 月 28 日，列作持续观察。全文为当期公开来源搜索整理。
+
+</TLDR>
+
+## 三个判断
+
+**一、评估 AI 工具，要把订阅价格往后再算一步。**
+
+共享用量预告把聊天和编码放进同一份预算，但一个任务怎么消耗额度，还取决于选择的模型、上下文和处理步骤。只有月费，仍不足以判断一个工作流是否划算。
+
+对写作者，可以把研究、初稿、核查与修改分开记录；对开发者，则记录计划、执行、测试和返工。这里提出的是一种测量办法，不是已经得出的成本排名。
+
+**先留下当前任务的基线，等规则实际生效，再比较同样任务的变化。** 本期没有统一测过各平台，也不把套餐预告写成已经发生的成本上涨。
+
+**二、长任务体验的改善，越来越多地发生在模型周围。**
+
+Message Threads 改变的是对话历史的传输；Pando 处理的是特定规模下的代码基础设施压力。两者不在同一层，却都在解决“任务变长、协作变多之后怎么办”。
+
+这给内容评测一个更具体的方向：别只截取一次顺畅演示，试着在中途停下、重启、续接，再核对资料有没有丢、结果有没有重复。
+
+**能开始工作和能可靠地接着工作，是两项需要分别测试的能力。** 官方发布可以说明功能存在，真正的恢复体验仍要靠实际任务验证。
+
+**三、来源、实验能力和交付正确性，不能用同一份证据代替。**
+
+FlashProve 研究的是推理来源；水印涉及输出识别；权重编程则需要看具体实验设置。把这些消息堆在一起，很容易得到一个比任何单项证据都强的“模型已经可信”判断。
+
+更有用的整理，是每条消息都问清它证明了什么：来自哪个模型、在什么条件下完成了什么、最终结果是否经过独立检查。
+
+**对读者而言，知道证据停在哪里，比再听到一个包办一切的能力口号更有用。** 这也是本期研究类内容和产品使用类内容需要分开的原因。
+
+## 本期最该动手的 3 个选题
+
+当期只有两个 Google 联想种子成功返回。下面三个入口沿用那批记录，两个成本词是备选方向；没有完成搜索结果审计前，不建议把它们做成重复页面。
+
+**① 入口词：`ai agent cost calculator`**（Google autocomplete 当期记录）
+
+同组变体：ai agent cost per month / ai agent cost benefit analysis / ai agent cost optimization。
+
+**怎么写才不一样**：做一个让读者输入实际任务用量的计算说明，区分模型调用费用、工具费用与重试。会员额度只有可核换算规则时才计入金额，其他部分单列，不给出看似精确的伪总价。
+
+**② 入口词：`ai agent cost comparison`**（Google autocomplete 当期记录）
+
+同组变体来自同一 cost 词族，包括 ai agent cost per month 和 ai agent cost optimization。
+
+**怎么写才不一样**：固定一个任务及验收标准，比较完成后的实际账单、等待和返工。它应是测试报告，与①的输入计算工具区分；如果搜索结果显示两者意图重合，就只做其中一个。
+
+**③ 入口词：`apple intelligence in china`**（Google autocomplete 当期记录）
+
+同组变体：apple intelligence features / apple intelligence download / apple intelligence iphone 15 / apple intelligence iphone 17。
+
+**怎么写才不一样**：围绕地区、设备、系统版本与功能，逐项核对官方开放条件，把公告、测试和计划上线分开列。页面应带核对日期，不把测试窗口写成所有用户已经可用。
+
+## 本周 13 个 AI 观察项
+
+分数、名次、发布日期和搜索联想各按原口径列出；没有取得绝对搜索量，量级栏留空。
+
+<KeywordTable mode="trend" rows={[
+  {
+    "keyword": "ChatGPT / Codex 共享额度",
+    "growth": "12 月预告",
+    "region": "全球",
+    "note": "Plus、Pro、Business；尚未生效"
+  },
+  {
+    "keyword": "Instant 聊天用量边界",
+    "growth": "同一公告子项",
+    "region": "全球",
+    "note": "官方说 Instant 不占共享额度"
+  },
+  {
+    "keyword": "Claude Message Threads",
+    "growth": "11/02 更新",
+    "region": "全球",
+    "note": "长对话只发增量，仍需自存历史"
+  },
+  {
+    "keyword": "Claude 文本水印",
+    "growth": "11/03 更新",
+    "region": "全球",
+    "note": "限定模型与平台，参数有例外"
+  },
+  {
+    "keyword": "FlashProve 推理证明",
+    "growth": "11/02 研究",
+    "region": "全球",
+    "note": "证明模型来源，不证明答案正确"
+  },
+  {
+    "keyword": "Pando：Git 推送延迟",
+    "growth": "11/02 工程文",
+    "region": "全球",
+    "note": "内部中位延迟降近八成"
+  },
+  {
+    "keyword": "Weight-Space Programming",
+    "growth": "11/02 研究",
+    "region": "全球",
+    "note": "小网络识别与模型修改须分开"
+  },
+  {
+    "keyword": "Qwen 本地权重识别复现",
+    "growth": "11/03 个人实验",
+    "region": "全球",
+    "note": "小样本，不能外推通用自我改进"
+  },
+  {
+    "keyword": "DeepSeek Creator Mode",
+    "growth": "持续观察",
+    "region": "中国",
+    "note": "官网有聊天造插件，不宣称本周首发"
+  },
+  {
+    "keyword": "Apple 智能中国版",
+    "growth": "11/04 测试窗口",
+    "region": "中国",
+    "note": "10/31 公告，12 月计划正式推出"
+  },
+  {
+    "keyword": "Gemini 4 Carbon",
+    "growth": "10/28 旧闻纠偏",
+    "region": "全球",
+    "note": "分阶段开放，不能写公众已可用"
+  },
+  {
+    "keyword": "Postman 插件授权争议",
+    "growth": "10/25 报告，本周讨论",
+    "region": "全球",
+    "note": "用户报告待复现，不等于数据外泄"
+  },
+  {
+    "keyword": "NVIDIA Auto Ontology",
+    "growth": "本周 HN 再发现",
+    "region": "全球",
+    "note": "语义图上下文框架，非确认本周首发"
+  }
+]} />
+
+## 数据源与盲区
+
+**当期记录**：HN top 50、Google US RSS，以及官方新闻、接口文档、研究作者文章和原始 issue。百度热搜与 trends24 已打开，但本期依当时要求只整理 AI，观察窗口为 11 月 2—4 日。
+
+**盲区**：Google 联想 8 个种子中仅 2 个成功，其余是 TLS 失败，不能写成空返回。pytrends、Reddit、Product Hunt 未执行，没有搜索增长率或市场规模数据。两个成本入口词的搜索意图是否重合仍待核。
+
+**本期改掉的判断**：Carbon 的公告在 10 月 28 日；Apple 的公告与测试时间不同；DeepSeek 仅核到功能，没有核到本周首次发布。权重识别、工具辅助修改与通用自主改进也不能画等号。13 个观察项包含同一共享额度公告的子项，不等于 13 次独立发布。
+
+<FeaturePick>
+
+- [AI 写公众号文章](/features/ai-wechat-article) — 把一个具体问题整理成选题和初稿
+- [免费标题生成器](/tools/title-generator) — 比较同一选题的不同表达
+- [公众号 AI 排版](/features/wechat-formatter) — 将核查后的定稿整理成发布格式
+
+</FeaturePick>
