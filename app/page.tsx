@@ -6,6 +6,29 @@ export const metadata: Metadata = {
   description:
     "不只做 AI 写作。AutoContent 基于你的公众号数据，判断今日/本周值得写的选题，结合热度、竞品覆盖与预测流量，并追踪发布后的真实反馈，让账号持续增长。",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "AutoContent — 豆包帮你写一篇，我们帮你的号长起来",
+    description:
+      "不只做 AI 写作。AutoContent 基于你的公众号数据，判断今日/本周值得写的选题，结合热度、竞品覆盖与预测流量，并追踪发布后的真实反馈，让账号持续增长。",
+    url: "https://autocontent.net",
+    locale: "zh_CN",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AutoContent — 豆包帮你写一篇，我们帮你的号长起来",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AutoContent — 豆包帮你写一篇，我们帮你的号长起来",
+    description:
+      "不只做 AI 写作。AutoContent 基于你的公众号数据，判断今日/本周值得写的选题，结合热度、竞品覆盖与预测流量，并追踪发布后的真实反馈，让账号持续增长。",
+    images: ["/og-image.png"],
+  },
 };
 
 const jsonLd = {
@@ -145,8 +168,8 @@ export default function Home() {
               {sampleTopics.map((topic) => (
                 <div
                   key={topic.title}
-                  className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-3 rounded-sm"
-                  style={{ background: "var(--paper-elevated)" }}
+                  className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-3 rounded-sm border"
+                  style={{ background: "var(--paper-elevated)", borderColor: "var(--divider)" }}
                 >
                   <div className="flex-1 min-w-0">
                     <div
