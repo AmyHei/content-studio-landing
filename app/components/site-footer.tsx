@@ -81,7 +81,7 @@ export function SiteFooter() {
           <div>
             <div className={colTitleClass}>AutoContent</div>
             <p className="text-[13px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 mb-4">
-              监控热点 → AI 写稿 → 自动配图 → 一键发布公众号
+              选题研判 → 账号数据 → 辅助成稿 → 增长回流
             </p>
             <Link
               href="https://app.autocontent.net/register"
@@ -97,7 +97,7 @@ export function SiteFooter() {
           className="mt-12 pt-6 border-t text-[12px] text-center"
           style={{ borderColor: "var(--divider)", color: "var(--ink-muted)" }}
         >
-          © 2026 AutoContent. All rights reserved.
+          © 2026 AutoContent. 版权所有。
         </div>
       </div>
     </footer>
