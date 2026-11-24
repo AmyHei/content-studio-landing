@@ -197,7 +197,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-col items-center gap-4">
             <a
-              href="https://app.autocontent.net/register"
+              href="https://app.autocontent.net/try"
               className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white transition-colors shadow-sm"
             >
               免费试用
@@ -314,10 +314,10 @@ export default function Home() {
               准备好让你的号长起来了吗？
             </h2>
             <p className="text-[14px] md:text-[15px] mb-8 text-[var(--ink-soft)] dark:text-gray-400">
-              注册即可开始免费体验，从下一个选题开始迭代
+              先试今日选题，觉得合适再注册保存或发布
             </p>
             <a
-              href="https://app.autocontent.net/register"
+              href="https://app.autocontent.net/try"
               className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2.5 text-sm font-medium text-white transition-colors"
             >
               免费试用

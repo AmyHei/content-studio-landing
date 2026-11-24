@@ -84,7 +84,7 @@ export function SiteFooter() {
               选题研判 → 账号数据 → 辅助成稿 → 增长回流
             </p>
             <Link
-              href="https://app.autocontent.net/register"
+              href="https://app.autocontent.net/try"
               className="inline-block text-[13px] font-medium"
               style={{ color: "var(--accent)" }}
             >
