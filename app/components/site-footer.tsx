@@ -6,7 +6,7 @@ import { getAllPosts } from "@/lib/posts";
 // "Discovered – currently not indexed" because nothing linked to them directly.
 const FEATURE_LINKS = [
   { href: "/features/ai-wechat-article", label: "AI 写公众号文章" },
-  { href: "/features/ai-writing-free", label: "AI 写作（免费）" },
+  { href: "/features/ai-writing-free", label: "AI 写作" },
   { href: "/features/markdown-to-wechat", label: "Markdown 转公众号" },
   { href: "/features/wechat-formatter", label: "公众号排版" },
   { href: "/features/wechat-title-generator", label: "爆款标题生成器" },

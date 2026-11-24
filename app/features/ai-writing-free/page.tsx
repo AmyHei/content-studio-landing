@@ -8,9 +8,9 @@ import {
 } from "@/app/components/marketing-shell";
 
 export const metadata: Metadata = {
-  title: "免费 AI 写作工具 — 在线无限制，注册即用 | AutoContent",
+  title: "免费 AI 写作工具 — 在线使用，注册即用 | AutoContent",
   description:
-    "免费 AI 写作工具，在线使用无需下载。Claude / GPT / Gemini 全模型支持，公众号文章、技术博客、营销文案都能生成。每月免费 5 篇起。",
+    "免费 AI 写作工具，在线使用无需下载。支持多家主流大模型，公众号文章、技术博客、营销文案都能生成。注册即可免费试用。",
   keywords: [
     "ai 写作",
     "ai 写作免费",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     canonical: "https://autocontent.net/features/ai-writing-free",
   },
   openGraph: {
-    title: "免费 AI 写作工具 — 在线无限制",
-    description: "Claude / GPT / Gemini 全模型支持，免费试用。",
+    title: "免费 AI 写作工具 — 在线使用",
+    description: "支持多家主流大模型，免费试用。",
     url: "https://autocontent.net/features/ai-writing-free",
     type: "website",
     locale: "zh_CN",
@@ -37,7 +37,7 @@ export default function Page() {
     <article className="min-h-screen">
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <HeroBadge>免费在线 · 注册即用</HeroBadge>
+          <HeroBadge>免费试用 · 注册即用</HeroBadge>
           <h1
             className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
             style={{ fontFamily: "var(--font-display-zh)" }}
@@ -45,18 +45,18 @@ export default function Page() {
             AI 写作工具
             <br />
             <span className="text-[var(--accent)]">
-              免费在线使用
+              注册即可免费使用
             </span>
           </h1>
           <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
-            Claude 4.5、GPT-5、Gemini 2.5、Grok 4 全模型支持。公众号文章、技术博客、营销文案、社交媒体内容都能生成。
-            每月免费 5 篇起，无需信用卡。
+            支持多家主流大模型。公众号文章、技术博客、营销文案、社交媒体内容都能生成。
+            注册即可免费试用，无需信用卡。
           </p>
           <div className="mt-10">
             <PrimaryCTAButton>立即免费试用</PrimaryCTAButton>
           </div>
           <p className="mt-3 text-xs text-[var(--ink-muted)] dark:text-gray-500">
-            注册即送 5 篇免费额度
+            注册即可开始使用
           </p>
         </div>
       </section>
@@ -129,21 +129,21 @@ export default function Page() {
           className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-3"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
-          支持的所有 AI 模型
+          支持多家主流大模型
         </h2>
         <p className="text-center text-[var(--ink-soft)] dark:text-gray-400 mb-10 text-sm">
           系统按内容类型自动选最合适的模型，也可手动指定
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
-            { name: "Claude 4.5", strong: "长文 / 推理 / 风格" },
-            { name: "GPT-5", strong: "营销 / 多语种" },
-            { name: "Gemini 2.5", strong: "结构化 / 速度" },
-            { name: "Grok 4", strong: "热点 / 调性" },
-            { name: "DeepSeek V3", strong: "中文 / 性价比" },
-            { name: "Qwen 3", strong: "中文 / 阿里生态" },
-            { name: "Kimi K2", strong: "长上下文" },
-            { name: "Doubao", strong: "短文 / 抖音" },
+            { name: "Claude 系列", strong: "长文 / 推理 / 风格" },
+            { name: "GPT 系列", strong: "营销 / 多语种" },
+            { name: "Gemini 系列", strong: "结构化 / 速度" },
+            { name: "Grok 系列", strong: "热点 / 调性" },
+            { name: "DeepSeek 系列", strong: "中文 / 性价比" },
+            { name: "通义千问", strong: "中文 / 阿里生态" },
+            { name: "Kimi", strong: "长上下文" },
+            { name: "豆包", strong: "短文 / 字节生态" },
           ].map((m) => (
             <div
               key={m.name}
@@ -166,23 +166,23 @@ export default function Page() {
           className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
-            为什么免费
+            为什么提供免费试用
           </h2>
           <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
             <p>
-              我们相信内容创作者大多数时候不需要为基础功能付费。
-              每月 5 篇免费额度对个人副业号、刚起步的自媒体已经够用。
+              我们相信好的产品应该让用户先体验再决定。
+              注册即可免费试用核心功能，亲自感受 AI 写作的效率提升。
             </p>
             <p>
               <strong className="text-[var(--ink)] dark:text-white">
-                付费只为更高频的使用
+                具体定价方案即将公布
               </strong>
-              ——重度用户（每天 1-3 篇）、矩阵号运营、企业团队。Pro 版本主要解锁的是：额度、批量处理、多账号管理、高级模型（Opus 4.7、GPT-5 Pro）。
+              ——我们会在确定定价后通过官网和邮件通知。目前的重点是打磨产品体验。
             </p>
             <p>
               不会出现&ldquo;免费版到处是水印&rdquo;或&ldquo;免费版只能用低端模型&rdquo;这种事。
               <strong className="text-[var(--ink)] dark:text-white">
-                免费用户和付费用户能用同一套核心 AI 模型
+                试用期间可以体验完整的 AI 模型能力
               </strong>
               。
             </p>
@@ -198,12 +198,12 @@ export default function Page() {
           常见问题
         </h2>
         <FAQItem
-          q="真的完全免费吗？"
-          a="基础功能完全免费：每月 5 篇 AI 写作、无限次排版、标题生成器、模型自由切换。重度用户付费升级 Pro。"
+          q="产品如何收费？"
+          a="产品目前提供免费试用，注册即可体验核心功能。具体定价方案即将公布，届时会通过官网和邮件通知。"
         />
         <FAQItem
-          q="免费版能用 Claude / GPT-5 这种顶级模型吗？"
-          a="可以。免费用户和付费用户共享同一套模型池，没有「免费版用差模型」的歧视。"
+          q="试用版能用主流 AI 模型吗？"
+          a="可以。试用用户可以体验完整的模型能力，没有模型限制。"
         />
         <FAQItem
           q="生成的内容版权归谁？"
@@ -224,8 +224,8 @@ export default function Page() {
       </section>
 
       <CTASection
-        title="开始免费用 AI 写作"
-        subtitle="注册 30 秒，立刻写第一篇"
+        title="开始免费试用 AI 写作"
+        subtitle="注册即可立刻体验"
       />
 
       <RelatedFeatures exclude="ai-writing-free" />
