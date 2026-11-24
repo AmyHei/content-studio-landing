@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function WaitlistForm({ variant = "default" }: { variant?: "default" | "dark" }) {
+export function WaitlistForm({ variant = "default" }: { variant?: "default" | "dark" | "secondary" }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -36,8 +36,6 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
         </p>
         <a
           href="https://app.autocontent.net/register"
-          target="_blank"
-          rel="noopener"
           className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
         >
           立即体验 AutoContent →
@@ -48,11 +46,42 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
 
   const inputClasses = variant === "dark"
     ? "flex-1 px-4 py-3 rounded-lg border border-blue-400/30 bg-blue-700/30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+    : variant === "secondary"
+    ? "flex-1 px-3 py-2 rounded-lg border text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
     : "flex-1 px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500";
 
   const buttonClasses = variant === "dark"
     ? "px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap"
+    : variant === "secondary"
+    ? "px-4 py-2 border text-sm font-medium rounded-lg transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap hover:border-[var(--accent)]"
     : "px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 cursor-pointer whitespace-nowrap";
+
+  if (variant === "secondary") {
+    return (
+      <div className="text-center">
+        <p className="text-[12px] text-[var(--ink-muted)] mb-2">或留下邮箱获取功能更新通知</p>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="your@email.com"
+            required
+            className={inputClasses}
+            style={{ borderColor: "var(--divider)" }}
+          />
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className={buttonClasses}
+            style={{ borderColor: "var(--divider)", color: "var(--ink-soft)" }}
+          >
+            {status === "loading" ? "提交中..." : "订阅更新"}
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   const tryLinkClasses = variant === "dark"
     ? "text-blue-100 hover:text-white"
@@ -77,8 +106,6 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
         或{" "}
         <a
           href="https://app.autocontent.net/register"
-          target="_blank"
-          rel="noopener"
           className="underline underline-offset-2"
         >
           直接免费体验

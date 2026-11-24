@@ -8,19 +8,18 @@ import {
 } from "@/app/components/marketing-shell";
 
 export const metadata: Metadata = {
-  title: "AI 写公众号文章 — 从选题到发布 30 秒搞定 | AutoContent",
+  title: "AI 写公众号文章 — 从选题到发布一站搞定 | AutoContent",
   description:
     "AI 写公众号文章工具：智能选题、AI 写稿、自动配图、一键发布微信草稿箱。副业、自媒体、企业号都能用，免费试用。",
   keywords: [
     "AI 写公众号",
     "AI 写公众号文章",
     "公众号 AI 写作",
-    "AI 写公众号年入 200w",
     "公众号自动化",
   ],
   alternates: { canonical: "https://autocontent.net/features/ai-wechat-article" },
   openGraph: {
-    title: "AI 写公众号文章 — 从选题到发布 30 秒",
+    title: "AI 写公众号文章 — 从选题到发布一站搞定",
     description: "AI 帮你写公众号，选题写稿配图一站完成。",
     url: "https://autocontent.net/features/ai-wechat-article",
     type: "website",
@@ -41,12 +40,12 @@ export default function Page() {
             AI 帮你写公众号文章
             <br />
             <span className="text-[var(--accent)]">
-              30 秒，从选题到发布
+              从选题到发布，一站搞定
             </span>
           </h1>
           <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             选个话题，AI 生成符合你风格的文章，自动配图、智能排版，一键发到微信公众号草稿箱。
-            副业自媒体每天省 3 小时，企业号小编不再加班。
+            大幅提升内容创作效率，让你专注于更有价值的工作。
           </p>
           <div className="mt-10">
             <PrimaryCTAButton>免费开始写第一篇</PrimaryCTAButton>
@@ -102,7 +101,7 @@ export default function Page() {
             {
               n: "02",
               t: "AI 写稿",
-              d: "给 AI 喂你过去的 5-10 篇文章学风格，生成的稿子像你自己写的。支持多家模型：Claude / GPT / Gemini / Grok，按内容类型自动选模型。",
+              d: "给 AI 喂你过去的 5-10 篇文章学风格，生成的稿子贴近你的写作习惯。支持多家主流大模型，按内容类型自动选择最合适的模型。",
             },
             {
               n: "03",
@@ -147,13 +146,13 @@ export default function Page() {
             {[
               {
                 t: "副业账号",
-                d: "下班 1 小时发 1 篇，月入 2k-1w。AI 写稿 + 自动追热点是关键。",
-                tag: "兼职 1 小时/天",
+                d: "下班后轻松更新，AI 写稿 + 自动追热点帮你持续产出内容。",
+                tag: "业余创作",
               },
               {
                 t: "自媒体专职",
-                d: "一人维护 3-5 个垂类号，AI 把重复劳动接管，你专注做选题判断和精修。",
-                tag: "效率 5x",
+                d: "一人维护多个垂类号，AI 把重复劳动接管，你专注做选题判断和精修。",
+                tag: "效率提升",
               },
               {
                 t: "企业新媒体",
@@ -188,12 +187,12 @@ export default function Page() {
           常见问题
         </h2>
         <FAQItem
-          q="AI 写的公众号文章会被识别出来吗？"
-          a="我们让 AI 学你的过往文章风格，生成的稿子人称、口头禅、断句节奏都贴近你自己。多数用户反馈读者完全察觉不到。AI 是工具，最终发出去的是你的判断和精修。"
+          q="AI 写的公众号文章质量如何？"
+          a="我们让 AI 学你的过往文章风格，生成的稿子人称、口头禅、断句节奏都贴近你自己。AI 是辅助工具，最终发出去的内容需要你的判断和精修。"
         />
         <FAQItem
-          q="AI 写公众号能做副业变现吗？真有人年入 200w 吗？"
-          a="头部确实有人靠 AI 矩阵号年入百万级，但绝大多数副业用户的稳态在月入 2k-1w。关键不是 AI 本身，是选对垂类 + 持续更新 + 流量主/广告主接洽。AutoContent 帮你解决「写」的问题，剩下的看你的运营。"
+          q="AI 写公众号能帮助提升效率吗？"
+          a="AI 可以大幅减少重复性工作，如初稿生成、排版、配图等。但内容运营的成功取决于多种因素：选题判断、内容质量、运营策略等。AutoContent 帮你提升「写」的效率，让你有更多时间专注于内容策划。"
         />
         <FAQItem
           q="生成的文章版权归谁？"
@@ -201,17 +200,17 @@ export default function Page() {
         />
         <FAQItem
           q="支持哪些 AI 模型？"
-          a="Claude 4.5、GPT-5、Gemini 2.5、Grok 4 都接入了。系统根据文章类型自动选最合适的模型，也可以手动指定。"
+          a="支持多家主流大模型。系统根据文章类型自动选最合适的模型，也可以手动指定。"
         />
         <FAQItem
-          q="免费版有什么限制？"
-          a="每月免费写 5 篇文章，所有功能都能用（选题、写稿、配图、排版、发布）。超出后按篇付费或升级订阅。"
+          q="产品定价是怎样的？"
+          a="产品目前提供免费试用。具体定价方案即将公布，届时会通过官网和邮件通知。"
         />
       </section>
 
       <CTASection
         title="开始用 AI 写公众号"
-        subtitle="第一篇免费，30 秒看到效果"
+        subtitle="注册即可免费试用"
       />
 
       <RelatedFeatures exclude="ai-wechat-article" />

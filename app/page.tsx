@@ -8,6 +8,47 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autocontent.net/#organization",
+      name: "AutoContent",
+      url: "https://autocontent.net",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://autocontent.net/og-image.png",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://autocontent.net/#website",
+      url: "https://autocontent.net",
+      name: "AutoContent",
+      publisher: { "@id": "https://autocontent.net/#organization" },
+      inLanguage: "zh-CN",
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://autocontent.net/#software",
+      name: "AutoContent",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "CNY",
+        availability: "https://schema.org/InStock",
+      },
+      description:
+        "AI 公众号自动化工具：智能监控热点、AI 写稿、自动配图、一键发布微信草稿箱",
+      url: "https://app.autocontent.net",
+      provider: { "@id": "https://autocontent.net/#organization" },
+    },
+  ],
+};
+
 const painPoints = [
   {
     num: "01",
@@ -56,6 +97,10 @@ const features = [
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="pt-20 md:pt-28 pb-16 md:pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
@@ -73,14 +118,19 @@ export default function Home() {
           <p className="mt-5 text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
             监控热点 → AI 写稿 → 自动配图 → 一键发布微信公众号
             <br />
-            从每天 4 小时缩短到 30 分钟
+            大幅提升内容创作效率
           </p>
-          <div className="mt-10" id="waitlist">
-            <WaitlistForm />
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <a
+              href="https://app.autocontent.net/register"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-8 py-3 text-base font-medium text-white transition-colors shadow-sm"
+            >
+              免费试用
+            </a>
+            <div id="waitlist" className="w-full max-w-md">
+              <WaitlistForm variant="secondary" />
+            </div>
           </div>
-          <p className="mt-4 text-[12px] text-[var(--ink-muted)]">
-            留下邮箱获取功能更新通知，或直接免费试用
-          </p>
         </div>
       </section>
 
@@ -197,9 +247,17 @@ export default function Home() {
               准备好让 AI 帮你创作了吗？
             </h2>
             <p className="text-[14px] md:text-[15px] mb-8 text-[var(--ink-soft)] dark:text-gray-400">
-              订阅更新通知，或直接开始免费体验
+              注册即可开始免费体验
             </p>
-            <WaitlistForm />
+            <a
+              href="https://app.autocontent.net/register"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-2.5 text-sm font-medium text-white transition-colors"
+            >
+              免费试用
+            </a>
+            <div className="mt-6">
+              <WaitlistForm variant="secondary" />
+            </div>
           </div>
         </div>
       </section>

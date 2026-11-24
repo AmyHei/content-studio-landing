@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "用 AI 自动化公众号内容创作：智能监控热点、AI 写稿、自动配图、一键发布微信草稿箱。免费试用，从每天 4 小时缩到 30 分钟。",
+    "用 AI 自动化公众号内容创作：智能监控热点、AI 写稿、自动配图、一键发布微信草稿箱。免费试用，大幅提升内容创作效率。",
   keywords: [
     "AI 写公众号",
     "公众号自动化",
@@ -44,6 +44,21 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     type: "website",
     url: "https://autocontent.net",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AutoContent — AI 写公众号，从选题到发布一键搞定",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AutoContent — AI 写公众号，从选题到发布一键搞定",
+    description:
+      "用 AI 自动化公众号内容创作：智能监控热点、AI 写稿、自动配图、一键发布。免费试用。",
+    images: ["/og-image.png"],
   },
   verification: {
     other: {

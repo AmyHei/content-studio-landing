@@ -158,7 +158,7 @@ export function RelatedFeatures({ exclude }: { exclude: string }) {
     {
       slug: "ai-writing-free",
       title: "免费 AI 写作",
-      desc: "无需注册，立即试用",
+      desc: "注册即用，免费试用",
     },
   ].filter((f) => f.slug !== exclude);
 

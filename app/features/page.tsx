@@ -24,7 +24,7 @@ const FEATURES = [
   {
     slug: "ai-wechat-article",
     title: "AI 写公众号文章",
-    desc: "智能选题、AI 写稿、自动配图、一键发布微信草稿箱。从 4 小时缩到 30 秒。",
+    desc: "智能选题、AI 写稿、自动配图、一键发布微信草稿箱。大幅提升创作效率。",
     keyword: "AI 写公众号",
   },
   {
@@ -48,7 +48,7 @@ const FEATURES = [
   {
     slug: "ai-writing-free",
     title: "免费 AI 写作工具",
-    desc: "Claude / GPT / Gemini / Grok 全模型支持，每月免费 5 篇起。",
+    desc: "支持多家主流大模型，注册即可免费试用。",
     keyword: "AI 写作免费",
   },
 ];
@@ -134,7 +134,7 @@ export default function Page() {
             }}
           >
             <p className="text-[14px] md:text-[15px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 mb-6 max-w-xl mx-auto">
-              想直接试用所有功能？AutoContent 把以上能力一站打包，注册即用，每月免费 5 篇。
+              想直接试用所有功能？AutoContent 把以上能力一站打包，注册即可免费试用。
             </p>
             <Link
               href="https://app.autocontent.net/register"
