@@ -40,7 +40,7 @@ app.autocontent.net      (OTHER REPO — content-studio, Vercel)
 
 # Design System — Letterpress Newsletter
 
-Editorial aesthetic, warm restraint. Terracotta accent, system serif for display, generous whitespace. The bg matches the rest of the site (white / gray-950), no warm paper bg — `--paper-elevated` is a subtle tint for cards only.
+Editorial aesthetic, cool paper, terracotta accent, system serif for display, generous whitespace. Page, background, and elevated paper are the same cool white `#f7f8f8` (dark: gray-950). Hover, selected, and inset panels use `#eef0f2` (`--paper-press`).
 
 ## Tokens (defined in `app/globals.css`, via plain CSS vars + media-query dark mode)
 
@@ -51,10 +51,11 @@ Editorial aesthetic, warm restraint. Terracotta accent, system serif for display
 --ink              #1C1A17  (deep warm text)
 --ink-soft         #4A4640  (secondary text, body in cards)
 --ink-muted        #837D72  (captions, meta)
---divider          #EBE8E0  (borders — use everywhere instead of gray-200)
+--divider          #E6E7EA  (borders — use everywhere instead of gray-200)
 --rule             #2A2622  (2px under page headers)
---paper            #FFFFFF  (matches site bg)
---paper-elevated   #FAF9F5  (CARDS / code blocks ONLY — never the page bg)
+--paper            #F7F8F8  (page and article sheet)
+--paper-elevated   #F7F8F8  (same cool sheet as the page)
+--paper-press      #EEF0F2  (hover, selected, inset panels)
 --font-display-zh  "Songti SC", "STSong", "SimSun", "PingFang SC", serif
 ```
 
@@ -98,8 +99,8 @@ hover: border-[var(--accent)] + shadow-md + -translate-y-[2px]
 ```
 
 **Section bg (alternating)**
-- Default sections: no bg (inherits page white)
-- Alternate sections: `bg-[var(--paper-elevated)] dark:bg-gray-900`
+- Default sections: no bg (inherits page `#f7f8f8`)
+- Alternate sections: `bg-[var(--paper-elevated)] dark:bg-gray-900` — light mode matches the page; dark mode still lifts
 - Never `bg-gray-50` directly
 
 **Section dividers (between major chunks)**

@@ -2,16 +2,18 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
+  --background: #f7f8f8;
   --foreground: #171717;
 
-  /* ─── article design system (letterpress, but on site bg) ─── */
-  --paper: #ffffff;                 /* matches site bg */
-  --paper-elevated: #faf9f5;        /* subtle warm tint for cards/code only */
+  /* ─── article design system (letterpress on cool paper) ─── */
+  /* Same comfortable cool white as /try. Not stark #ffffff, not warm #faf9f5. */
+  --paper: #f7f8f8;
+  --paper-elevated: #f7f8f8;
+  --paper-press: #eef0f2;           /* selected, hover, inset panels */
   --ink: #1c1a17;
   --ink-soft: #4a4640;
   --ink-muted: #837d72;
-  --divider: #ebe8e0;
+  --divider: #e6e7ea;
   --rule: #2a2622;
   --accent: #b1422d;
   --accent-wash: #f5e1d9;
@@ -46,6 +48,7 @@
 
     --paper: #030712;                /* matches gray-950 */
     --paper-elevated: #111827;       /* slightly lighter for cards */
+    --paper-press: #1f2937;          /* hover / inset, one step off elevated */
     --ink: #f0eae0;
     --ink-soft: #c7bfb1;
     --ink-muted: #8e867a;
@@ -135,7 +138,7 @@ body {
 .article-body code {
   font-family: var(--font-mono);
   font-size: 0.88em;
-  background: var(--paper-elevated);
+  background: var(--paper-press);
   border: 1px solid var(--divider);
   border-radius: 3px;
   padding: 0.1em 0.4em;
@@ -241,7 +244,7 @@ body {
 }
 
 .article-body tbody tr:hover {
-  background: var(--paper-elevated);
+  background: var(--paper-press);
 }
 
 .article-body td {
@@ -264,7 +267,7 @@ body {
 
 /* code blocks — editorial style with line of accent on top */
 .article-body pre {
-  background: var(--paper-elevated);
+  background: var(--paper-press);
   border: 1px solid var(--divider);
   border-top: 3px solid var(--accent);
   border-radius: 3px;

@@ -5,7 +5,7 @@ const linkClass =
 
 export function Nav() {
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <nav className="sticky top-0 z-50 bg-[#f7f8f8]/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-[var(--divider)] dark:border-gray-800">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <Link href="/" className="font-bold text-lg text-gray-900 dark:text-white">
           AutoContent
