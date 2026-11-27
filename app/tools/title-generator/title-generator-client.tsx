@@ -109,20 +109,20 @@ export function TitleGeneratorClient() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
       <div className="mb-8">
-        <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
+        <label className="block text-sm font-medium text-gray-900 mb-2">
           你这篇文章想写什么主题？
         </label>
         <textarea
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
           placeholder="例如：用 AI 写公众号 / 副业月入一万 / 程序员转型独立开发"
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-blue-600 dark:focus:border-blue-400"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-600"
           rows={3}
         />
         <button
           onClick={handleGenerate}
           disabled={!topic.trim()}
-          className="mt-3 px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:cursor-not-allowed text-white font-medium transition-colors"
+          className="mt-3 px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium transition-colors"
         >
           生成 {TEMPLATES.length * 2} 个候选标题
         </button>
@@ -131,12 +131,12 @@ export function TitleGeneratorClient() {
       {generated.length > 0 && (
         <div className="space-y-3">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-lg font-semibold text-gray-900">
               候选标题（{generated.length} 条）
             </h2>
             <button
               onClick={handleGenerate}
-              className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+              className="text-sm text-blue-600 hover:underline"
             >
               重新生成
             </button>
@@ -144,14 +144,14 @@ export function TitleGeneratorClient() {
           {generated.map((g, i) => (
             <div
               key={i}
-              className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-blue-600 dark:hover:border-blue-400 transition-colors group"
+              className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 bg-white hover:border-blue-600 transition-colors group"
             >
               <div className="flex-1 min-w-0">
-                <div className="text-[15px] text-gray-900 dark:text-white leading-relaxed mb-1">
+                <div className="text-[15px] text-gray-900 leading-relaxed mb-1">
                   {g.title}
                 </div>
-                <div className="text-[11px] text-gray-500 dark:text-gray-500 flex gap-2 items-center">
-                  <span className="text-blue-600 dark:text-blue-400 font-medium">
+                <div className="text-[11px] text-gray-500 flex gap-2 items-center">
+                  <span className="text-blue-600 font-medium">
                     {g.template}
                   </span>
                   <span>·</span>
@@ -159,7 +159,7 @@ export function TitleGeneratorClient() {
                   <span>·</span>
                   <span>{g.title.length} 字</span>
                   {g.title.length > 32 && (
-                    <span className="text-orange-600 dark:text-orange-400">
+                    <span className="text-orange-600">
                       ⚠ 超过 32 字可能被截断
                     </span>
                   )}
@@ -167,18 +167,18 @@ export function TitleGeneratorClient() {
               </div>
               <button
                 onClick={() => handleCopy(g.title, i)}
-                className="shrink-0 px-3 py-1.5 rounded text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 border border-gray-200 dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-400 transition-colors"
+                className="shrink-0 px-3 py-1.5 rounded text-xs text-gray-600 hover:text-blue-600 border border-gray-200 hover:border-blue-600 transition-colors"
               >
                 {copiedIdx === i ? "已复制" : "复制"}
               </button>
             </div>
           ))}
 
-          <div className="mt-8 p-6 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900">
-            <div className="font-semibold text-gray-900 dark:text-white mb-1">
+          <div className="mt-8 p-6 rounded-xl bg-blue-50 border border-blue-200">
+            <div className="font-semibold text-gray-900 mb-1">
               想要 AI 真正"思考"出独特标题？
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <div className="text-sm text-gray-600 mb-4">
               这个工具用的是规则模板，AI 版本会读懂你的文章内容，按主题独家生成标题。
             </div>
             <Link
@@ -192,7 +192,7 @@ export function TitleGeneratorClient() {
       )}
 
       {generated.length === 0 && (
-        <div className="text-center py-12 text-gray-500 dark:text-gray-500 text-sm">
+        <div className="text-center py-12 text-gray-500 text-sm">
           输入主题点击生成，会用 {TEMPLATES.length} 种爆款模板各出 2 个候选
         </div>
       )}

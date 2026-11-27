@@ -29,15 +29,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <article className="min-h-screen">
-      <section className="py-12 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-12 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-3xl mx-auto text-center">
           <h1
-            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)]"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             公众号字数统计 + 标题检测
           </h1>
-          <p className="mt-4 text-base text-[var(--ink-soft)] dark:text-gray-400 max-w-xl mx-auto">
+          <p className="mt-4 text-base text-[var(--ink-soft)] max-w-xl mx-auto">
             实时统计字数、段落、阅读时长。标题超 32 字会被订阅号列表截断，工具自动提示。
           </p>
         </div>
@@ -45,25 +45,25 @@ export default function Page() {
 
       <WordCounterClient />
 
-      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-3xl mx-auto">
           <h2
-          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] mb-6"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
             公众号文章长度建议
           </h2>
-          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] leading-relaxed">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="border-b border-[var(--divider)] dark:border-gray-800">
-                  <th className="text-left py-2 px-3 text-[var(--ink)] dark:text-white">
+                <tr className="border-b border-[var(--divider)]">
+                  <th className="text-left py-2 px-3 text-[var(--ink)]">
                     长度
                   </th>
-                  <th className="text-left py-2 px-3 text-[var(--ink)] dark:text-white">
+                  <th className="text-left py-2 px-3 text-[var(--ink)]">
                     适用场景
                   </th>
-                  <th className="text-left py-2 px-3 text-[var(--ink)] dark:text-white">
+                  <th className="text-left py-2 px-3 text-[var(--ink)]">
                     特点
                   </th>
                 </tr>
@@ -78,20 +78,20 @@ export default function Page() {
                 ].map(([len, scene, note], i) => (
                   <tr
                     key={i}
-                    className="border-b border-gray-100 dark:border-gray-900"
+                    className="border-b border-gray-100"
                   >
-                    <td className="py-2 px-3 font-mono text-blue-600 dark:text-blue-400">
+                    <td className="py-2 px-3 font-mono text-blue-600">
                       {len}
                     </td>
                     <td className="py-2 px-3">{scene}</td>
-                    <td className="py-2 px-3 text-[var(--ink-soft)] dark:text-gray-400">
+                    <td className="py-2 px-3 text-[var(--ink-soft)]">
                       {note}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <p className="text-sm text-[var(--ink-muted)] dark:text-gray-500 mt-6">
+            <p className="text-sm text-[var(--ink-muted)] mt-6">
               💡 标题字数：订阅号在用户消息列表里只显示前 32 个汉字，超过会被截断。服务号 / 折叠后浏览不受此限制。
             </p>
           </div>
