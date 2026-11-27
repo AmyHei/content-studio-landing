@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 const linkClass =
-  "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors text-sm";
+  "text-gray-600 hover:text-gray-900 transition-colors text-sm";
 
 export function Nav() {
   return (
-    <nav className="sticky top-0 z-50 bg-[#f7f8f8]/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-[var(--divider)] dark:border-gray-800">
+    <nav className="sticky top-0 z-50 bg-[#f7f8f8]/80 backdrop-blur-md border-b border-[var(--divider)]">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-bold text-lg text-gray-900 dark:text-white">
+        <Link href="/" className="font-bold text-lg text-gray-900">
           AutoContent
         </Link>
         <div className="flex items-center gap-5 md:gap-6">

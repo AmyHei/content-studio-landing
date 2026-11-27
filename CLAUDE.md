@@ -40,9 +40,9 @@ app.autocontent.net      (OTHER REPO — content-studio, Vercel)
 
 # Design System — Letterpress Newsletter
 
-Editorial aesthetic, cool paper, terracotta accent, system serif for display, generous whitespace. Page, background, and elevated paper are the same cool white `#f7f8f8` (dark: gray-950). Hover, selected, and inset panels use `#eef0f2` (`--paper-press`).
+Editorial aesthetic, cool paper, terracotta accent, system serif for display, generous whitespace. Page, background, and elevated paper are the same cool white `#f7f8f8`. Hover, selected, and inset panels use `#eef0f2` (`--paper-press`). The public site is locked to `color-scheme: light`. Do not remap tokens under `prefers-color-scheme: dark`, do not add `dark:` backgrounds, and do not add a theme toggle.
 
-## Tokens (defined in `app/globals.css`, via plain CSS vars + media-query dark mode)
+## Tokens (defined in `app/globals.css`, light only)
 
 ```
 --accent           #B1422D  (terracotta — editorial labels, hover states, H1 spans, "立即使用" links)
@@ -59,7 +59,7 @@ Editorial aesthetic, cool paper, terracotta accent, system serif for display, ge
 --font-display-zh  "Songti SC", "STSong", "SimSun", "PingFang SC", serif
 ```
 
-Use via Tailwind arbitrary value syntax: `bg-[var(--paper-elevated)]`, `text-[var(--ink)]`, `border-[var(--divider)]`. They auto-flip in dark mode.
+Use via Tailwind arbitrary value syntax: `bg-[var(--paper-elevated)]`, `text-[var(--ink)]`, `border-[var(--divider)]`. These values stay on the cool-white sheet in every color scheme.
 
 ## Color usage rules (DO NOT MIX)
 
@@ -94,13 +94,13 @@ rounded-sm  (not rounded-xl/2xl)
 border-2    on hub cards (extra visible hover)
 border      on small cards
 border-color: var(--divider)
-bg: white dark:bg-gray-900
+bg: white
 hover: border-[var(--accent)] + shadow-md + -translate-y-[2px]
 ```
 
 **Section bg (alternating)**
 - Default sections: no bg (inherits page `#f7f8f8`)
-- Alternate sections: `bg-[var(--paper-elevated)] dark:bg-gray-900` — light mode matches the page; dark mode still lifts
+- Alternate sections: `bg-[var(--paper-elevated)]` — same cool sheet as the page
 - Never `bg-gray-50` directly
 
 **Section dividers (between major chunks)**
@@ -252,7 +252,7 @@ Without it, markdown tables, task lists, strikethrough don't parse — they rend
 ## 4. Don't mix blue and terracotta arbitrarily
 - Blue = action button only (drives to app)
 - Terracotta = editorial accent (labels, hovers, content emphasis)
-- If you find yourself adding `text-blue-600 dark:text-blue-400` to a section label or H1 highlight, you probably want `text-[var(--accent)]` instead.
+- If you find yourself adding `text-blue-600` to a section label or H1 highlight, you probably want `text-[var(--accent)]` instead.
 
 ## 5. Don't use Tailwind `prose` for blog articles
 Bypasses the editorial design. The article page uses custom `.article-body` styling in globals.css (drop cap, accent-wash highlights on `<strong>`, custom bullets, ornament dividers, table editorial style).
@@ -261,7 +261,7 @@ Bypasses the editorial design. The article page uses custom `.article-body` styl
 Standard SaaS split — that domain handles auth + app only. `content-studio` repo's `app/page.tsx` is a server redirect (logged in → /dashboard, logged out → autocontent.net). Don't recreate marketing surfaces there.
 
 ## 7. Never `bg-gray-50` or `border-gray-200`
-Always use `bg-[var(--paper-elevated)]` and `border-[var(--divider)]` so light/dark mode and brand consistency stay coherent.
+Always use `bg-[var(--paper-elevated)]` and `border-[var(--divider)]` so the cool paper and brand stay coherent. The site does not ship a dark theme.
 
 ## 8. Blog post titles use display serif, not Geist
 The blog feels like a magazine, not a Stripe doc. If you see `text-3xl font-bold text-gray-900` on a blog page heading, that's wrong — fix to `--font-display-zh` + ink tokens.

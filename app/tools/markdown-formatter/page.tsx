@@ -29,15 +29,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <article className="min-h-screen">
-      <section className="py-12 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-12 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-3xl mx-auto text-center">
           <h1
-            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)]"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             Markdown 转公众号
           </h1>
-          <p className="mt-4 text-base text-[var(--ink-soft)] dark:text-gray-400 max-w-xl mx-auto">
+          <p className="mt-4 text-base text-[var(--ink-soft)] max-w-xl mx-auto">
             左边贴 Markdown，右边看公众号样式预览。一键复制带样式的正文。
             免费、不上传你的内容。
           </p>
@@ -46,18 +46,18 @@ export default function Page() {
 
       <MarkdownFormatterClient />
 
-      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-3xl mx-auto">
           <h2
-          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-6"
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] mb-6"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
             为什么需要这个工具
           </h2>
-          <div className="space-y-3 text-base text-[var(--ink-soft)] dark:text-gray-300 leading-relaxed">
+          <div className="space-y-3 text-base text-[var(--ink-soft)] leading-relaxed">
             <p>预览正常，不代表粘贴后的内容也相同。这个工具将 Markdown 转成带内联样式的正文，并提供富文本复制。</p>
             <p>在公众号图文正文中直接粘贴后，请检查标题、列表、表格和图片，再使用平台预览确认最终效果。不同编辑器可能调整样式。</p>
-            <p className="text-sm text-[var(--ink-muted)] dark:text-gray-500 mt-4">
+            <p className="text-sm text-[var(--ink-muted)] mt-4">
               🔒 所有处理在你浏览器里完成，不上传任何内容到服务器。
             </p>
           </div>
