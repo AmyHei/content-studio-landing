@@ -77,7 +77,7 @@ export function CTASection({
           }}
         >
           <h2
-            className="text-[22px] md:text-[26px] font-semibold mb-3 text-[var(--ink)] dark:text-white"
+            className="text-[22px] md:text-[26px] font-semibold mb-3 text-[var(--ink)]"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             {title}
@@ -112,7 +112,7 @@ export function FAQItem({ q, a }: { q: string; a: string }) {
       style={{ borderColor: "var(--divider)" }}
     >
       <summary
-        className="flex justify-between items-center cursor-pointer font-semibold text-[15px] list-none text-[var(--ink)] dark:text-white"
+        className="flex justify-between items-center cursor-pointer font-semibold text-[15px] list-none text-[var(--ink)]"
         style={{ fontFamily: "var(--font-display-zh)" }}
       >
         {q}
@@ -180,7 +180,7 @@ export function RelatedFeatures({ exclude }: { exclude: string }) {
             <Link
               key={f.slug}
               href={`/features/${f.slug}`}
-              className="group block p-5 rounded-sm border bg-white dark:bg-gray-900 transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[1px]"
+              className="group block p-5 rounded-sm border bg-white transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[1px]"
               style={{ borderColor: "var(--divider)" }}
             >
               <div className="flex items-baseline gap-3">
@@ -192,7 +192,7 @@ export function RelatedFeatures({ exclude }: { exclude: string }) {
                 </span>
                 <div className="flex-1">
                   <div
-                    className="font-semibold text-[15px] mb-1 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] transition-colors"
+                    className="font-semibold text-[15px] mb-1 text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors"
                     style={{ fontFamily: "var(--font-display-zh)" }}
                   >
                     {f.title}
@@ -239,7 +239,7 @@ export function PageHero({
           {breadcrumb}
         </div>
         <h1
-          className="text-[30px] md:text-[40px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+          className="text-[30px] md:text-[40px] font-bold tracking-tight leading-[1.2] text-[var(--ink)]"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
           {title}

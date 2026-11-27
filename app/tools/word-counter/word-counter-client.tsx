@@ -67,7 +67,7 @@ export function WordCounterClient() {
     <div className="max-w-3xl mx-auto px-6 py-8 space-y-8">
       {/* Title checker */}
       <div>
-        <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
+        <label className="block text-sm font-medium text-gray-900 mb-2">
           标题（订阅号超 32 字会被截断）
         </label>
         <input
@@ -75,15 +75,15 @@ export function WordCounterClient() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="把你的标题贴到这里"
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:border-blue-600"
         />
         <div
           className={`mt-2 text-sm flex justify-between ${
             titleStats.status === "bad"
-              ? "text-red-600 dark:text-red-400"
+              ? "text-red-600"
               : titleStats.status === "warn"
-                ? "text-orange-600 dark:text-orange-400"
-                : "text-gray-600 dark:text-gray-400"
+                ? "text-orange-600"
+                : "text-gray-600"
           }`}
         >
           <span>{titleStats.hint}</span>
@@ -93,13 +93,13 @@ export function WordCounterClient() {
 
       {/* Body counter */}
       <div>
-        <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
+        <label className="block text-sm font-medium text-gray-900 mb-2">
           正文
         </label>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="w-full min-h-[280px] px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white text-sm leading-relaxed focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 resize-y"
+          className="w-full min-h-[280px] px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 text-sm leading-relaxed focus:outline-none focus:border-blue-600 resize-y"
         />
       </div>
 
@@ -119,16 +119,16 @@ export function WordCounterClient() {
         ].map((s) => (
           <div
             key={s.label}
-            className="p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900"
+            className="p-4 rounded-lg border border-gray-200 bg-white"
           >
-            <div className="text-xs text-gray-500 dark:text-gray-500 mb-1">
+            <div className="text-xs text-gray-500 mb-1">
               {s.label}
             </div>
-            <div className="text-xl font-bold text-gray-900 dark:text-white">
+            <div className="text-xl font-bold text-gray-900">
               {s.value}
             </div>
             {s.note && (
-              <div className="text-[10px] text-gray-400 dark:text-gray-500 mt-1">
+              <div className="text-[10px] text-gray-400 mt-1">
                 {s.note}
               </div>
             )}
@@ -137,16 +137,16 @@ export function WordCounterClient() {
       </div>
 
       {/* Length advice */}
-      <div className="p-5 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+      <div className="p-5 rounded-xl bg-gray-50 border border-gray-200">
         <div className="flex items-baseline gap-3 mb-1">
-          <span className="text-sm font-medium text-gray-900 dark:text-white">
+          <span className="text-sm font-medium text-gray-900">
             长度判定:
           </span>
-          <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
+          <span className="text-lg font-bold text-blue-600">
             {lengthAdvice.level}
           </span>
         </div>
-        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+        <p className="text-sm text-gray-600 leading-relaxed">
           {lengthAdvice.note}
         </p>
       </div>
