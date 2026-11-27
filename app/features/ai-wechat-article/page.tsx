@@ -34,7 +34,7 @@ export default function Page() {
         <div className="max-w-3xl mx-auto text-center">
           <HeroBadge>AI 写公众号 · 免费试用</HeroBadge>
           <h1
-            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            className="text-[28px] md:text-[36px] font-bold tracking-tight leading-[1.2] text-[var(--ink)]"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             AI 帮你写公众号文章
@@ -43,7 +43,7 @@ export default function Page() {
               从选题到发布，一站搞定
             </span>
           </h1>
-          <p className="mt-6 text-lg text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-[var(--ink-soft)] max-w-2xl mx-auto">
             选个话题，AI 生成符合你风格的文章，自动配图、智能排版，一键发到微信公众号草稿箱。
             大幅提升内容创作效率，让你专注于更有价值的工作。
           </p>
@@ -53,10 +53,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-5xl mx-auto">
           <h2
-          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-10"
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] mb-10"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
             公众号运营，这 4 件事最磨人
@@ -70,12 +70,12 @@ export default function Page() {
             ].map((p) => (
               <div
                 key={p.t}
-                className="p-5 rounded-sm bg-white dark:bg-gray-900 border border-[var(--divider)] dark:border-gray-800"
+                className="p-5 rounded-sm bg-white border border-[var(--divider)]"
               >
-                <div className="font-semibold text-[var(--ink)] dark:text-white mb-1">
+                <div className="font-semibold text-[var(--ink)] mb-1">
                   {p.t}
                 </div>
-                <div className="text-sm text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed">
+                <div className="text-sm text-[var(--ink-soft)] leading-relaxed">
                   {p.d}
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function Page() {
 
       <section className="py-16 px-6 max-w-4xl mx-auto">
         <h2
-          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-12"
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] mb-12"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
           AI 写公众号的完整流程
@@ -119,10 +119,10 @@ export default function Page() {
                 {s.n}
               </div>
               <div>
-                <div className="font-semibold text-lg text-[var(--ink)] dark:text-white mb-1">
+                <div className="font-semibold text-lg text-[var(--ink)] mb-1">
                   {s.t}
                 </div>
-                <div className="text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed">
+                <div className="text-[var(--ink-soft)] leading-relaxed">
                   {s.d}
                 </div>
               </div>
@@ -131,15 +131,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-16 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-4xl mx-auto">
           <h2
-          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-3"
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] mb-3"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
             谁在用 AI 写公众号
           </h2>
-          <p className="text-center text-[var(--ink-soft)] dark:text-gray-400 mb-10 text-sm">
+          <p className="text-center text-[var(--ink-soft)] mb-10 text-sm">
             副业、自媒体、企业，三种场景都能跑通
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -162,15 +162,15 @@ export default function Page() {
             ].map((c) => (
               <div
                 key={c.t}
-                className="p-6 rounded-sm bg-white dark:bg-gray-900 border border-[var(--divider)] dark:border-gray-800"
+                className="p-6 rounded-sm bg-white border border-[var(--divider)]"
               >
-                <div className="text-xs font-medium text-blue-600 dark:text-blue-400 mb-2">
+                <div className="text-xs font-medium text-blue-600 mb-2">
                   {c.tag}
                 </div>
-                <div className="font-semibold text-[var(--ink)] dark:text-white mb-2">
+                <div className="font-semibold text-[var(--ink)] mb-2">
                   {c.t}
                 </div>
-                <div className="text-sm text-[var(--ink-soft)] dark:text-gray-400 leading-relaxed">
+                <div className="text-sm text-[var(--ink-soft)] leading-relaxed">
                   {c.d}
                 </div>
               </div>
@@ -181,7 +181,7 @@ export default function Page() {
 
       <section className="py-16 px-6 max-w-3xl mx-auto">
         <h2
-          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] dark:text-white mb-8"
+          className="text-[22px] md:text-[26px] font-semibold text-center text-[var(--ink)] mb-8"
           style={{ fontFamily: "var(--font-display-zh)" }}
         >
           常见问题

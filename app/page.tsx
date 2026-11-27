@@ -134,20 +134,20 @@ export default function Home() {
             账号增长，从选对题开始
           </div>
           <h1
-            className="text-[32px] md:text-[42px] font-bold tracking-tight leading-[1.2] text-[var(--ink)] dark:text-white"
+            className="text-[32px] md:text-[42px] font-bold tracking-tight leading-[1.2] text-[var(--ink)]"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             豆包帮你写一篇
             <br />
             我们帮你的号长起来
           </h1>
-          <p className="mt-5 text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="mt-5 text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] max-w-2xl mx-auto">
             不只生成文章。我们结合你的账号数据、领域热度与竞品覆盖，判断「现在写什么更容易涨」，并追踪发布后的真实反馈，让下一篇比上一篇更好。
           </p>
 
           {/* Sample topic list */}
           <div
-            className="mt-10 text-left rounded-sm border p-5 md:p-6 bg-white dark:bg-gray-900"
+            className="mt-10 text-left rounded-sm border p-5 md:p-6 bg-white"
             style={{ borderColor: "var(--divider)" }}
           >
             <div className="flex items-center justify-between mb-4">
@@ -173,12 +173,12 @@ export default function Home() {
                 >
                   <div className="flex-1 min-w-0">
                     <div
-                      className="text-[15px] font-semibold text-[var(--ink)] dark:text-white truncate"
+                      className="text-[15px] font-semibold text-[var(--ink)] truncate"
                       style={{ fontFamily: "var(--font-display-zh)" }}
                     >
                       {topic.title}
                     </div>
-                    <div className="text-[13px] leading-[1.6] text-[var(--ink-soft)] dark:text-gray-400">
+                    <div className="text-[13px] leading-[1.6] text-[var(--ink-soft)]">
                       {topic.reason}
                     </div>
                   </div>
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Differentiators */}
-      <section className="py-16 md:py-20 px-6 bg-[var(--paper-elevated)] dark:bg-gray-900">
+      <section className="py-16 md:py-20 px-6 bg-[var(--paper-elevated)]">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-10">
             <div className="h-px flex-1" style={{ background: "var(--divider)" }} />
@@ -223,7 +223,7 @@ export default function Home() {
             {differentiators.map((d) => (
               <div
                 key={d.title}
-                className="p-5 md:p-6 rounded-sm border-2 bg-white dark:bg-gray-900 transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[2px]"
+                className="p-5 md:p-6 rounded-sm border-2 bg-white transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[2px]"
                 style={{ borderColor: "var(--divider)" }}
               >
                 <div className="flex items-baseline gap-4">
@@ -235,12 +235,12 @@ export default function Home() {
                   </span>
                   <div className="flex-1">
                     <h3
-                      className="text-[17px] md:text-[18px] font-semibold mb-2 text-[var(--ink)] dark:text-white"
+                      className="text-[17px] md:text-[18px] font-semibold mb-2 text-[var(--ink)]"
                       style={{ fontFamily: "var(--font-display-zh)" }}
                     >
                       {d.title}
                     </h3>
-                    <p className="text-[14px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400">
+                    <p className="text-[14px] leading-[1.7] text-[var(--ink-soft)]">
                       {d.desc}
                     </p>
                   </div>
@@ -276,12 +276,12 @@ export default function Home() {
                 </span>
                 <div className="flex-1">
                   <h3
-                    className="text-[16px] md:text-[17px] font-semibold mb-1 text-[var(--ink)] dark:text-white"
+                    className="text-[16px] md:text-[17px] font-semibold mb-1 text-[var(--ink)]"
                     style={{ fontFamily: "var(--font-display-zh)" }}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-[14px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400">
+                  <p className="text-[14px] leading-[1.7] text-[var(--ink-soft)]">
                     {step.desc}
                   </p>
                 </div>
@@ -308,12 +308,12 @@ export default function Home() {
               开始增长
             </div>
             <h2
-              className="text-[22px] md:text-[28px] font-semibold mb-3 text-[var(--ink)] dark:text-white"
+              className="text-[22px] md:text-[28px] font-semibold mb-3 text-[var(--ink)]"
               style={{ fontFamily: "var(--font-display-zh)" }}
             >
               准备好让你的号长起来了吗？
             </h2>
-            <p className="text-[14px] md:text-[15px] mb-8 text-[var(--ink-soft)] dark:text-gray-400">
+            <p className="text-[14px] md:text-[15px] mb-8 text-[var(--ink-soft)]">
               先试今日选题，觉得合适再注册保存或发布
             </p>
             <a

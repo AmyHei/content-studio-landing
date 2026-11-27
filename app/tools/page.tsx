@@ -54,14 +54,14 @@ export default function Page() {
             AutoContent · Tools
           </div>
           <h1
-            className="text-[30px] md:text-[38px] font-bold tracking-tight mb-4 text-[var(--ink)] dark:text-white"
+            className="text-[30px] md:text-[38px] font-bold tracking-tight mb-4 text-[var(--ink)]"
             style={{ fontFamily: "var(--font-display-zh)" }}
           >
             公众号免费工具集
           </h1>
-          <p className="text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="text-[15px] md:text-[17px] leading-[1.7] text-[var(--ink-soft)] max-w-2xl mx-auto">
             为公众号运营者准备的几个常用小工具。
-            <strong className="text-[var(--ink)] dark:text-white font-semibold">
+            <strong className="text-[var(--ink)] font-semibold">
               全部免费、无需注册
             </strong>
             、纯浏览器运行不上传内容。
@@ -76,17 +76,17 @@ export default function Page() {
             <Link
               key={t.slug}
               href={`/tools/${t.slug}`}
-              className="group block p-6 rounded-sm border-2 bg-white dark:bg-gray-900 transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[2px]"
+              className="group block p-6 rounded-sm border-2 bg-white transition-all hover:border-[var(--accent)] hover:shadow-md hover:-translate-y-[2px]"
               style={{ borderColor: "var(--divider)" }}
             >
               <div className="text-3xl mb-4">{t.icon}</div>
               <h2
-                className="text-[17px] font-semibold mb-2 text-[var(--ink)] dark:text-white group-hover:text-[var(--accent)] dark:group-hover:text-[var(--accent)] transition-colors"
+                className="text-[17px] font-semibold mb-2 text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors"
                 style={{ fontFamily: "var(--font-display-zh)" }}
               >
                 {t.title}
               </h2>
-              <p className="text-[13px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 mb-4">
+              <p className="text-[13px] leading-[1.7] text-[var(--ink-soft)] mb-4">
                 {t.desc}
               </p>
               <div
@@ -123,7 +123,7 @@ export default function Page() {
               background: "var(--paper-elevated)",
             }}
           >
-            <p className="text-[14px] md:text-[15px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 mb-6 max-w-xl mx-auto">
+            <p className="text-[14px] md:text-[15px] leading-[1.7] text-[var(--ink-soft)] mb-6 max-w-xl mx-auto">
               这些工具是独立的小帮手。AutoContent 把它们打包成完整流程：
               智能选题 → AI 写稿 → 自动配图 → 一键发布公众号。
             </p>

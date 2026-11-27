@@ -21,7 +21,7 @@ const TOOL_LINKS = [
 const colTitleClass =
   "text-[10px] font-bold tracking-[0.22em] uppercase mb-4 text-[var(--ink-muted)]";
 const linkClass =
-  "block text-[13px] leading-[1.6] text-[var(--ink-soft)] dark:text-gray-400 hover:text-[var(--ink)] dark:hover:text-white transition-colors";
+  "block text-[13px] leading-[1.6] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors";
 
 export function SiteFooter() {
   const latestPosts = getAllPosts().slice(0, 5);
@@ -80,7 +80,7 @@ export function SiteFooter() {
           {/* Brand */}
           <div>
             <div className={colTitleClass}>AutoContent</div>
-            <p className="text-[13px] leading-[1.7] text-[var(--ink-soft)] dark:text-gray-400 mb-4">
+            <p className="text-[13px] leading-[1.7] text-[var(--ink-soft)] mb-4">
               选题研判 → 账号数据 → 辅助成稿 → 增长回流
             </p>
             <Link

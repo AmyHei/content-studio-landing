@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Nav } from "./components/nav";
 import { SiteFooter } from "./components/site-footer";
@@ -13,6 +13,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://autocontent.net"),
@@ -75,9 +79,9 @@ export default function RootLayout({
   const cfToken = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN;
 
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" style={{ colorScheme: "light" }}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#f7f8f8] dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#f7f8f8] text-gray-900 antialiased`}
       >
         <Nav />
         {children}

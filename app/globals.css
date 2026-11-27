@@ -1,7 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/*
+  Public pages stay on the cool-white sheet. Tailwind's default `dark:`
+  variant follows prefers-color-scheme; pin it to a class this site never
+  sets so OS dark mode cannot repaint the page. No theme toggle.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
   --background: #f7f8f8;
   --foreground: #171717;
 
@@ -39,34 +47,6 @@
   --font-body-zh:
     var(--font-geist-sans), -apple-system, "PingFang SC", "Microsoft YaHei",
     sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-
-    --paper: #030712;                /* matches gray-950 */
-    --paper-elevated: #111827;       /* slightly lighter for cards */
-    --paper-press: #1f2937;          /* hover / inset, one step off elevated */
-    --ink: #f0eae0;
-    --ink-soft: #c7bfb1;
-    --ink-muted: #8e867a;
-    --divider: #3a3530;
-    --rule: #f0eae0;
-    --accent: #e8806b;
-    --accent-wash: #3d2823;
-    --accent-strong: #f09782;
-
-    --persona-saas: #8faec5;
-    --persona-saas-wash: #2a3038;
-    --persona-wechat: #9cb890;
-    --persona-wechat-wash: #2a3128;
-    --persona-sidehustle: #dcb378;
-    --persona-sidehustle-wash: #3a2f1b;
-    --persona-engineer: #b093d3;
-    --persona-engineer-wash: #2d2438;
-  }
 }
 
 body {

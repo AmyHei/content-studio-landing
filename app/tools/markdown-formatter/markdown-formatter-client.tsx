@@ -167,17 +167,17 @@ export function MarkdownFormatterClient() {
         {/* Editor */}
         <div className="flex flex-col">
           <div className="flex justify-between items-center mb-2">
-            <label className="text-sm font-medium text-gray-900 dark:text-white">
+            <label className="text-sm font-medium text-gray-900">
               Markdown 源文
             </label>
-            <span className="text-xs text-gray-500 dark:text-gray-500">
+            <span className="text-xs text-gray-500">
               {stats.chars} 字 · {stats.words} 词
             </span>
           </div>
           <textarea
             value={md}
             onChange={(e) => setMd(e.target.value)}
-            className="flex-1 min-h-[500px] px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-mono text-sm focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 resize-y"
+            className="flex-1 min-h-[500px] px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 font-mono text-sm focus:outline-none focus:border-blue-600 resize-y"
             spellCheck={false}
           />
           <button
@@ -192,10 +192,10 @@ export function MarkdownFormatterClient() {
         {/* Preview (iframe sandbox 隔离用户输入) */}
         <div className="flex flex-col">
           <div className="flex justify-between items-center mb-2">
-            <label className="text-sm font-medium text-gray-900 dark:text-white">
+            <label className="text-sm font-medium text-gray-900">
               公众号预览
             </label>
-            <span className="text-xs text-gray-500 dark:text-gray-500">
+            <span className="text-xs text-gray-500">
               浏览器预览，粘贴后请再次检查
             </span>
           </div>
@@ -203,9 +203,9 @@ export function MarkdownFormatterClient() {
             title="公众号样式预览"
             srcDoc={previewDoc}
             sandbox=""
-            className="flex-1 min-h-[500px] w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white"
+            className="flex-1 min-h-[500px] w-full rounded-lg border border-gray-300 bg-white"
           />
-          <p className="mt-3 text-xs text-gray-500 dark:text-gray-500">
+          <p className="mt-3 text-xs text-gray-500">
             点击「复制排版内容」，在公众号图文正文中直接粘贴。发布前检查标题、列表、表格和图片；不要使用“粘贴为纯文本”。
           </p>
           <Link href="/blog/markdown-wechat-copy-format" className="mt-2 text-sm text-[var(--accent)] underline">
@@ -214,11 +214,11 @@ export function MarkdownFormatterClient() {
         </div>
       </div>
 
-      <div className="mt-10 p-6 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900">
-        <div className="font-semibold text-gray-900 dark:text-white mb-1">
+      <div className="mt-10 p-6 rounded-xl bg-blue-50 border border-blue-200">
+        <div className="font-semibold text-gray-900 mb-1">
           想要 AI 帮你写完整文章？
         </div>
-        <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+        <div className="text-sm text-gray-600 mb-4">
           这个工具只做排版。AutoContent 还能：AI 写稿、自动配图、智能选题、一键发布草稿箱。
         </div>
         <Link
