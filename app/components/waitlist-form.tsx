@@ -35,10 +35,10 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
           订阅成功！有新功能会第一时间通知你。
         </p>
         <a
-          href="https://app.autocontent.net/register"
+          href="https://app.autocontent.net/try"
           className="inline-block px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
         >
-          立即体验 AutoContent →
+          立即免费体验 →
         </a>
       </div>
     );
@@ -65,7 +65,7 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="your@email.com"
+            placeholder="你的邮箱"
             required
             className={inputClasses}
             style={{ borderColor: "var(--divider)" }}
@@ -94,7 +94,7 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="your@email.com"
+          placeholder="你的邮箱"
           required
           className={inputClasses}
         />
@@ -105,7 +105,7 @@ export function WaitlistForm({ variant = "default" }: { variant?: "default" | "d
       <p className={`text-sm text-center ${tryLinkClasses} transition-colors`}>
         或{" "}
         <a
-          href="https://app.autocontent.net/register"
+          href="https://app.autocontent.net/try"
           className="underline underline-offset-2"
         >
           直接免费体验
