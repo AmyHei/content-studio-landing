@@ -169,7 +169,7 @@ export default function Home() {
                 <div
                   key={topic.title}
                   className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 p-3 rounded-sm border"
-                  style={{ background: "var(--paper-elevated)", borderColor: "var(--divider)" }}
+                  style={{ background: "var(--paper-press)", borderColor: "var(--divider)" }}
                 >
                   <div className="flex-1 min-w-0">
                     <div

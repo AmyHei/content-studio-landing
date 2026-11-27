@@ -115,7 +115,7 @@ function FeaturedPostCard({
       <div className="max-w-3xl mx-auto">
         <Link
           href={`/blog/${post.slug}`}
-          className="group block py-8 -mx-4 px-4 rounded-sm transition-colors hover:bg-[var(--paper-elevated)]"
+          className="group block py-8 -mx-4 px-4 rounded-sm transition-colors hover:bg-[var(--paper-press)]"
         >
           <div className="flex items-baseline gap-3 mb-4">
             <span

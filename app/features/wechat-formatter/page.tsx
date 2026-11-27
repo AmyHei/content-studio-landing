@@ -113,7 +113,7 @@ export default function Page() {
           ].map((s) => (
             <div
               key={s}
-              className="px-4 py-3 rounded-lg bg-[var(--paper-elevated)] dark:bg-gray-900 border border-[var(--divider)] dark:border-gray-800 text-sm text-[var(--ink-soft)] dark:text-gray-300"
+              className="px-4 py-3 rounded-lg bg-[var(--paper-press)] dark:bg-gray-900 border border-[var(--divider)] dark:border-gray-800 text-sm text-[var(--ink-soft)] dark:text-gray-300"
             >
               ✓ {s}
             </div>

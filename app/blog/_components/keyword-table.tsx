@@ -75,7 +75,7 @@ function SeoVariant({ rows }: { rows: SeoRow[] }) {
             return (
               <tr
                 key={i}
-                className="border-b transition-colors hover:bg-[var(--paper-elevated)]"
+                className="border-b transition-colors hover:bg-[var(--paper-press)]"
                 style={{ borderColor: "var(--divider)" }}
               >
                 <Td mono>{r.keyword}</Td>
@@ -113,7 +113,7 @@ function TrendVariant({ rows }: { rows: TrendRow[] }) {
             return (
               <tr
                 key={i}
-                className="border-b transition-colors hover:bg-[var(--paper-elevated)]"
+                className="border-b transition-colors hover:bg-[var(--paper-press)]"
                 style={{ borderColor: "var(--divider)" }}
               >
                 <Td mono soft>
